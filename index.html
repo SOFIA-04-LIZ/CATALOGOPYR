@@ -233,8 +233,11 @@ footer{
 
 /* Responsive */
 @media(max-width:768px){
-    .search-container input{
-        width:90%;
+
+    header{
+        flex-direction:column;
+        padding:20px;
+        text-align:center;
     }
 
     .logo-container{
@@ -243,12 +246,18 @@ footer{
     }
 
     .logo-container img{
-        height:45px;
+        width:180px;
+        max-width:80%;
+        height:auto;      
     }
 
-    .header h1{
-        font-size:18px;
+    header h1{
+        font-size:20px;
         letter-spacing:1px;
+    }
+
+    .search-container input{
+        width:90%;
     }
 }
 </style>
