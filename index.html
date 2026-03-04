@@ -1234,19 +1234,28 @@ footer{
     <span>SKU:5524453</span>
 </div>
 
-<div class="card">
-    <img src="Images\Chamarra para Hombre Azul Marino.PNG" alt="">
-    <h3>Chamarra para Hombre Azul Marino</h3>
-    <p>Uniforme</p>
-    <span>SKU:5539465</span>
-</div>
+
+
 
 <div class="card">
-    <img src="Images\Chamarra para Mujer Azul Marino.PNG" alt="">
-    <h3>Chamarra para Mujer Azul Marino</h3>
-    <p>Uniforme</p>
-    <span>SKU:5539467</span>
-</div>
+        <img id="imagenProductoCha" class="product-imgcha" 
+    src="Images\Chamarra para Hombre Azul Marino.PNG.PNG" alt="">
+
+        <h3>Chamarra para Hombre Azul Marino</h3>
+        <p>Uniforme</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcioncha('Hombre', event)">Hombre</button>
+        <button class="opcion-btn" onclick="cambiarOpcioncha('Mujer', event)">Mujer</button>
+    </div>
+
+
+         <span id="skucha">SKU:5539465</span>
+         
+    </div>
+
+
+
 
 <div class="card">
     <img src="Images\Chamarra para Mujer Azul Marino.PNG" alt="">
@@ -1553,6 +1562,44 @@ function cambiarOpcionInfracap(opcion, evento){
 }
 
 </script>
+
+
+
+
+<script>
+
+const productoscha = {
+    "Hombre": {
+        skucha: "SKU:5539465",
+        imgcha: "Images\\Chamarra para Hombre Azul Marino.PNG"
+    },
+    "Mujer": {
+        skucha: "SKU:5539467",
+        imgcha: "Images\\Chamarra para Mujer Azul Marino.PNG"
+    }
+};
+
+function cambiarOpcioncha(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductocha");
+    const skucha = document.getElementById("skucha");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productoscha[opcion].imgcha;
+        skucha.textContent = productoscha[opcion].skucha;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
 
 
 </body>
