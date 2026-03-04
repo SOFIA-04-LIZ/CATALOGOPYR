@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo PY Lubricanes</title>
+
+<style>
+:root{
+    --primary:#111111;
+    --secondary:#1f1f1f;
+    --accent:#C9A227;
+    --light:#f4f4f4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--light);
+}
+
+/* HEADER */
+header{
+
+     background:var(--primary);
+    color: #e5b611;
+    padding:20px 40px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+header h1{
+    font-weight:600;
+    letter-spacing:2px;
+    color:var(--accent);
+    align-items: justify-content;
+}
+
+
+
+/* Logo */
+.logo-container{
+    position:absolute;
+    left:40px;
+}
+
+.logo-container img{
+    height:50px;
+}
+
+/* NAV */
+nav{
+    background:var(--secondary);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:15px 18px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.menu li a:hover{
+    background:var(--accent);
+    color:black;
+}
+
+/* Dropdown */
+.menu li ul{
+    position:absolute;
+    top:50px;
+    left:0;
+    background:var(--secondary);
+    list-style:none;
+    display:none;
+    min-width:180px;
+}
+
+.menu li:hover ul{
+    display:block;
+}
+
+.menu li ul li a{
+    padding:12px;
+}
+
+/* SEARCH */
+.search-container{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.search-container input{
+    width:50%;
+    padding:12px;
+    border:2px solid var(--accent);
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+/* CATALOG */
+.catalogo{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:8px;
+    color:var(--primary);
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+}
+
+.card span{
+    display:block;
+    margin-top:10px;
+    color:var(--accent);
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .search-container input{
+        width:90%;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ALMACEN PARTES Y REFACCIONES LUBRICANTES</h1>
+      <div class="logo-container">
+        <img src="images\unnamed.png" alt="Logo Empresa">
+    </div>
+</header>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li>
+            <a href="#">Categorías ▼</a>
+            <ul>
+                <li><a href="#">Limpieza</a></li>
+                <li><a href="#">EPP</a></li>
+                <li><a href="#">Papelería</a></li>
+                <li><a href="#">Solventes</a></li>
+                <li><a href="#">Químicos</a></li>
+                <li><a href="#">Uniformes</a></li>
+                <li><a href="#">Refacciones</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<section class="search-container">
+    <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()">
+</section>
+
+<section class="catalogo" id="catalogo">
+
+    <div class="card">
+        <img src="images\Aceite (39433735 Ingersoll Rand) Litro.png" alt="">
+        <h3>Aceite (39433735 Ingersoll Rand) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057265</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite (Mobil Delvac 1340) Litro.png" alt="">
+        <h3>Aceite (Mobil Delvac 1340) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057096</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Aceite Hidraulico (Mobil DTE 26) Litro.PNG" alt="">
+        <h3>Aceite Hidraulico (Mobil DTE 26) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057377</span>
+    </div>
+
+
+<div class="card">
+        <img src="images\Aceite Lubricante (Mobil DTE 242) Litro.png" alt="">
+        <h3>Aceite Lubricante (Mobil DTE 242) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4136419</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Almasol 680) Litro.png" alt="">
+        <h3>Aceite Lubricante (Almasol 680) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057481</span>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Catálogo Partes Y Refacciones Lubrcantes V2 By Sofia Jimenez
+</footer>
+
+<script>
+function buscarProducto(){
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for(let i=0; i<cards.length; i++){
+        let texto = cards[i].innerText.toLowerCase();
+        if(texto.includes(input)){
+            cards[i].style.display = "block";
+        }else{
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

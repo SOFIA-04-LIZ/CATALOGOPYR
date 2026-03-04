@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo PYR</title>
+
+<style>
+:root{
+    --primary:#111111;
+    --secondary:#1f1f1f;
+    --accent:#C9A227;
+    --light:#f4f4f4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--light);
+}
+
+/* HEADER */
+header{
+
+     background:var(--primary);
+    color: #e5b611;
+    padding:20px 40px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+
+/* Logo */
+.logo-container{
+    position:absolute;
+    left:40px;
+}
+
+.logo-container img{
+    height:150px;
+}
+
+
+
+header h1{
+    font-weight:600;
+    letter-spacing:2px;
+    color:var(--accent);
+    align-items: justify-content;
+}
+
+/* NAV */
+nav{
+    background:var(--secondary);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:15px 18px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.menu li a:hover{
+    background:var(--accent);
+    color:black;
+}
+
+/* Dropdown */
+.menu li ul{
+    position:absolute;
+    top:50px;
+    left:0;
+    background:var(--secondary);
+    list-style:none;
+    display:none;
+    min-width:180px;
+}
+
+.menu li:hover ul{
+    display:block;
+}
+
+.menu li ul li a{
+    padding:12px;
+}
+
+/* SEARCH */
+.search-container{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.search-container input{
+    width:50%;
+    padding:12px;
+    border:2px solid var(--accent);
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+/* CATALOG */
+.catalogo{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:8px;
+    color:var(--primary);
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+}
+
+
+
+.card span{
+    display:block;
+    margin-top:10px;
+    color:var(--accent);
+    font-weight:bold;
+}
+
+
+select{
+    padding:5px 8px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+    cursor:pointer;
+}
+
+/* Cuando el mouse está encima */
+select:hover{
+    border-color:#C9A227;
+    background:#f9f4e6;
+}
+
+/* Cuando está activo (abierto o seleccionado) */
+select:focus{
+    outline:none;
+    border-color:#C9A227;
+    box-shadow:0 0 5px rgba(201,162,39,0.5);
+}
+.menu-opciones{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+.opcion-btn{
+    padding:8px 16px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.opcion-btn:hover{
+    border-color:var(--accent);
+    transform:scale(1.05);
+}
+
+.opcion-btn.active{
+    background:var(--accent);
+    color:white;
+    border-color:var(--accent);
+    box-shadow:0 4px 10px rgba(201,162,39,0.4);
+}
+
+/* FOOTER */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .search-container input{
+        width:90%;
+    }
+
+    .logo-container{
+        position:static;
+        margin-bottom:10px;
+    }
+
+    .logo-container img{
+        height:45px;
+    }
+
+    .header h1{
+        font-size:18px;
+        letter-spacing:1px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ALMACEN PARTES Y REFACCIONES</h1>
+      <div class="logo-container">
+        <img src="images\LOGOBLANCO.png" alt="Logo Empresa">
+    </div>
+</header>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li>
+            <a href="#">Categorías ▼</a>
+            <ul>
+                <li><a href="#">Limpieza</a></li>
+                <li><a href="Lubricantes.html">EPP</a></li>
+                <li><a href="#">Papelería</a></li>
+                <li><a href="#">Solventes</a></li>
+                <li><a href="Lubricantes.html">Lubricantes</a></li>
+                <li><a href="#">Químicos</a></li>
+                <li><a href="#">Uniformes</a></li>
+                <li><a href="#">Refacciones</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<section class="search-container">
+    <input type="text" id="buscador" placeholder="Buscar producto por nombre o sku..." onkeyup="buscarProducto()">
+</section>
+
+<section class="catalogo" id="catalogo">
+
+    <div class="card">
+        <img src="images\Aceite (39433735 Ingersoll Rand) Litro.png" alt="">
+        <h3>Aceite (39433735 Ingersoll Rand) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057265</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite (Mobil Delvac 1340) Litro.png" alt="">
+        <h3>Aceite (Mobil Delvac 1340) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057096</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Aceite Dielectrico de Aerosol 400 ml.PNG" alt="">
+        <h3>Aceite Dielectrico de Aerosol 400 ml</h3>
+        <p>Solventes</p>
+        <span>SKU:4057464</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite Hidraulico (Mobil DTE 26) Litro.PNG" alt="">
+        <h3>Aceite Hidraulico (Mobil DTE 26) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057377</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Mobil DTE 242) Litro.png" alt="">
+        <h3>Aceite Lubricante (Mobil DTE 242) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4136419</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Almasol 680) Litro.png" alt="">
+        <h3>Aceite Lubricante (Almasol 680) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057481</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Duolec 1605) Litro.png" alt="">
+        <h3>Aceite Lubricante (Duolec 1605) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057526</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Mobil Dte Oil Heavy Medium) con 208 Litros.png" alt="">
+        <h3>Aceite Lubricante (Mobil Dte Oil Heavy Medium) con 208 Litros</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4056368</span>
+    </div>  
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Mobil Dte Oil Light) con 208 Litros.png" alt="">
+        <h3>Aceite Lubricante (Mobil Dte Oil Light) con 208 Litros</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4056505</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Mobil Gear 600xp 200) Litro.png" alt="">
+        <h3>Aceite Lubricante (Mobil Gear 600xp 200) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4018364</span>
+    </div>
+
+
+
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Mobil Glygoyle 30) Litro.png" alt="">
+        <h3>Aceite Lubricante (Mobil Glygoyle 30) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057131</span>
+    </div>
+
+
+<div class="card">
+        <img src="images\Aceite Lubricante (Mobil Glygoyle 460) Litro.png" alt="">
+        <h3>Aceite Lubricante (Mobil Glygoyle 460) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4056384</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Aceite Lubricante (Mobil SHC 634) Litro.png" alt="">
+        <h3>Aceite Lubricante (Mobil SHC 634) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4056964</span>
+    </div>
+
+     <div class="card">
+        <img src="images\Aceite Lubricante (Reflo 68) Litro.png" alt="">
+        <h3>Aceite Lubricante (Reflo 68) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4244153</span>
+    </div>  
+
+
+<div class="card">
+        <img src="images\Aceite Lubricante 4150 h1 Quinplex con 208 Litros.png" alt="">
+        <h3>Aceite Lubricante 4150 h1 Quinplex con 208 Litros</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4269069</span>
+    </div> 
+
+
+<div class="card">
+        <img src="images\Aceite Lubricante HEUFT Litro.png" alt="">
+        <h3>Aceite Lubricante HEUFT Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057523</span>
+    </div> 
+
+
+<div class="card">
+        <img src="images\Aceite Lubricante WD-40 de 3.78 L.png" alt="">
+        <h3>Aceite Lubricante WD-40 de 3.78 L</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057151</span>
+    </div> 
+
+
+    <div class="card">
+        <img src="images\Aceite Mobil (DTE 27) Litro.png" alt="">
+        <h3>Aceite Mobil (DTE 27) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057095</span>
+    </div> 
+
+       <div class="card">
+        <img src="images\Aceite Superla White Oil Litro.png" alt="">
+        <h3>Aceite Superla White Oil Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:5005030</span>
+    </div> 
+
+
+      <div class="card">
+        <img src="images\Adhesivo Permatex (Henkel) de 250 ml.png" alt="">
+        <h3>Adhesivo Permatex (Henkel) de 250 ml</h3>
+        <p>Solventes</p>
+        <span>SKU:4053949</span>
+    </div> 
+
+
+     <div class="card">
+        <img src="images\Aflojatodo Key Litro.png" alt="">
+        <h3>Aflojatodo Key Litro</h3>
+        <p>Solventes</p>
+        <span>SKU:4057463</span>
+    </div> 
+
+    <div class="card">
+        <img src="images\Alcohol etílico 70° G.L. Desnaturalizado Litro.png" alt="">
+        <h3>Alcohol etílico 70° G.L. Desnaturalizado Litro</h3>
+        <p>Solventes</p>
+        <span>SKU:5523881</span>
+    </div> 
+
+    <div class="card">
+        <img src="images\Alcohol Etílico al 96% para Laboratorio Litro.png" alt="">
+        <h3>Alcohol Etílico al 96% para Laboratorio Litro</h3>
+        <p>Solventes</p>
+        <span>SKU:4053948</span>
+    </div> 
+
+
+ <div class="card">
+        <img src="images\Alcohol Isopropilico en aerosol 280 g.png" alt="">
+        <h3>Alcohol Isopropilico en aerosol 280 g</h3>
+        <p>Solventes</p>
+        <span>SKU:4057201</span>
+    </div> 
+
+
+    <div class="card">
+        <img src="images\Antebrazo De Carnaza Con Ojillo De Metal.png" alt="">
+        <h3>Antebrazo De Carnaza Con Ojillo De Metal</h3>
+        <p>EPP</p>
+        <span>SKU:5506417</span>
+    </div> 
+
+    <div class="card">
+        <img src="images\Antiderrapante Cosmético para Bandas 250 g.png" alt="">
+        <h3>Antiderrapante Cosmético para Bandas 250 g</h3>
+        <p>Solventes</p>
+        <span>SKU:4056344</span>
+    </div> 
+
+    <div class="card">
+        <img src="images\Antiespumante Hach Litro.png" alt="">
+        <h3>Antiespumante Hach Litro</h3>
+        <p>Solventes</p>
+        <span>SKU:5003550</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Arrow Kg.png" alt="">
+        <h3>Arrow Kg</h3>
+        <p>Quimicos</p>
+        <span>SKU:5000848</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Atomizadores de Plastico 500 ml.png" alt="">
+        <h3>Atomizadores de Plastico 500 ml</h3>
+        <p>Limpieza</p>
+        <span>SKU:5521403</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Barbiquejo de Elastico para Casco de Seguridad.png" alt="">
+        <h3>Barbiquejo de Elastico para Casco de Seguridad</h3>
+        <p>EPP</p>
+        <span>SKU:5524482</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Barniz Aislante Eléctrico Litro.png" alt="">
+        <h3>Barniz Aislante Eléctrico Litro</h3>
+        <p>Solventes</p>
+        <span>SKU:4057853</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Barniz Therm Litro.png" alt="">
+        <h3>Barniz Therm Litro</h3>
+        <p>Solventes</p>
+        <span>SKU:4057858</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Base de Bloqueo Grande para Valvulas Universales.png" alt="">
+        <h3>Base de Bloqueo Grande para Valvulas Universales</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5530750</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bata de Laboratorio para Hombre.png" alt="">
+        <h3>Bata de Laboratorio para Hombre</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539468</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bata de Laboratorio para Mujer.png" alt="">
+        <h3>Bata de Laboratorio para Mujer</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539469</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bengala Led.png" alt="">
+        <h3>Bengala Led</h3>
+        <p>EPP</p>
+        <span>SKU:5524397</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bicarbonato de Sodio G.I. Kg.png" alt="">
+        <h3>Bicarbonato de Sodio G.I. Kg</h3>
+        <p>Solventes</p>
+        <span>SKU:5000527</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Bicolor Rojo Azul.png" alt="">
+        <h3>Bicolor Rojo Azul</h3>
+        <p>Papeleria</p>
+        <span>SKU:5529938</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bloqueo Ajustable para Valvulas de Compuerta.png" alt="">
+        <h3>Bloqueo Ajustable para Valvulas de Compuerta</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5524011</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bloqueo de Cable para Cualquier Proposito.png" alt="">
+        <h3>Bloqueo de Cable para Cualquier Proposito</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5530733</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bloqueo de Valvula Universal con Cable de Mylon.png" alt="">
+        <h3>Bloqueo de Valvula Universal con Cable de Mylon</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5524006</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Bloqueo Grande Prinzing para Valvulas de Bola.png" alt="">
+        <h3>Bloqueo Grande Prinzing para Valvulas de Bola</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5530748</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Bloqueo Prinzing para Valvulas de Bola.png" alt="">
+        <h3>Bloqueo Prinzing para Valvulas de Bola</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5530749</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Blusa Manga Corta Azul Cielo.png" alt="">
+        <h3>Blusa Manga Corta Azul Cielo</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539444</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Blusa Manga Corta Azul Rey.png" alt="">
+        <h3>Blusa Manga Corta Azul Rey</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539420</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Blusa Manga Larga Azul Cielo.png" alt="">
+        <h3>Blusa Manga Larga Azul Cielo</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539445</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Blusa Manga Larga Azul Rey.png" alt="">
+        <h3>Blusa Manga Larga Azul Rey</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539421</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Boligrado (Pluma) Punto Mediano Color Azul.png" alt="">
+        <h3>Boligrado (Pluma) Punto Mediano Color Azul</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530184</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Boligrado (Pluma) Punto Mediano Color Negro.png" alt="">
+        <h3>Boligrado (Pluma) Punto Mediano Color Negro</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530185</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Boligrado (Pluma) Punto Mediano Color Rojo.png" alt="">
+        <h3>Boligrado (Pluma) Punto Mediano Color Rojo</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530186</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Bolsa de Plastico Rollo con 1 kg.png" alt="">
+        <h3>Bolsa de Plastico Rollo con 1 kg</h3>
+        <p>Papeleria</p>
+        <span>SKU:5523284</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Borrador para Pizarron Blanco.png" alt="">
+        <h3>Borrador para Pizarron Blanco</h3>
+        <p>Papeleria</p>
+        <span>SKU:5523284</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Bota de Hule con Casquillo.png" alt="">
+        <h3>Bota de Hule con Casquillo</h3>
+        <p>EPP - Calzado</p>
+
+            <div>
+                Talla:
+                <select id="talla" onchange="cambiarSKU()">
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                </select>
+             </div>
+
+        <span id="sku">SKU: 5506389</span>
+    </div> 
+
+
+
+     <div class="card">
+        <img src="images\Proximamente Botas Procliff.png" alt="">
+        <h3>Proximamente Botas Procliff</h3>
+        <p>EPP - Calzado</p>
+
+            <div>
+                Talla:
+                <select id="tallabp" onchange="cambiarSKUBotasProcliff()">
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+
+
+
+                </select>
+             </div>
+
+        <span id="skubp">SKU: 5542030</span>
+    </div> 
+
+
+
+
+        <div class="card">
+        <img src="images\Botas Rhino.png" alt="">
+        <h3>Botas Rhino</h3>
+        <p>EPP - Calzado</p>
+
+            <div>
+                Talla:
+                <select id="tallaBr" onchange="cambiarSKUBr()">
+
+                    <option value="23">23    </option>
+                    <option value="23.5">23.5</option>
+                    <option value="24">24    </option>
+                    <option value="24.5">24.5</option>
+                    <option value="25">25    </option>
+                    <option value="25.5">25.5</option>
+                    <option value="26">26    </option>
+                    <option value="26.5">26.5</option>
+                    <option value="27">27    </option>
+                    <option value="27.5">27.5</option>
+                    <option value="28">28    </option>
+                    <option value="28.5">28.5</option>
+                    <option value="29">29    </option>
+                    <option value="29.5">29.5</option>
+                    <option value="30">30    </option>
+                    <option value="31.5">31.5</option>
+                    <option value="32">32    </option>
+
+                </select>
+             </div>
+
+        <span id="skuBr">SKU: 5530796</span>
+    </div> 
+
+
+
+<div class="card">
+        <img id="imagenProducto" class="product-img" 
+    src="images\Brocha (Pinceleta) de 2 in.png" alt="Brocha">
+
+        <h3>Brocha (Pinceleta)</h3>
+        <p>Limpieza</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcion('2in', event)">2 in</button>
+        <button class="opcion-btn" onclick="cambiarOpcion('4in', event)">4 in</button>
+    </div>
+
+
+         <span id="skupincel">SKU:4187859</span>
+         
+    </div>
+
+
+    <div class="card">
+        <img src="images\Broche Metak para Gafete.png" alt="">
+        <h3>Broche Metak para Gafete</h3>
+        <p>Papeleria - Artículos para Escritorio</p>
+        <span>SKU:5511448</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Broche para Bloqueo Grupal 1.5 in.png" alt="">
+        <h3>Broche para Bloqueo Grupal 1.5 in</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:4243629</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Broches de Archivo 8 cm.png" alt="">
+        <h3>Broches de Archivo 8 cm</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530037</span>
+    </div>
+
+ <div class="card">
+        <img src="images\Cabezal de Impresión HP 727.png" alt="">
+        <h3>Cabezal de Impresión HP 727</h3>
+        <p>Papeleria</p>
+        <span>SKU:5532549</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Cadena Amarilla Plastica 3 in.png" alt="">
+        <h3>Cadena Amarilla Plastica 3 in</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5523909</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Caja de Marcadores para Pizarron con 4 pzas.png" alt="">
+        <h3>Caja de Marcadores para Pizarron con 4 pzas</h3>
+        <p>Papeleria</p>
+        <span>SKU:5529992</span>
+    </div>
+
+
+<div class="card">
+        <img id="imagenProductoCAR" class="product-imgCAR" 
+    src="images\\Camisa Manga Corta Azul Rey.png" alt="Brocha">
+
+        <h3>Camisa Azul Rey</h3>
+        <p>Uniforme</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionCAR('Manga Corta', event)">Manga Corta</button>
+        <button class="opcion-btn" onclick="cambiarOpcionCAR('Manga Larga', event)">Manga Larga</button>
+    </div>
+
+
+         <span id="skuCAR">SKU:5539416</span>
+         
+    </div>
+
+
+
+    <div class="card">
+        <img src="images\Camisa Manga Larga Caqui.png" alt="">
+        <h3>Camisa Manga Larga Caqui</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539426</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Camisa Manga Larga Caqui.png" alt="">
+        <h3>Camisa Manga Larga Caqui Ignifuga y Contra Arco Electrico</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539434</span>
+    </div>
+
+
+
+<div class="card">
+        <img id="imagenProductoCAN" class="product-imgCAN" 
+    src="images\\Candado de Seguridad Color Azul.png" alt="Brocha">
+
+        <h3>Candado de Seguridad</h3>
+        <p>EPP - SAM/LOTOTO</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionCAN('Azul 1 Llave', event)">Azul 1Llave</button>
+        <button class="opcion-btn" onclick="cambiarOpcionCAN('Azul 2 Llave', event)">Azul 2Llaves</button>
+         <button class="opcion-btn" onclick="cambiarOpcionCAN('Rojo', event)">Rojo</button>
+          <button class="opcion-btn" onclick="cambiarOpcionCAN('Verde', event)">Verde</button>
+    </div>
+
+
+         <span id="skuCAN">SKU: 5541030</span>
+         
+    </div>
+
+
+
+    <div class="card">
+        <img src="images\Cardetela de 50X50 (Paquete de 475).png" alt="">
+        <h3>Cardetela de 50X50 (Paquete de 475)</h3>
+        <p>Limpieza</p>
+        <span>SKU:5512664</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Carpeta Panoramica Tamaño Carta 0.5 in Arillo Negro.png" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 0.5 in Arillo Negro</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530167</span>
+    </div>
+
+
+     <div class="card">
+        <img src="images\Carpeta Panoramica Tamaño Carta 1 in.png" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 1 in</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530164</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Carpeta Panoramica Tamaño Carta 3 in.png" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 3 in</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530159</span>
+    </div>
+
+    <div class="card">
+        <img src="images\Carpeta Panoramica Tamaño Carta 4 in Arillo Blanco.png" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 4 in Arillo Blanco</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530170</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Cartucho 6001 para Vapores Organicos.png" alt="">
+        <h3>Cartucho 6001 para Vapores Organicos</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5506435</span>
+    </div>
+
+
+    <div class="card">
+        <img src="images\Cartucho Amarillo HP 727.png" alt="">
+        <h3>Cartucho Amarillo HP 727</h3>
+        <p>Papeleria</p>
+        <span>SKU:5532547</span>
+    </div>
+
+
+<div class="card">
+    <img src="images\Cartucho Cian Claro HP 831.png" alt="">
+    <h3>Cartucho Cian Claro HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532505</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Cian HP 727.png" alt="">
+    <h3>Cartucho Cian HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532548</span>
+</div>
+
+
+<div class="card">
+    <img src="images\Cartucho Cian HP 831A.png" alt="">
+    <h3>Cartucho Cian HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532502</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Cian Negro HP 831.png" alt="">
+    <h3>Cartucho Cian Negro HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532510</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho de Mantenimiento HP 831.png" alt="">
+    <h3>Cartucho de Mantenimiento HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5533734</span>
+</div>
+
+
+<div class="card">
+    <img src="images\Cartucho de Repuesto Canister.png" alt="">
+    <h3>Cartucho de Repuesto Canister</h3>
+    <p>EPP</p>
+    <span>SKU:5506426</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Gris HP 727.png" alt="">
+    <h3>Cartucho Gris HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532545</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Latex Amarillo HP 831A.png" alt="">
+    <h3>Cartucho Latex Amarillo HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5526757</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Latex Magenta Claro HP 831A.png" alt="">
+    <h3>Cartucho Latex Magenta Claro HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532504</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Latex Magenta HP 831A.png" alt="">
+    <h3>Cartucho Latex Magenta HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5526756</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Magenta Amarillo Claro HP 831.png" alt="">
+    <h3>Cartucho Magenta Amarillo Claro HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532512</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Magenta Claro Cian HP 831.png" alt="">
+    <h3>Cartucho Magenta Claro Cian HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532511</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Magenta HP 727.png" alt="">
+    <h3>Cartucho Magenta HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532546</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Negro HP 727.png" alt="">
+    <h3>Cartucho Negro HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532543</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Negro HP 831A.png" alt="">
+    <h3>Cartucho Negro HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532503</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Negro Mate HP 727.png" alt="">
+    <h3>Cartucho Negro Mate HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532544</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Optimizador de Latex HP 831.png" alt="">
+    <h3>Cartucho Optimizador de Latex HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532509</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho Optimizador HP 831.png" alt="">
+    <h3>Cartucho Optimizador HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532508</span>
+</div>
+
+
+
+<div class="card">
+    <img src="images\Cartucho para Amoniaco y Metilamina.png" alt="">
+    <h3>Cartucho para Amoniaco y Metilamina</h3>
+    <p>EPP</p>
+    <span>SKU:5506480</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno.png" alt="">
+    <h3>Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno)</h3>
+    <p>EPP</p>
+    <span>SKU:5506479</span>
+</div>
+
+<div class="card">
+    <img src="images\Cartulina Opalina Tamaño Carta con 100 Hojas.png" alt="">
+    <h3>Cartulina Opalina Tamaño Carta con 100 Hojas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530160</span>
+</div>
+
+<div class="card">
+        <img id="imagenProductoBUMCAP" class="product-imgBUMCAP" 
+    src="images\Casco Azul BUM CAP.png" alt="Brocha">
+
+        <h3>Casco BUM CAP</h3>
+        <p>EPP</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionBUMCAP('Azul', event)">Azul</button>
+        <button class="opcion-btn" onclick="cambiarOpcionBUMCAP('Blanco', event)">Blanco</button>
+    </div>
+
+
+         <span id="skuBUMCAP">SKU:5517586</span>
+         
+    </div>
+
+
+<div class="card">
+    <img src="images\Casco Blanco MCA.png" alt="">
+    <h3>Casco Blanco MCA</h3>
+    <p>EPP</p>
+    <span>SKU:5541826</span>
+</div>
+
+
+
+<div class="card">
+        <img id="imagenProductoInfracap" class="product-imgInfracap" 
+    src="images\Casco Infracap Amarillo.png" alt="">
+
+        <h3>Casco Infracap</h3>
+        <p>EPP</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionInfracap('Amarillo', event)">Amarillo</button>
+        <button class="opcion-btn" onclick="cambiarOpcionInfracap('Azul', event)">Azul</button>
+        <button class="opcion-btn" onclick="cambiarOpcionInfracap('Rojo', event)">Rojo</button>
+        <button class="opcion-btn" onclick="cambiarOpcionInfracap('Verde', event)">Verde</button>
+    </div>
+
+
+         <span id="skuInfracap">SKU:5517586</span>
+         
+    </div>
+
+
+<div class="card">
+    <img src="images\Casco Naranja MCA.png" alt="">
+    <h3>Casco Naranja MCA</h3>
+    <p>EPP</p>
+    <span>SKU:5541827</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo Swiss-Diary.png" alt="">
+    <h3>Cepillo Swiss-Diary</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5525762</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo Bi-nivel.png" alt="">
+    <h3>Cepillo Bi-nivel</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5525757</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo de Alambre de Acero Inoxidable.png" alt="">
+    <h3>Cepillo de Alambre de Acero Inoxidable</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5505872</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo de Ixtle.png" alt="">
+    <h3>Cepillo de Ixtle</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5505866</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo de Mano de Alambre Acero al Carbono.png" alt="">
+    <h3>Cepillo de Mano de Alambre Acero al Carbono</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5505864</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo de Tanque Duro.png" alt="">
+    <h3>Cepillo de Tanque Duro</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5525390</span>
+</div>
+
+<div class="card">
+    <img src="images\Cepillo Multisuperficies.png" alt="">
+    <h3>Cepillo Multisuperficies</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5525778</span>
+</div>
+
+<div class="card">
+    <img src="images\Cesto para la Basura.png" alt="">
+    <h3>Cesto para la Basura</h3>
+    <p>Utensilio de Limpieza</p>
+    <span>SKU:5502681</span>
+</div>
+
+<div class="card">
+    <img src="images\Chaleco Alta Visibilidad 1 Color Naranja.png" alt="">
+    <h3>Chaleco Alta Visibilidad 1 Color Naranja</h3>
+    <p>EPP</p>
+    <span>SKU:5528862</span>
+</div>
+
+<div class="card">
+    <img src="images\Chaleco Alta Visibilidad Color Naranja.png" alt="">
+    <h3>Chaleco Alta Visibilidad Color Naranja</h3>
+    <p>EPP</p>
+    <span>SKU:5520968</span>
+</div>
+
+<div class="card">
+    <img src="images\Chaleco de Malla Color Azul.png" alt="">
+    <h3>Chaleco de Malla Color Azul</h3>
+    <p>EPP</p>
+    <span>SKU:5521045</span>
+</div>
+
+<div class="card">
+    <img src="images\Chaleco para Rescatista.png" alt="">
+    <h3>Chaleco para Rescatista</h3>
+    <p>EPP</p>
+    <span>SKU:5524453</span>
+</div>
+
+<div class="card">
+    <img src="images\Chamarra para Hombre Azul Marino.png" alt="">
+    <h3>Chamarra para Hombre Azul Marino</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539465</span>
+</div>
+
+<div class="card">
+    <img src="images\Chamarra para Mujer Azul Marino.png" alt="">
+    <h3>Chamarra para Mujer Azul Marino</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539467</span>
+</div>
+
+
+
+</section>
+
+<footer>
+     2026 Catálogo Partes Y Refacciones V2 By Sofia Jimenez
+</footer>
+
+
+
+
+
+<script>
+function buscarProducto(){
+    let input = document.getElementById("buscador").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for(let i=0; i<cards.length; i++){
+        let texto = cards[i].innerText.toLowerCase();
+        if(texto.includes(input)){
+            cards[i].style.display = "block";
+        }else{
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+<!-- BOTAS DE HULE  -->
+<script>
+function cambiarSKU(){
+    const talla = document.getElementById("talla").value;
+    const skuElemento = document.getElementById("sku");
+
+    const skus = {
+         
+        "26": "SKU: 5506389",
+        "27": "SKU: 5506390",
+        "28": "SKU: 5506391",
+        "29": "SKU: 5506392",
+        "30": "SKU: 5506431"
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+<!-- BOTAS DE HULE  -->
+<script>
+function cambiarSKUBotasProcliff(){
+    const talla = document.getElementById("tallabp").value;
+    const skuElemento = document.getElementById("skubp");
+
+    const skus = {
+
+         "22": "SKU: 5542030",
+        "23": "SKU: 5542029",
+        "24": "SKU: 5542028",
+        "25": "SKU: 5542027",
+        "26": "SKU: 5542026",
+        "27": "SKU: 5542025",
+        "28": "SKU: 5542024",
+        "29": "SKU: 5542023",
+        "30": "SKU: 5542022",
+        "31": "SKU: 5542021",
+        "32": "SKU: 5542020"
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+
+<!-- BOTAS rhino  -->
+<script>
+function cambiarSKUBr(){
+    const talla = document.getElementById("tallaBr").value;
+    const skuElemento = document.getElementById("skuBr");
+
+    const skus = {
+
+         "23": "SKU: 5530796",
+        "23.5": "SKU: 5530797",
+        "24": "SKU: 5530798",
+        "24.5": "SKU: 5530799",
+        "25": "SKU: 5530800",
+        "25.5": "SKU: 5530801",
+        "26": "SKU: 5530802",
+        "26.5": "SKU: 5530803",
+        "27": "SKU: 5530804",
+        "27.5": "SKU: 5530805",
+        "28": "SKU: 5530806",
+        "28.5": "SKU: 5530807",
+        "29": "SKU: 5530808",
+        "29.5": "SKU: 5530809",
+        "30": "SKU: 5530810",
+        "31.5": "SKU: 5530811",
+        "32": "SKU: 5530812"
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<script>
+
+const productos = {
+    "2in": {
+        skupincel: "SKU:4187859",
+        img: "images\\Brocha (Pinceleta) de 2 in.png"
+    },
+    "4in": {
+        skupincel: "SKU:4014690",
+        img: "images\\Brocha (Pinceleta) de 4 in.png"
+    }
+};
+
+function cambiarOpcion(opcion, evento){
+
+    const imagen = document.getElementById("imagenProducto");
+    const skupincel = document.getElementById("skupincel");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productos[opcion].img;
+        skupincel.textContent = productos[opcion].skupincel;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+<script>
+
+const productosCAR = {
+    "Manga Corta": {
+        skuCAR: "SKU:5539416",
+        imgCAR: "images\\Camisa Manga Corta Azul Rey.png"
+    },
+    "Manga Larga": {
+        skuCAR: "SKU:5539417",
+        imgCAR: "images\\Camisa Manga Larga Azul Rey.png"
+    }
+};
+
+function cambiarOpcionCAR(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoCAR");
+    const skuCAR = document.getElementById("skuCAR");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosCAR[opcion].imgCAR;
+        skuCAR.textContent = productosCAR[opcion].skuCAR;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+<script>
+
+const productosCAN = {
+    "Azul 1 Llave": {
+        skuCAN: "SKU: 55410306",
+        imgCAN: "images\\Candado de Seguridad Color Azul.png"
+    },
+    "Azul 2 Llave": {
+        skuCAN: "SKU: 4233278",
+        imgCAN: "images\\Candado de Seguridad Color Azul.png"
+    },
+     "Rojo": {
+        skuCAN: "SKU:5524014",
+        imgCAN: "images\\Candado de Seguridad Color Rojo.png"
+    },
+     "Verde": {
+        skuCAN: "SKU:4231438",
+        imgCAN: "images\\Candado de Seguridad Color Verde.png"
+    }
+};
+
+function cambiarOpcionCAN(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoCAN");
+    const skuCAN = document.getElementById("skuCAN");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosCAN[opcion].imgCAN;
+        skuCAN.textContent = productosCAN[opcion].skuCAN;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+<script>
+
+const productosBUMCAP = {
+    "Azul": {
+        skuBUMCAP: "SKU:5517586",
+        imgBUMCAP: "images\\Casco Azul BUM CAP.png"
+    },
+    "Blanco": {
+        skuBUMCAP: "SKU:5517584",
+        imgBUMCAP: "images\\Casco Blanco BUM CAP.png"
+    }
+};
+
+function cambiarOpcionBUMCAP(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoBUMCAP");
+    const skuBUMCAP = document.getElementById("skuBUMCAP");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosBUMCAP[opcion].imgBUMCAP;
+        skuBUMCAP.textContent = productosBUMCAP[opcion].skuBUMCAP;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+<div class="card">
+    <img src="images\Casco Infracap Amarillo.png" alt="">
+    <h3>Casco Infracap Amarillo</h3>
+    <p>EPP</p>
+    <span>SKU:5533306</span>
+</div>
+
+
+
+
+
+
+<script>
+
+const productosInfracap = {
+    "Amarillo": {
+        skuInfracap: "SKU:5533306",
+        imgInfracap: "images\\Casco Infracap Amarillo.png"
+    },
+    "Azul": {
+        skuInfracap: "SKU:5506506",
+        imgInfracap: "images\\Casco Infracap Azul.png"
+    },
+    "Rojo": {
+        skuInfracap: "SKU:5533305",
+        imgInfracap: "images\\Casco Infracap Rojo.png"
+    },
+    "Verde": {
+        skuInfracap: "SKU:5526770",
+        imgInfracap: "images\\Casco Infracap Verde.png"
+    }
+};
+
+function cambiarOpcionInfracap(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoInfracap");
+    const skuInfracap = document.getElementById("skuInfracap");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosInfracap[opcion].imgInfracap;
+        skuInfracap.textContent = productosInfracap[opcion].skuInfracap;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+</body>
+</html>
