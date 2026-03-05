@@ -546,19 +546,27 @@ footer{
         <span>SKU:5530750</span>
     </div>
 
-    <div class="card">
-        <img src="Images\Bata de Laboratorio para Hombre.PNG" alt="">
-        <h3>Bata de Laboratorio para Hombre</h3>
+
+
+    <!--BOTONES BATA DE LABORATORIO PARA HOMBRE Y NUJER -->
+<div class="card">
+        <img id="imagenProductobat" class="product-imgbat" 
+    src="Images\Bata de Laboratorio para Hombre.PNG" alt="Brocha">
+
+        <h3>ata de Laboratorio</h3>
         <p>Uniforme</p>
-        <span>SKU:5539468</span>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionbat('Hombre', event)">Hombre</button>
+        <button class="opcion-btn" onclick="cambiarOpcionbat('Mujer', event)">Mujer</button>
     </div>
 
-    <div class="card">
-        <img src="Images\Bata de Laboratorio para Mujer.PNG" alt="">
-        <h3>Bata de Laboratorio para Mujer</h3>
-        <p>Uniforme</p>
-        <span>SKU:5539469</span>
+
+         <span id="skubat">SKU:5539468</span>
+         
     </div>
+
+    
 
     <div class="card">
         <img src="Images\Bengala Led.PNG" alt="">
@@ -2028,7 +2036,7 @@ footer{
 </div>
 
 <div class="card">
-    <img src="Images\Kit de LLimpieza HBO 90000.PNG" alt="">
+    <img src="Images\Kit de Limpieza HBO 90000.PNG" alt="">
     <h3>Kit de LLimpieza HBO 90000</h3>
     <p>LLimpieza</p>
     <span>SKU:5528438</span>
@@ -2339,7 +2347,7 @@ footer{
 </div>
 
 <div class="card">
-    <img src="Images\Papel Blanco Blancura 89 Caja con 5000 hojas.PNG" alt="">
+    <img src="Images\Papel Blanco Blancura 89% Caja con 5000 hojas.PNG" alt="">
     <h3>Papel Blanco Blancura 89% Caja con 5000 hojas</h3>
     <p>Papeleria</p>
     <span>SKU:5530157</span>
@@ -3399,6 +3407,40 @@ function cambiarOpcionInfracap(opcion, evento){
     setTimeout(()=>{
         imagen.src = productosInfracap[opcion].imgInfracap;
         skuInfracap.textContent = productosInfracap[opcion].skuInfracap;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+<script>
+
+const productosbat = {
+    "Hombre": {
+        skubt: "SKU:5539468",
+        imgbat: "Images\\Bata de Laboratorio para Hombre.PNG"
+    },
+    "Mujer": {
+        skucha: "SKU:5539469",
+        imgcha: "Images\\Bata de Laboratorio para Mujer.PNG.PNG"
+    }
+};
+
+function cambiarOpcioncha(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductobat");
+    const skubat = document.getElementById("skubat");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosbat[opcion].imgcha;
+        skubat.textContent = productosbat[opcion].skubat;
         imagen.classList.remove("fade");
     },200);
 }
