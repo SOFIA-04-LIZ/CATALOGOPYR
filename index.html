@@ -627,6 +627,7 @@ footer{
         <span>SKU:5530749</span>
     </div>
 
+    <!--- Cabio a botone-->
 
     <div class="card">
         <img src="Images\Blusa Manga Corta Azul Cielo.PNG" alt="">
@@ -657,6 +658,49 @@ footer{
         <p>Uniforme</p>
         <span>SKU:5539421</span>
     </div>
+
+
+
+        <!--BOTONES CAMISA AZUL CIELO MAANGA ORTTA Y LARGA  -->
+<div class="card">
+        <img id="imagenProductoMGCORTA" class="product-imgMGCORTA" 
+    src="Images\Blusa Manga Corta Azul Cielo.PNG" alt="">
+
+        <h3>Blusa Azul Cielo</h3>
+        <p>Uniforme</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionMGCORTA('Manga corta', event)">Manga corta</button>
+        <button class="opcion-btn" onclick="cambiarOpcionMGCORTA('Manga Larga', event)">Manga Larga</button>
+    </div>
+
+
+         <span id="skuMGCORTA">SKU:5539444</span>
+         
+    </div>
+
+
+    <!--BOTONES CAMISA AZUL REY MAANGA ORTTA Y LARGA  -->
+<div class="card">
+        <img id="imagenProductoMGCORTA" class="product-imgMGCORTA" 
+    src="Images\Images\Blusa Manga Corta Azul Rey.PNG" alt="">
+
+        <h3>Blusa Azul Rey</h3>
+        <p>Uniforme</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionMGCORTA('Manga corta', event)">Manga corta</button>
+        <button class="opcion-btn" onclick="cambiarOpcionMGCORTA('Manga Larga', event)">Manga Larga</button>
+    </div>
+
+
+         <span id="skuMGCORTA">SKU:5539444</span>
+         
+    </div>
+
+
+
+    <!-- .-->
 
     <div class="card">
         <img src="Images\Boligrado (Pluma) Punto Mediano Color Azul.PNG" alt="">
@@ -3427,7 +3471,7 @@ const productosbat = {
     }
 };
 
-function cambiarOpcioncha(opcion, evento){
+function cambiarOpcionbat(opcion, evento){
 
     const imagen = document.getElementById("imagenProductobat");
     const skubat = document.getElementById("skubat");
