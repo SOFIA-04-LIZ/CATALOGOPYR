@@ -1706,40 +1706,100 @@ footer{
                 </select>
              </div>
 
-        <span id="skuGDROC">SKU:553934</span>
+        <span id="skuGDROC">SKU: 5539343</span>
+    </div> 
+
+
+
+<div class="card">
+        <img src="Images\Guante Anticorte MAPA.PNG" alt="">
+        <h3>Guante Anticorte MAPA</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaMAPA" onchange="cambiarSKUMAPA()">
+                    
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuMAPA">SKU:5527331</span>
     </div> 
 
 
 
 
+<div class="card">
+        <img src="Images\Guante Anticorte Quimicos SHOWA.PNG" alt="">
+        <h3>Guante Anticorte Quimicos SHOWA</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallashowa" onchange="cambiarSKUshowa()">
+                    
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+
+                </select>
+             </div>
+
+        <span id="skushowa">SKU:5537483</span>
+    </div>
+
 
 <div class="card">
-    <img src="Images\Guante Anticorte MAPA.PNG" alt="">
-    <h3>Guante Anticorte MAPA</h3>
-    <p>EPP</p>
-    <span>SKU:5527331</span>
-</div>
+        <img src="Images\Guante Color Cromo de Canraza.PNG" alt="">
+        <h3>Guante Color Cromo de Canraza</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallacanranza" onchange="cambiarSKUcanranza()">
+                    
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skucanranza">SKU:5506425</span>
+    </div>
+
+
 
 <div class="card">
-    <img src="Images\Guante Anticorte Quimicos SHOWA.PNG" alt="">
-    <h3>Guante Anticorte Quimicos SHOWA</h3>
-    <p>EPP</p>
-    <span>SKU:5537483</span>
-</div>
+        <img src="Images\Guante de Hule Negro Adex.PNG" alt="">
+        <h3>Guante de Hule Negro Adex</h3>
+        <p>EPP</p>
 
-<div class="card">
-    <img src="Images\Guante Color Cromo de Canraza.PNG" alt="">
-    <h3>Guante Color Cromo de Canraza</h3>
-    <p>EPP</p>
-    <span>SKU:5506425</span>
-</div>
+            <div>
+                Talla:
+                <select id="tallaadex" onchange="cambiarSKUadex()">
+                    
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+   
+                </select>
+             </div>
 
-<div class="card">
-    <img src="Images\Guante de Hule Negro Adex.PNG" alt="">
-    <h3>Guante de Hule Negro Adex</h3>
-    <p>EPP</p>
-    <span>SKU:5506408</span>
-</div>
+        <span id="skucadex">SKU:5506408</span>
+    </div>
+
+
+
 
 <div class="card">
     <img src="Images\Guante de Nitrilo Besto.PNG" alt="">
@@ -1748,19 +1808,49 @@ footer{
     <span>SKU:5506473</span>
 </div>
 
-<div class="card">
-    <img src="Images\Guante de Protección HY-FLEX.PNG" alt="">
-    <h3>Guante de Protección HY-FLEX</h3>
-    <p>EPP</p>
-    <span>SKU:5519626</span>
-</div>
 
 <div class="card">
-    <img src="Images\Guante en Piel Tipo Electricista.PNG" alt="">
-    <h3>Guante en Piel Tipo Electricista</h3>
-    <p>EPP</p>
-    <span>SKU:5506489</span>
-</div>
+        <img src="Images\Guante de Protección HY-FLEX.PNG" alt="">
+        <h3>Guante de Protección HY-FLEX</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaflex" onchange="cambiarSKUflex()">
+                    
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+   
+                </select>
+             </div>
+
+        <span id="skuflex">SKU:5519626</span>
+    </div>
+
+
+
+
+<div class="card">
+        <img src="Images\Guante en Piel Tipo Electricista.PNG" alt="">
+        <h3>Guante en Piel Tipo Electricista</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaelectricista" onchange="cambiarSKUelectricista()">
+                    
+                    
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                     <option value="11">11</option>
+
+   
+                </select>
+             </div>
+
+        <span id="skuelectricista">SKU:5506489</span>
+    </div>
 
 <div class="card">
     <img src="Images\Guantes de Nitrilo con 100 pz.PNG" alt="">
@@ -2168,6 +2258,133 @@ function cambiarSKUGDROC(){
     skuElemento.textContent = skus[talla];
 }
 </script>
+
+
+<!--mapa -->
+<script>
+function cambiarSKUMAPA(){
+    const talla = document.getElementById("tallaMAPA").value;
+    const skuElemento = document.getElementById("skuMAPA");
+
+    const skus = {
+
+        "8": "SKU: 5527331",
+         "9": "SKU: 5527332",
+        "10": "SKU: 5527333",
+        "12": "SKU: 5521186"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+<!--showa -->
+
+<script>
+function cambiarSKUshowa(){
+    const talla = document.getElementById("tallashowa").value;
+    const skuElemento = document.getElementById("skushowa");
+
+    const skus = {
+
+        "8": "SKU: 5537483",
+         "9": "SKU: 5537480",
+        "10": "SKU: 5537481"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--canranza-->
+<script>
+function cambiarSKUcanranza(){
+    const talla = document.getElementById("tallacanranza").value;
+    const skuElemento = document.getElementById("skucanranza");
+
+    const skus = {
+
+        "9": "SKU: 5506425",
+         "10": "SKU: 5506422",
+        "12": "SKU: 5506424"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--adex-->
+
+<script>
+function cambiarSKUadex(){
+    const talla = document.getElementById("tallaadex").value;
+    const skuElemento = document.getElementById("skucadex");
+
+    const skus = {
+
+        "9": "SKU: 5506408",
+         "10": "SKU: 5506409"
+        
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--flex-->
+
+<script>
+function cambiarSKUflex(){
+    const talla = document.getElementById("tallaflex").value;
+    const skuElemento = document.getElementById("skuflex");
+
+    const skus = {
+
+        "8": "SKU: 5519626",
+         "9": "SKU: 5520091",
+        "10": "SKU: 5520250"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+<!--electricista-->
+
+
+<script>
+function cambiarSKUelectricista(){
+    const talla = document.getElementById("tallaelectricista").value;
+    const skuElemento = document.getElementById("skuelectricista");
+
+    const skus = {
+
+        "9": "SKU: 5506489",
+         "10": "SKU: 5506498",
+        "11": "SKU: 5506499"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
 
 
 <script>
