@@ -1938,19 +1938,52 @@ footer{
 
 
 
-<div class="card">
-    <img src="Images\Impermeable Chamarra de Color Amarillo.PNG" alt="">
-    <h3>Impermeable Chamarra de Color Amarillo</h3>
-    <p>EPP</p>
-    <span>SKU:5506468</span>
-</div>
 
 <div class="card">
-    <img src="Images\Impermeable Pantalon Color Amarillo.PNG" alt="">
-    <h3>Impermeable Pantalon Color Amarillo</h3>
-    <p>EPP</p>
-    <span>SKU:5506466</span>
-</div>
+        <img src="Images\Impermeable Chamarra de Color Amarillo.PNG" alt="">
+        <h3>Impermeable Chamarra de Color Amarillo</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaIMCHA" onchange="cambiarSKUIMCHA()">
+                    
+                    <option value="XG">XG</option>
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuIMCHA">SKU:5506468</span>
+    </div> 
+
+
+
+
+<div class="card">
+        <img src="Images\Impermeable Pantalon Color Amarillo.PNG" alt="">
+        <h3>Impermeable Pantalon Color Amarillo</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaIMPA" onchange="cambiarSKUIMPA()">
+                    
+                    <option value="XG">XG</option>
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuIMPA">SKU:5506466</span>
+    </div>
+
 
 <div class="card">
     <img src="Images\Jabon de Espuma con 1 Litro.PNG" alt="">
@@ -2418,6 +2451,45 @@ function cambiarOpcion(opcion, evento){
     },200);
 }
 
+</script>
+
+
+<!--IMPERNEABL CHAMARRA-->
+<script>
+function cambiarSKUIMCHA(){
+    const talla = document.getElementById("tallaIMCHA").value;
+    const skuElemento = document.getElementById("skuIMCHA");
+
+    const skus = {
+
+        "XG": "SKU: 5541922",
+         "G": "SKU: 5506469",
+        "M": "SKU: 5506468"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--IMPERNEABL PANTALON-->
+<script>
+function cambiarSKUIMPA(){
+    const talla = document.getElementById("tallaIMPA").value;
+    const skuElemento = document.getElementById("skuIMPA");
+
+    const skus = {
+
+        "XG": "SKU: 5541921",
+         "G": "SKU: 5506467",
+        "M": "SKU: 5506466"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
 </script>
 
 <script>
