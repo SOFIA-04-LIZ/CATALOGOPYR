@@ -3434,7 +3434,7 @@ const productosbat = {
     },
     "Mujer": {
         skucha: "SKU:5539469",
-        imgcha: "Images\\Bata de Laboratorio para Mujer.PNG.PNG"
+        imgcha: "Images\\Bata de Laboratorio para Mujer.PNG"
     }
 };
 
@@ -3558,7 +3558,7 @@ function cambiarOpcionMGLARGA(opcion, evento){
     imagen.classList.add("fade");
 
     setTimeout(()=>{
-        imagen.src = productosMGLARGA[opcion].imgMGCORTA;
+        imagen.src = productosMGLARGA[opcion].imgMGLARGA;
         skUMGLARGA.textContent = productosMGLARGA[opcion].skuMGLARGA;
         imagen.classList.remove("fade");
     },200);
