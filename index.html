@@ -748,23 +748,23 @@ footer{
                 Talla:
                 <select id="tallaBr" onchange="cambiarSKUBr()">
 
-                    <option value="23">23    </option>
+                    <option value="23">23</option>
                     <option value="23.5">23.5</option>
-                    <option value="24">24    </option>
+                    <option value="24">24</option>
                     <option value="24.5">24.5</option>
-                    <option value="25">25    </option>
+                    <option value="25">25</option>
                     <option value="25.5">25.5</option>
-                    <option value="26">26    </option>
+                    <option value="26">26</option>
                     <option value="26.5">26.5</option>
-                    <option value="27">27    </option>
+                    <option value="27">27</option>
                     <option value="27.5">27.5</option>
-                    <option value="28">28    </option>
+                    <option value="28">28</option>
                     <option value="28.5">28.5</option>
-                    <option value="29">29    </option>
+                    <option value="29">29</option>
                     <option value="29.5">29.5</option>
-                    <option value="30">30    </option>
+                    <option value="30">30</option>
                     <option value="31.5">31.5</option>
-                    <option value="32">32    </option>
+                    <option value="32">32</option>
 
                 </select>
              </div>
@@ -1199,6 +1199,7 @@ footer{
     <span>SKU:5525778</span>
 </div>
 
+
 <div class="card">
     <img src="Images\Cesto para la Basura.PNG" alt="">
     <h3>Cesto para la Basura</h3>
@@ -1206,19 +1207,55 @@ footer{
     <span>SKU:5502681</span>
 </div>
 
-<div class="card">
-    <img src="Images\Chaleco Alta Visibilidad 1 Color Naranja.PNG" alt="">
-    <h3>Chaleco Alta Visibilidad 1 Color Naranja</h3>
-    <p>EPP</p>
-    <span>SKU:5528862</span>
-</div>
+
+
+
+ <div class="card">
+        <img src="Images\Chaleco Alta Visibilidad 1 Color Naranja.PNG" alt="">
+        <h3>Chaleco Alta Visibilidad 1 Color Naranja</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaCHALECONARANJA" onchange="cambiarSKUCHALECONARANJA()">
+
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+          
+
+                </select>
+             </div>
+
+        <span id="skuCHALECONARANJA">SKU: 5528863</span>
+    </div> 
+
+
+
+
 
 <div class="card">
-    <img src="Images\Chaleco Alta Visibilidad Color Naranja.PNG" alt="">
-    <h3>Chaleco Alta Visibilidad Color Naranja</h3>
-    <p>EPP</p>
-    <span>SKU:5520968</span>
-</div>
+        <img src="Images\Chaleco Alta Visibilidad Color Naranja.PNG" alt="">
+        <h3>Chaleco Alta Visibilidad Color Naranja</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaCHALECONARANJA2" onchange="cambiarSKUCHALECONARANJA2()">
+                    
+                    <option value="XG">XG</option>
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuCHALECONARANJA2">SKU: 5520951</span>
+    </div> 
+
+
+
 
 <div class="card">
     <img src="Images\Chaleco de Malla Color Azul.PNG" alt="">
@@ -2051,6 +2088,44 @@ function cambiarSKUBr(){
     skuElemento.textContent = skus[talla];
 }
 </script>
+
+
+
+<script>
+function cambiarSKUCHALECONARANJA(){
+    const talla = document.getElementById("tallaCHALECONARANJA").value;
+    const skuElemento = document.getElementById("skuCHALECONARANJA");
+
+    const skus = {
+
+         "G": "SKU: 5528863",
+        "M": "SKU: 5528862"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<script>
+function cambiarSKUCHALECONARANJA2(){
+    const talla = document.getElementById("tallaCHALECONARANJA2").value;
+    const skuElemento = document.getElementById("skuCHALECONARANJA2");
+
+    const skus = {
+
+        "XG": "SKU: 5520951",
+         "G": "SKU: 5520973",
+        "M": "SKU: 5520968"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
 
 <script>
 
