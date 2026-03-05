@@ -627,39 +627,6 @@ footer{
         <span>SKU:5530749</span>
     </div>
 
-    <!--- Cabio a botone-->
-
-    <div class="card">
-        <img src="Images\Blusa Manga Corta Azul Cielo.PNG" alt="">
-        <h3>Blusa Manga Corta Azul Cielo</h3>
-        <p>Uniforme</p>
-        <span>SKU:5539444</span>
-    </div>
-
-
-    <div class="card">
-        <img src="Images\Blusa Manga Corta Azul Rey.PNG" alt="">
-        <h3>Blusa Manga Corta Azul Rey</h3>
-        <p>Uniforme</p>
-        <span>SKU:5539420</span>
-    </div>
-
-    <div class="card">
-        <img src="Images\Blusa Manga Larga Azul Cielo.PNG" alt="">
-        <h3>Blusa Manga Larga Azul Cielo</h3>
-        <p>Uniforme</p>
-        <span>SKU:5539445</span>
-    </div>
-
-
-    <div class="card">
-        <img src="Images\Blusa Manga Larga Azul Rey.PNG" alt="">
-        <h3>Blusa Manga Larga Azul Rey</h3>
-        <p>Uniforme</p>
-        <span>SKU:5539421</span>
-    </div>
-
-
 
         <!--BOTONES CAMISA AZUL CIELO MAANGA ORTTA Y LARGA  -->
 <div class="card">
@@ -682,19 +649,19 @@ footer{
 
     <!--BOTONES CAMISA AZUL REY MAANGA ORTTA Y LARGA  -->
 <div class="card">
-        <img id="imagenProductoMGCORTA" class="product-imgMGCORTA" 
+        <img id="imagenProductoMGLARGA" class="product-imgMGLARGA" 
     src="Images\Images\Blusa Manga Corta Azul Rey.PNG" alt="">
 
         <h3>Blusa Azul Rey</h3>
         <p>Uniforme</p>
 
         <div class="menu-opciones">
-        <button class="opcion-btn active" onclick="cambiarOpcionMGCORTA('Manga corta', event)">Manga corta</button>
-        <button class="opcion-btn" onclick="cambiarOpcionMGCORTA('Manga Larga', event)">Manga Larga</button>
+        <button class="opcion-btn active" onclick="cambiarOpcionMGLARGA('Manga corta', event)">Manga corta</button>
+        <button class="opcion-btn" onclick="cambiarOpcionMGLARGA('Manga Larga', event)">Manga Larga</button>
     </div>
 
 
-         <span id="skuMGCORTA">SKU:5539444</span>
+         <span id="skuMGLARGA">SKU:5539420</span>
          
     </div>
 
@@ -3521,6 +3488,78 @@ function cambiarOpcioncha(opcion, evento){
     setTimeout(()=>{
         imagen.src = productoscha[opcion].imgcha;
         skucha.textContent = productoscha[opcion].skucha;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+    
+
+    <script>
+
+const productosMGCORTA = {
+    "Manga Corta": {
+        skuMGCORTA: "SKU:5539444",
+        imgMGCORTA: "Images\\Blusa Manga Corta Azul Cielo.PNG"
+    },
+    "Manga Larga": {
+        skuMGCORTA: "SKU:5539445",
+        imgMGCORTA: "Images\\Blusa Manga Larga Azul Cielo.PNG"
+    }
+};
+
+function cambiarOpcionMGCORTA(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoMGCORTA");
+    const skuMGCORTA = document.getElementById("skuMGCORTA");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosMGCORTA[opcion].imgMGCORTA;
+        skUMGCORTA.textContent = productosMGCORTA[opcion].skuMGCORTA;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+<script>
+
+const productosMGLARGA= {
+    "Manga Corta": {
+        skuMGLARGA: "SKU:5539420",
+        imgMGLARGA: "Images\\Blusa Manga Corta Azul Rey.PNG"
+    },
+    "Manga Larga": {
+        skuMGLARGA: "SKU:5539421",
+        imgMGLARGA: "Images\\Blusa Manga Larga Azul Rey.PNG"
+    }
+};
+
+function cambiarOpcionMGLARGA(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoMGLARGA");
+    const skuMGLARGA = document.getElementById("skuMGLARGA");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosMGLARGA[opcion].imgMGCORTA;
+        skUMGLARGA.textContent = productosMGLARGA[opcion].skuMGLARGA;
         imagen.classList.remove("fade");
     },200);
 }
