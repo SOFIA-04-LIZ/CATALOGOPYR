@@ -1283,7 +1283,7 @@ footer{
 
         <div class="menu-opciones">
         <button class="opcion-btn active" onclick="cambiarOpcioncha('Hombre', event)">Hombre</button>
-        <button class="opcion-btn" onclick="cambiarOpcioncha('Muje r', event)">Mujer</button>
+        <button class="opcion-btn" onclick="cambiarOpcioncha('Mujer', event)">Mujer</button>
     </div>
 
 
@@ -1684,12 +1684,34 @@ footer{
     <span>SKU:4056792</span>
 </div>
 
+
+
+
 <div class="card">
-    <img src="Images\Guante Anticorte D-ROC.PNG" alt="">
-    <h3>Guante Anticorte D-ROC</h3>
-    <p>EPP</p>
-    <span>SKU:5539343</span>
-</div>
+        <img src="Images\Guante Anticorte D-ROC.PNG" alt="">
+        <h3>Guante Anticorte D-ROC</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaGDROC" onchange="cambiarSKUGDROC()">
+                    
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuGDROC">SKU:553934</span>
+    </div> 
+
+
+
+
 
 <div class="card">
     <img src="Images\Guante Anticorte MAPA.PNG" alt="">
@@ -2108,6 +2130,8 @@ function cambiarSKUCHALECONARANJA(){
 }
 </script>
 
+
+
 <script>
 function cambiarSKUCHALECONARANJA2(){
     const talla = document.getElementById("tallaCHALECONARANJA2").value;
@@ -2118,6 +2142,25 @@ function cambiarSKUCHALECONARANJA2(){
         "XG": "SKU: 5520951",
          "G": "SKU: 5520973",
         "M": "SKU: 5520968"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<script>
+function cambiarSKUGDROC(){
+    const talla = document.getElementById("tallaGDROC").value;
+    const skuElemento = document.getElementById("skuGDROC");
+
+    const skus = {
+
+        "6": "SKU: 5539343",
+         "7": "SKU: 5539344",
+        "8": "SKU: 5539345",
+        "9": "SKU: 5539346"
    
 
     };
