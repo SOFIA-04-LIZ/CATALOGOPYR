@@ -36,6 +36,19 @@ header{
     align-items:center;
 }
 
+.cart-container{
+    position:absolute;
+    right:40px;
+    font-size:22px;
+    cursor:pointer;
+    color:var(--accent);
+}
+
+.cart-container span{
+    font-weight:bold;
+    margin-left:5px;
+}
+
 
 
 
@@ -163,6 +176,21 @@ nav{
     font-size:14px;
 }
 
+.card button{
+    margin-top:10px;
+    padding:8px 12px;
+    border:none;
+    background:var(--accent);
+    color:black;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card button:hover{
+    background:#b8951f;
+}
+
 
 
 .card span{
@@ -259,7 +287,13 @@ footer{
     .search-container input{
         width:90%;
     }
+
+
+
 }
+
+
+
 </style>
 </head>
 <body>
@@ -269,6 +303,12 @@ footer{
       <div class="logo-container">
         <img src="Images\LOGOBLANCO.png" alt="Logo Empresa">
     </div>
+
+    <div class="cart-container">
+    🛒 <span id="cart-count">0</span>
+</div>
+<div id="cart-panel" style="display:none; position:absolute; right:40px; top:80px; background:white; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); width:250px;"></div>
+
 </header>
 
 <nav>
@@ -309,6 +349,7 @@ footer{
         <h3>Aceite (Mobil Delvac 1340) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057096</span>
+        <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
 
@@ -3567,6 +3608,31 @@ function cambiarOpcionMGLARGA(opcion, evento){
 </script>
 
 
+<script>
+let carrito = [];
+
+function agregarAlCarrito(boton){
+    const card = boton.closest(".card");
+
+    const nombre = card.querySelector("h3").innerText;
+    const sku = card.querySelector("span").innerText;
+
+    const producto = {
+        nombre,
+        sku
+    };
+
+    carrito.push(producto);
+
+    actualizarCarrito();
+
+    console.log(carrito); // para ver en consola
+}
+
+function actualizarCarrito(){
+    document.getElementById("cart-count").innerText = carrito.length;
+}
+</script>
 
 
 </body>
