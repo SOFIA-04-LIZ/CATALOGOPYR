@@ -309,6 +309,15 @@ footer{
 </div>
 <div id="cart-panel" style="display:none; position:absolute; right:40px; top:80px; background:white; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); width:250px;"></div>
 
+<!-- Carrito -->
+<div id="carrito">
+  <h3>Mi carrito</h3>
+  <div id="listaCarrito"></div>
+  <button onclick="vaciarCarrito()">Eliminar lista</button>
+</div
+
+
+
 </header>
 
 <nav>
@@ -3609,29 +3618,45 @@ function cambiarOpcionMGLARGA(opcion, evento){
 
 
 <script>
-let carrito = [];
+  let carrito = [];
 
-function agregarAlCarrito(boton){
-    const card = boton.closest(".card");
+  function toggleCarrito() {
+    const carritoDiv = document.getElementById("carrito");
+    carritoDiv.style.display =
+      carritoDiv.style.display === "none" ? "block" : "none";
+  }
 
-    const nombre = card.querySelector("h3").innerText;
-    const sku = card.querySelector("span").innerText;
+  function agregarProducto(nombre) {
+    carrito.push(nombre);
+    renderCarrito();
+  }
 
-    const producto = {
-        nombre,
-        sku
-    };
+  function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    renderCarrito();
+  }
 
-    carrito.push(producto);
+  function vaciarCarrito() {
+    carrito = [];
+    renderCarrito();
+  }
 
-    actualizarCarrito();
+  function renderCarrito() {
+    const lista = document.getElementById("listaCarrito");
+    lista.innerHTML = "";
 
-    console.log(carrito); // para ver en consola
-}
+    carrito.forEach((producto, index) => {
+      const div = document.createElement("div");
+      div.className = "producto";
 
-function actualizarCarrito(){
-    document.getElementById("cart-count").innerText = carrito.length;
-}
+      div.innerHTML = `
+        <span>${producto}</span>
+        <button onclick="eliminarProducto(${index})">❌</button>
+      `;
+
+      lista.appendChild(div);
+    });
+  }
 </script>
 
 
