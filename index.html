@@ -388,6 +388,72 @@ footer{
         width:90%;
     }
 
+    /* RESPONSIVE CARRITO */
+@media(max-width:768px){
+
+    #cart-panel{
+        right:10px;
+        top:70px;
+        width:90%;
+        max-width:300px;
+        z-index:999;
+    }
+
+    header{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    .cart-container{
+        position:absolute;
+        right:15px;
+        top:15px;
+    }
+
+    header h1{
+        font-size:16px;
+        text-align:center;
+        margin-top:10px;
+    }
+
+}
+
+/* CARDS EN CELULAR */
+@media(max-width:768px){
+
+    .catalogo{
+        grid-template-columns:repeat(3, 1fr);
+        gap:10px;
+        padding:15px;
+    }
+
+    .card{
+        padding:10px;
+    }
+
+    .card img{
+        height:100px;
+    }
+
+    .card h3{
+        font-size:12px;
+    }
+
+    .card p{
+        font-size:11px;
+    }
+
+    .card span{
+        font-size:11px;
+    }
+
+    .card button{
+        font-size:11px;
+        padding:5px;
+    }
+
+}
+
 
 
 }
