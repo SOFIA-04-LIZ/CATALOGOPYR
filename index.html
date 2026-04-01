@@ -49,6 +49,106 @@ header{
     margin-left:5px;
 }
 
+/* PANEL DEL CARRITO */
+#cart-panel{
+    display:none;
+    position:absolute;
+    right:40px;
+    top:80px;
+    background:#111;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+    width:250px;
+}
+
+/* TITULO */
+#cart-panel h3{
+    color:#C9A227;
+    margin-bottom:10px;
+}
+
+/* ITEMS */
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+    font-size:14px;
+    color:white;
+}
+
+/* BOTON ELIMINAR INDIVIDUAL */
+.btn-eliminar{
+    background:#ff4d4d;
+    border:none;
+    color:white;
+    border-radius:5px;
+    padding:4px 8px;
+    cursor:pointer;
+    font-size:12px;
+    transition:0.3s;
+}
+
+.btn-eliminar:hover{
+    background:#cc0000;
+}
+
+/* BOTON VACIAR */
+.btn-vaciar{
+    margin-top:10px;
+    width:100%;
+    padding:8px;
+    background:#C9A227;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-vaciar:hover{
+    background:#b8951f;
+}
+
+
+/* ITEM COMPLETO */
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+/* IMAGEN */
+.cart-img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    background:white;
+    border-radius:5px;
+    padding:3px;
+}
+
+/* INFO */
+.cart-info{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* NOMBRE */
+.cart-nombre{
+    font-size:13px;
+    color:white;
+}
+
+/* SKU */
+.cart-sku{
+    font-size:11px;
+    color:#C9A227;
+}
 
 
 
@@ -304,11 +404,16 @@ footer{
         <img src="Images\LOGOBLANCO.png" alt="Logo Empresa">
     </div>
 
-    <div class="cart-container">
+   <div class="cart-container" onclick="toggleCarrito()">
     🛒 <span id="cart-count">0</span>
 </div>
-<div id="cart-panel" style="display:none; position:absolute; right:40px; top:80px; background:white; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); width:250px;"></div>
-
+<div id="cart-panel">
+    <h3>Mi carrito</h3>
+    <div id="cart-items"></div>
+    <button onclick="vaciarCarrito()" class="btn-vaciar">
+        Eliminar lista
+    </button>
+</div>
 
 </header>
 
@@ -343,6 +448,7 @@ footer{
         <h3>Aceite (39433735 Ingersoll Rand) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057265</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
     <div class="card">
@@ -359,6 +465,7 @@ footer{
         <h3>Aceite Dielectrico de Aerosol 400 ml</h3>
         <p>Solventes</p>
         <span>SKU:4057464</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
     <div class="card">
@@ -366,6 +473,7 @@ footer{
         <h3>Aceite Hidraulico (Mobil DTE 26) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057377</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
 
@@ -374,7 +482,8 @@ footer{
         <h3>Aceite Lubricante (Mobil DTE 242) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4136419</span>
-    </div>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+         </div>
 
 
     <div class="card">
@@ -382,6 +491,7 @@ footer{
         <h3>Aceite Lubricante (Almasol 680) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057481</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
 
@@ -390,6 +500,7 @@ footer{
         <h3>Aceite Lubricante (Duolec 1605) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057526</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
     <div class="card">
@@ -795,6 +906,7 @@ footer{
              </div>
 
         <span id="skubp">SKU: 5542030</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div> 
 
 
@@ -3588,22 +3700,21 @@ const productosMGLARGA= {
     }
 };
 
-function cambiarOpcionMGLARGA(opcion, evento){
+function renderCarrito(){
+    const contenedor = document.getElementById("cart-items");
+    contenedor.innerHTML = "";
 
-    const imagen = document.getElementById("imagenProductoMGLARGA");
-    const skuMGLARGA = document.getElementById("skuMGLARGA");
-    const botones = document.querySelectorAll(".opcion-btn");
+    carrito.forEach((producto, index) => {
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
 
-    botones.forEach(btn => btn.classList.remove("active"));
-    evento.target.classList.add("active");
+        div.innerHTML = `
+            <span>${producto.nombre}</span>
+            <button class="btn-eliminar" onclick="eliminarProducto(${index})">X</button>
+        `;
 
-    imagen.classList.add("fade");
-
-    setTimeout(()=>{
-        imagen.src = productosMGLARGA[opcion].imgMGLARGA;
-        skUMGLARGA.textContent = productosMGLARGA[opcion].skuMGLARGA;
-        imagen.classList.remove("fade");
-    },200);
+        contenedor.appendChild(div);
+    });
 }
 
 </script>
@@ -3617,24 +3728,62 @@ function agregarAlCarrito(boton){
 
     const nombre = card.querySelector("h3").innerText;
     const sku = card.querySelector("span").innerText;
+    const img = card.querySelector("img").src;
 
     const producto = {
         nombre,
-        sku
+        sku,
+        img
     };
 
     carrito.push(producto);
 
     actualizarCarrito();
-
-    console.log(carrito); // para ver en consola
+    renderCarrito();
 }
 
 function actualizarCarrito(){
     document.getElementById("cart-count").innerText = carrito.length;
 }
-</script>
 
+function toggleCarrito(){
+    const panel = document.getElementById("cart-panel");
+    panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function renderCarrito(){
+    const contenedor = document.getElementById("cart-items");
+    contenedor.innerHTML = "";
+
+    carrito.forEach((producto, index) => {
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+
+        div.innerHTML = `
+            <img src="${producto.img}" class="cart-img">
+            <div class="cart-info">
+                <span class="cart-nombre">${producto.nombre}</span>
+                <span class="cart-sku">${producto.sku}</span>
+            </div>
+            <button class="btn-eliminar" onclick="eliminarProducto(${index})">X</button>
+        `;
+
+        contenedor.appendChild(div);
+    });
+}
+
+function eliminarProducto(index){
+    carrito.splice(index, 1);
+    actualizarCarrito();
+    renderCarrito();
+}
+
+function vaciarCarrito(){
+    carrito = [];
+    actualizarCarrito();
+    renderCarrito();
+}
+</script>
 
 </body>
 </html>
