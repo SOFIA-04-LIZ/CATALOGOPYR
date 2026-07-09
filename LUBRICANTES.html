@@ -1,196 +1,33 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catálogo PY Lubricanes</title>
-
-<style>
-:root{
-    --primary:#111111;
-    --secondary:#1f1f1f;
-    --accent:#C9A227;
-    --light:#f4f4f4;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body{
-    background:var(--light);
-}
-
-/* HEADER */
-header{
-
-     background:var(--primary);
-    color: #e5b611;
-    padding:20px 40px;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-header h1{
-    font-weight:600;
-    letter-spacing:2px;
-    color:var(--accent);
-    align-items: justify-content;
-}
+<title>Catálogo PYR</title>
 
 
+<link rel="stylesheet" href="styles.css">
 
-/* Logo */
-.logo-container{
-    position:absolute;
-    left:40px;
-}
-
-.logo-container img{
-    height:50px;
-}
-
-/* NAV */
-nav{
-    background:var(--secondary);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 40px;
-}
-
-.menu{
-    list-style:none;
-    display:flex;
-}
-
-.menu li{
-    position:relative;
-}
-
-.menu li a{
-    display:block;
-    padding:15px 18px;
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.menu li a:hover{
-    background:var(--accent);
-    color:black;
-}
-
-/* Dropdown */
-.menu li ul{
-    position:absolute;
-    top:50px;
-    left:0;
-    background:var(--secondary);
-    list-style:none;
-    display:none;
-    min-width:180px;
-}
-
-.menu li:hover ul{
-    display:block;
-}
-
-.menu li ul li a{
-    padding:12px;
-}
-
-/* SEARCH */
-.search-container{
-    text-align:center;
-    padding:30px 20px;
-}
-
-.search-container input{
-    width:50%;
-    padding:12px;
-    border:2px solid var(--accent);
-    border-radius:30px;
-    outline:none;
-    font-size:16px;
-}
-
-/* CATALOG */
-.catalogo{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    padding:40px;
-}
-
-.card{
-    background:white;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    padding:20px;
-    text-align:center;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 25px rgba(0,0,0,0.15);
-}
-
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:contain;
-    margin-bottom:15px;
-}
-
-.card h3{
-    font-size:18px;
-    margin-bottom:8px;
-    color:var(--primary);
-}
-
-.card p{
-    color:#666;
-    font-size:14px;
-}
-
-.card span{
-    display:block;
-    margin-top:10px;
-    color:var(--accent);
-    font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-    background:var(--primary);
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-/* Responsive */
-@media(max-width:768px){
-    .search-container input{
-        width:90%;
-    }
-}
-</style>
 </head>
 <body>
 
 <header>
-    <h1>ALMACEN PARTES Y REFACCIONES LUBRICANTES</h1>
+    <h1>ALMACEN PARTES Y REFACCIONES</h1>
       <div class="logo-container">
-        <img src="images\unnamed.png" alt="Logo Empresa">
+        <img src="Images\LOGOBLANCO.png" alt="Logo Empresa">
     </div>
+
+   <div class="cart-container" onclick="toggleCarrito()">
+    🛒 <span id="cart-count">0</span>
+</div>
+<div id="cart-panel">
+    <h3>Mi carrito</h3>
+    <div id="cart-items"></div>
+    <button onclick="vaciarCarrito()" class="btn-vaciar">
+        Eliminar lista
+    </button>
+</div>
+
 </header>
 
 <nav>
@@ -201,9 +38,10 @@ footer{
             <a href="#">Categorías ▼</a>
             <ul>
                 <li><a href="#">Limpieza</a></li>
-                <li><a href="#">EPP</a></li>
+                <li><a href="Lubricantes.html">EPP</a></li>
                 <li><a href="#">Papelería</a></li>
                 <li><a href="#">Solventes</a></li>
+                <li><a href="LUBRICANTES.html">Lubricantes</a></li>
                 <li><a href="#">Químicos</a></li>
                 <li><a href="#">Uniformes</a></li>
                 <li><a href="#">Refacciones</a></li>
@@ -213,53 +51,2642 @@ footer{
 </nav>
 
 <section class="search-container">
-    <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()">
+    <input type="text" id="buscador" placeholder="Buscar producto por nombre o sku..." onkeyup="buscarProducto()">
 </section>
 
 <section class="catalogo" id="catalogo">
 
     <div class="card">
-        <img src="images\Aceite (39433735 Ingersoll Rand) Litro.png" alt="">
+        <img src="Images/aceite-39433735-ingersoll-rand-litro.png" alt="">
         <h3>Aceite (39433735 Ingersoll Rand) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057265</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
     <div class="card">
-        <img src="images\Aceite (Mobil Delvac 1340) Litro.png" alt="">
+        <img src="Images\Aceite (Mobil Delvac 1340) Litro.PNG" alt="">
         <h3>Aceite (Mobil Delvac 1340) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057096</span>
+        <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
 
     <div class="card">
-        <img src="images\Aceite Hidraulico (Mobil DTE 26) Litro.PNG" alt="">
+        <img src="Images\Aceite Dielectrico de Aerosol 400 ml.PNG" alt="">
+        <h3>Aceite Dielectrico de Aerosol 400 ml</h3>
+        <p>Solventes</p>
+        <span>SKU:4057464</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Aceite Hidraulico (Mobil DTE 26) Litro.PNG" alt="">
         <h3>Aceite Hidraulico (Mobil DTE 26) Litro</h3>
         <p>Lubricantes</p>
         <span>SKU:4057377</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Mobil DTE 242) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil DTE 242) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4136419</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+         </div>
+
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Almasol 680) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Almasol 680) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057481</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Duolec 1605) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Duolec 1605) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057526</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Mobil Dte Oil Heavy Medium) con 208 Litros.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil Dte Oil Heavy Medium) con 208 Litros</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4056368</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>  
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Mobil Dte Oil Light) con 208 Litros.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil Dte Oil Light) con 208 Litros</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4056505</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Mobil Gear 600xp 200) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil Gear 600xp 200) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4018364</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+
+
+    <div class="card">
+        <img src="Images\Aceite Lubricante (Mobil Glygoyle 30) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil Glygoyle 30) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057131</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
 
 <div class="card">
-        <img src="images\Aceite Lubricante (Mobil DTE 242) Litro.png" alt="">
-        <h3>Aceite Lubricante (Mobil DTE 242) Litro</h3>
+        <img src="Images\Aceite Lubricante (Mobil Glygoyle 460) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil Glygoyle 460) Litro</h3>
         <p>Lubricantes</p>
-        <span>SKU:4136419</span>
+        <span>SKU:4056384</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
     <div class="card">
-        <img src="images\Aceite Lubricante (Almasol 680) Litro.png" alt="">
-        <h3>Aceite Lubricante (Almasol 680) Litro</h3>
+        <img src="Images\Aceite Lubricante (Mobil SHC 634) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Mobil SHC 634) Litro</h3>
         <p>Lubricantes</p>
-        <span>SKU:4057481</span>
+        <span>SKU:4056964</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
+
+     <div class="card">
+        <img src="Images\Aceite Lubricante (Reflo 68) Litro.PNG" alt="">
+        <h3>Aceite Lubricante (Reflo 68) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4244153</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>  
+
+
+<div class="card">
+        <img src="Images\Aceite Lubricante 4150 h1 Quinplex con 208 Litros.PNG" alt="">
+        <h3>Aceite Lubricante 4150 h1 Quinplex con 208 Litros</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4269069</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+<div class="card">
+        <img src="Images\Aceite Lubricante HEUFT Litro.PNG" alt="">
+        <h3>Aceite Lubricante HEUFT Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057523</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+<div class="card">
+        <img src="Images\Aceite Lubricante WD-40 de 3.78 L.PNG" alt="">
+        <h3>Aceite Lubricante WD-40 de 3.78 L</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057151</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+    <div class="card">
+        <img src="Images\Aceite Mobil (DTE 27) Litro.PNG" alt="">
+        <h3>Aceite Mobil (DTE 27) Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:4057095</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+       <div class="card">
+        <img src="Images\Aceite Superla White Oil Litro.PNG" alt="">
+        <h3>Aceite Superla White Oil Litro</h3>
+        <p>Lubricantes</p>
+        <span>SKU:5005030</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+
+
+
+<!-- BOTAS RINHO -->
+
+
+<div class="card" data-skus='{"23":"SKU: 5530796","23.5":"SKU: 5530797","24":"SKU: 5530798","24.5":"SKU: 5530799","25":"SKU: 5530800","25.5":"SKU: 5530801","26":"SKU: 5530802","26.5":"SKU: 5530803","27":"SKU: 5530804","27.5":"SKU: 5530805","28":"SKU: 5530806","28.5":"SKU: 5530807","29":"SKU: 5530808","29.5":"SKU: 5530809","30":"SKU: 5530810","31.5":"SKU: 5530811","32":"SKU: 5530812"}'>
+  <img src="Images/Botas Rhino.PNG" alt="">
+  <h3>Botas Rhino</h3>
+
+  <label>
+    Talla:
+    <select class="selector-talla">
+      <option value="23">23</option>
+      <option value="23.5">23.5</option>
+      <option value="24">24</option>
+      <option value="24.5">24.5</option>
+      <option value="25">25</option>
+      <option value="25.5">25.5</option>
+      <option value="26">26</option>
+      <option value="26.5">26.5</option>
+      <option value="27">27</option>
+      <option value="27.5">27.5</option>
+      <option value="28">28</option>
+      <option value="28.5">28.5</option>
+      <option value="29">29</option>
+      <option value="29.5">29.5</option>
+      <option value="30">30</option>
+      <option value="31.5">31.5</option>
+       <option value="32">32</option>
+    </select>
+  </label>
+
+  <span class="sku-display">SKU: 5530796</span>
+  <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+<!-- brocjas 2in y 4 in-->
+
+
+    <div class="card" data-productos='{
+        "2 in": {"sku":"SKU:4187859", "img":"Images/Brocha (Pinceleta) de 2 in.PNG"},
+        "4 in": {"sku":"SKU:4014690", "img":"Images/Brocha (Pinceleta) de 4 in.PNG"}
+                                    }'>
+
+  <img id="imagenProducto" src="Images/Brocha (Pinceleta) de 2 in.PNG" alt="">
+  <h3>Brocha (Pinceleta)</h3>
+  <div class="menu-opciones">
+    <button class="opcion-btn active">2 in</button>
+    <button class="opcion-btn">4 in</button>
+  </div>
+
+  <span class="sku-display">SKU:4187859</span>
+  <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+    <div class="card">
+        <img src="Images\Broche Metak para Gafete.PNG" alt="">
+        <h3>Broche Metak para Gafete</h3>
+        <p>Papeleria - Artículos para Escritorio</p>
+        <span>SKU:5511448</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Broche para Bloqueo Grupal 1.5 in.PNG" alt="">
+        <h3>Broche para Bloqueo Grupal 1.5 in</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:4243629</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Broches de Archivo 8 cm.PNG" alt="">
+        <h3>Broches de Archivo 8 cm</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530037</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+ <div class="card">
+        <img src="Images\Cabezal de Impresión HP 727.PNG" alt="">
+        <h3>Cabezal de Impresión HP 727</h3>
+        <p>Papeleria</p>
+        <span>SKU:5532549</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+    <div class="card">
+        <img src="Images\Cadena Amarilla Plastica 3 in.PNG" alt="">
+        <h3>Cadena Amarilla Plastica 3 in</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5523909</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Caja de Marcadores para Pizarron con 4 pzas.PNG" alt="">
+        <h3>Caja de Marcadores para Pizarron con 4 pzas</h3>
+        <p>Papeleria</p>
+        <span>SKU:5529992</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+
+<!--  Boyones caamisa Azul REy-->
+
+ <div class="card" data-productos='{
+        "Manga Corta": {"sku":"SKU:5539416", "img":"Images/Camisa Manga Corta Azul Rey.PNG"},
+        "Manga Larga": {"sku":"SKU:5539417", "img":"Images/Camisa Manga Larga Azul Rey.PNG"}
+                                    }'>
+
+  <img id="imagenProducto" src="Images/Camisa Manga Corta Azul Rey.PNG" alt="">
+  <h3>Camisa Azul Rey</h3>
+  <div class="menu-opciones">
+    <button class="opcion-btn active">Manga Corta</button>
+    <button class="opcion-btn">Manga Larga</button>
+  </div>
+
+  <span class="sku-display">SKU:5539416</span>
+  <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+    <div class="card">
+        <img src="Images\Camisa Manga Larga Caqui.PNG" alt="">
+        <h3>Camisa Manga Larga Caqui</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539426</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Camisa Manga Larga Caqui.PNG" alt="">
+        <h3>Camisa Manga Larga Caqui Ignifuga y Contra Arco Electrico</h3>
+        <p>Uniforme</p>
+        <span>SKU:5539434</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+
+    <!--
+<div class="card">
+        <img id="imagenProductoCAN" class="product-imgCAN" 
+    src="Images\\Candado de Seguridad Color Azul.PNG" alt="Brocha">
+
+        <h3>Candado de Seguridad</h3>
+        <p>EPP - SAM/LOTOTO</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionCAN('Azul 1 Llave', event)">Azul 1Llave</button>
+        <button class="opcion-btn" onclick="cambiarOpcionCAN('Azul 2 Llave', event)">Azul 2Llaves</button>
+         <button class="opcion-btn" onclick="cambiarOpcionCAN('Rojo', event)">Rojo</button>
+          <button class="opcion-btn" onclick="cambiarOpcionCAN('Verde', event)">Verde</button>
+    </div>
+
+
+         <span id="skuCAN">SKU: 5541030</span>
+           <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+-->
+
+<!-- Candaos e seguridad botones  -->
+
+ <div class="card" data-productos='{
+        "Azul 1 Llave": {"sku":"SKU: 5541030", "img":"Images/Candado de Seguridad Color Azul.PNG"},
+        "Azul 2 Llaves": {"sku":"SKU: 4233278", "img":"Images/Candado de Seguridad Color Azul.PNG"},
+         "Rojo": {"sku":"SKU:5524014", "img":"Images/Candado de Seguridad Color Rojo.PNG"},
+          "Verde": {"sku":"SKU:4231438", "img":"Images/Candado de Seguridad Color Verde.PNG"}
+                                    }'>
+
+  <img id="imagenProducto" src="Images/Candado de Seguridad Color Azul.PNG" alt="">
+  <h3>Candado de Seguridad</h3>
+  <div class="menu-opciones">
+    <button class="opcion-btn active">Azul 1 Llave</button>
+    <button class="opcion-btn">Azul 2 Llaves</button>
+    <button class="opcion-btn">Rojo</button>
+    <button class="opcion-btn">Verde</button>
+  </div>
+
+  <span class="sku-display">SKU: 5541030</span>
+  <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+
+
+    <div class="card">
+        <img src="Images\Cardetela de 50X50 (Paquete de 475).PNG" alt="">
+        <h3>Cardetela de 50X50 (Paquete de 475)</h3>
+        <p>LLimpieza</p>
+        <span>SKU:5512664</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Carpeta Panoramica Tamaño Carta 0.5 in Arillo Negro.PNG" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 0.5 in Arillo Negro</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530167</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+     <div class="card">
+        <img src="Images\Carpeta Panoramica Tamaño Carta 1 in.PNG" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 1 in</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530164</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Carpeta Panoramica Tamaño Carta 3 in.PNG" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 3 in</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530159</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+    <div class="card">
+        <img src="Images\Carpeta Panoramica Tamaño Carta 4 in Arillo Blanco.PNG" alt="">
+        <h3>Carpeta Panoramica Tamaño Carta 4 in Arillo Blanco</h3>
+        <p>Papeleria</p>
+        <span>SKU:5530170</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+    <div class="card">
+        <img src="Images\Cartucho 6001 para Vapores Organicos.PNG" alt="">
+        <h3>Cartucho 6001 para Vapores Organicos</h3>
+        <p>EPP - SAM/LOTOTO</p>
+        <span>SKU:5506435</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+    <div class="card">
+        <img src="Images\Cartucho Amarillo HP 727.PNG" alt="">
+        <h3>Cartucho Amarillo HP 727</h3>
+        <p>Papeleria</p>
+        <span>SKU:5532547</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+<div class="card">
+    <img src="Images\Cartucho Cian Claro HP 831.PNG" alt="">
+    <h3>Cartucho Cian Claro HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532505</span>
+     <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Cian HP 727.PNG" alt="">
+    <h3>Cartucho Cian HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532548</span>
+     <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Cartucho Cian HP 831A.PNG" alt="">
+    <h3>Cartucho Cian HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532502</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Cian Negro HP 831.PNG" alt="">
+    <h3>Cartucho Cian Negro HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532510</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho de Mantenimiento HP 831.PNG" alt="">
+    <h3>Cartucho de Mantenimiento HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5533734</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Cartucho de Repuesto Canister.PNG" alt="">
+    <h3>Cartucho de Repuesto Canister</h3>
+    <p>EPP</p>
+    <span>SKU:5506426</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Gris HP 727.PNG" alt="">
+    <h3>Cartucho Gris HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532545</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Latex Amarillo HP 831A.PNG" alt="">
+    <h3>Cartucho Latex Amarillo HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5526757</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Latex Magenta Claro HP 831A.PNG" alt="">
+    <h3>Cartucho Latex Magenta Claro HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532504</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Latex Magenta HP 831A.PNG" alt="">
+    <h3>Cartucho Latex Magenta HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5526756</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Magenta Amarillo Claro HP 831.PNG" alt="">
+    <h3>Cartucho Magenta Amarillo Claro HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532512</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Magenta Claro Cian HP 831.PNG" alt="">
+    <h3>Cartucho Magenta Claro Cian HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532511</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Magenta HP 727.PNG" alt="">
+    <h3>Cartucho Magenta HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532546</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Negro HP 727.PNG" alt="">
+    <h3>Cartucho Negro HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532543</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Negro HP 831A.PNG" alt="">
+    <h3>Cartucho Negro HP 831A</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532503</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Negro Mate HP 727.PNG" alt="">
+    <h3>Cartucho Negro Mate HP 727</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532544</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Optimizador de Latex HP 831.PNG" alt="">
+    <h3>Cartucho Optimizador de Latex HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532509</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho Optimizador HP 831.PNG" alt="">
+    <h3>Cartucho Optimizador HP 831</h3>
+    <p>Papeleria</p>
+    <span>SKU:5532508</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<div class="card">
+    <img src="Images\Cartucho para Amoniaco y Metilamina.PNG" alt="">
+    <h3>Cartucho para Amoniaco y Metilamina</h3>
+    <p>EPP</p>
+    <span>SKU:5506480</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno.PNG" alt="">
+    <h3>Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno)</h3>
+    <p>EPP</p>
+    <span>SKU:5506479</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cartulina Opalina Tamaño Carta con 100 Hojas.PNG" alt="">
+    <h3>Cartulina Opalina Tamaño Carta con 100 Hojas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530160</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<!-- Candaos e seguridad botones  -->
+
+ <div class="card" data-productos='{
+        "Azul": {"sku":"SKU:5517586", "img":"Images/Casco Azul BUM CAP.PNG"},
+        "Blanco": {"sku":"SKU:5517584", "img":"Images/Casco Azul BUM CAP.PNG"}
+                                    }'>
+
+  <img id="imagenProducto" src="Images/Candado de Seguridad Color Azul.PNG" alt="">
+  <h3>Casco BUM CAP</h3>
+  <div class="menu-opciones">
+    <button class="opcion-btn active">Azul</button>
+    <button class="opcion-btn">Blanco</button>
+  </div>
+
+  <span class="sku-display">SKU:5517586</span>
+  <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<div class="card">
+    <img src="Images\Casco Blanco MCA.PNG" alt="">
+    <h3>Casco Blanco MCA</h3>
+    <p>EPP</p>
+    <span>SKU:5541826</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<!--
+<div class="card">
+        <img id="imagenProductoInfracap" class="product-imgInfracap" 
+    src="Images\Casco Infracap Amarillo.PNG" alt="">
+
+        <h3>Casco Infracap</h3>
+        <p>EPP</p>
+
+    <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcionInfracap('Amarillo', event)">Amarillo</button>
+        <button class="opcion-btn" onclick="cambiarOpcionInfracap('Azul', event)">Azul</button>
+        <button class="opcion-btn" onclick="cambiarOpcionInfracap('Rojo', event)">Rojo</button>
+        <button class="opcion-btn" onclick="cambiarOpcionInfracap('Verde', event)">Verde</button>
+    </div>
+
+
+         <span id="skuInfracap">SKU:5517586</span>
+           <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+         
+</div>
+
+-->
+
+
+<!-- Candaos e seguridad botones  -->
+
+ <div class="card" data-productos='{
+        "Azul": {"sku":"SKU:5517586", "img":"Images/Casco Azul BUM CAP.PNG"},
+        "Blanco": {"sku":"SKU:5517584", "img":"Images/Casco Azul BUM CAP.PNG"},
+        "Blanco": {"sku":"SKU:5517584", "img":"Images/Casco Azul BUM CAP.PNG"},
+        "Blanco": {"sku":"SKU:5517584", "img":"Images/Casco Azul BUM CAP.PNG"}
+                                    }'>
+
+  <img id="imagenProducto" src="Imagesv v v vPNG" alt="">
+  <h3>Casco BUM CAP</h3>
+  <div class="menu-opciones">
+    <button class="opcion-btn active">Azul</button>
+    <button class="opcion-btn">Blanco</button>
+  </div>
+
+  <span class="sku-display">SKU:5517586</span>
+  <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Casco Naranja MCA.PNG" alt="">
+    <h3>Casco Naranja MCA</h3>
+    <p>EPP</p>
+    <span>SKU:5541827</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo Swiss-Diary.PNG" alt="">
+    <h3>Cepillo Swiss-Diary</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5525762</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo Bi-nivel.PNG" alt="">
+    <h3>Cepillo Bi-nivel</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5525757</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo de Alambre de Acero Inoxidable.PNG" alt="">
+    <h3>Cepillo de Alambre de Acero Inoxidable</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505872</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo de Ixtle.PNG" alt="">
+    <h3>Cepillo de Ixtle</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505866</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo de Mano de Alambre Acero al Carbono.PNG" alt="">
+    <h3>Cepillo de Mano de Alambre Acero al Carbono</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505864</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo de Tanque Duro.PNG" alt="">
+    <h3>Cepillo de Tanque Duro</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5525390</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cepillo Multisuperficies.PNG" alt="">
+    <h3>Cepillo Multisuperficies</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5525778</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Cesto para la Basura.PNG" alt="">
+    <h3>Cesto para la Basura</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5502681</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+ <div class="card">
+        <img src="Images\Chaleco Alta Visibilidad 1 Color Naranja.PNG" alt="">
+        <h3>Chaleco Alta Visibilidad 1 Color Naranja</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaCHALECONARANJA" onchange="cambiarSKUCHALECONARANJA()">
+
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+          
+
+                </select>
+             </div>
+
+        <span id="skuCHALECONARANJA">SKU: 5528863</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+
+
+
+<div class="card">
+        <img src="Images\Chaleco Alta Visibilidad Color Naranja.PNG" alt="">
+        <h3>Chaleco Alta Visibilidad Color Naranja</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaCHALECONARANJA2" onchange="cambiarSKUCHALECONARANJA2()">
+                    
+                    <option value="XG">XG</option>
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuCHALECONARANJA2">SKU: 5520951</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+
+
+<div class="card">
+    <img src="Images\Chaleco de Malla Color Azul.PNG" alt="">
+    <h3>Chaleco de Malla Color Azul</h3>
+    <p>EPP</p>
+    <span>SKU:5521045</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Chaleco para Rescatista.PNG" alt="">
+    <h3>Chaleco para Rescatista</h3>
+    <p>EPP</p>
+    <span>SKU:5524453</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+<div class="card">
+        <img id="imagenProductocha" class="product-imgcha" 
+    src="Images\Chamarra para Hombre Azul Marino.PNG" alt="">
+
+        <h3>Chamarra Azul Marino</h3>
+        <p>Uniforme</p>
+
+        <div class="menu-opciones">
+        <button class="opcion-btn active" onclick="cambiarOpcioncha('Hombre', event)">Hombre</button>
+        <button class="opcion-btn" onclick="cambiarOpcioncha('Mujer', event)">Mujer</button>
+    </div>
+
+
+         <span id="skucha">SKU:5539465</span>
+           <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+ 
+
+
+<div class="card">
+    <img src="Images\Cinta Antiderrapante 3 in Precaucion.PNG" alt="">
+    <h3>Cinta Antiderrapante 3 in Precaucion</h3>
+    <p>EPP</p>
+    <span>SKU:4245727</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cinta Doble Cara 12 mm x 50 m.PNG" alt="">
+    <h3>Cinta Doble Cara 12 mm x 50 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530061</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cinta Magica 12 mm x 33 m.PNG" alt="">
+    <h3>Cinta Magica 12 mm x 33 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529975</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cinta Magica 24 mm x 65 m.PNG" alt="">
+    <h3>Cinta Magica 24 mm x 65 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530058</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cinta Metrica Truper 50 m.PNG" alt="">
+    <h3>Cinta Metrica Truper 50 m</h3>
+    <p></p>
+    <span>SKU:5542016</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cinta Testigo para Autoclave.PNG" alt="">
+    <h3>Cinta Testigo para Autoclave</h3>
+    <p>Papeleria</p>
+    <span>SKU:5506675</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Clip Gotico con 100 pzas.PNG" alt="">
+    <h3>Clip Gotico con 100 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529979</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Clip Mariposa No. 1 con 12 pzas.PNG" alt="">
+    <h3>Clip Mariposa No. 1 con 12 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530062</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Clip Mariposa No. 2 con 50 pzas.PNG" alt="">
+    <h3>Clip Mariposa No. 2 con 50 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530063</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cloro Cloralex con 950 ml.PNG" alt="">
+    <h3>Cloro Cloralex con 950 ml</h3>
+    <p>Quimicos</p>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cofia Lavable.PNG" alt="">
+    <h3>Cofia Lavable</h3>
+    <p>EPP</p>
+    <span>SKU:5506500</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cono de Papel con 250 pzas.PNG" alt="">
+    <h3>Cono de Papel con 250 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5531587</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>  
+
+
+
+<div class="card">
+    <img src="Images\Cristal Claro para Careta de Soldador.PNG" alt="">
+    <h3>Cristal Claro para Careta de Soldador</h3>
+    <p>EPP</p>
+    <span>SKU:5506063</span>
+     <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cuaderno (Libreta) de Cuadro Grande.PNG" alt="">
+    <h3>Cuaderno (Libreta) de Cuadro Grande</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530010</span>
+     <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<div class="card">
+    <img src="Images\Cuaderno (Libreta) de Rayas.PNG" alt="">
+    <h3>Cuaderno (Libreta) de Rayas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530064</span>
+     <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+<div class="card">
+    <img src="Images\Cubeta de Plastico de 19 L.PNG" alt="">
+    <h3>Cubeta de Plastico de 19 L</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5529197</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Cubeta Kimkare de 18 L.PNG" alt="">
+    <h3>Cubeta Kimkare de 18 L</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505884</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Cubre Bota Desechable.PNG" alt="">
+    <h3>Cubre Bota Desechable</h3>
+    <p>EPP / Calzado</p>
+    <span>SKU:5524987</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Desengrapadora.PNG" alt="">
+    <h3>Desengrapadora</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530065</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Empaquetadura Moldeable 400 g.PNG" alt="">
+    <h3>Empaquetadura Moldeable 400 g</h3>
+    <p>Solventes</p>
+    <span>SKU:4056355</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Engrapadora de Golpe.PNG" alt="">
+    <h3>Engrapadora de Golpe</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529981</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Escoba de Mijo de 7 hilos.PNG" alt="">
+    <h3>Escoba de Mijo de 7 hilos</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505860</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Escoba de Plastico.PNG" alt="">
+    <h3>Escoba de Plastico</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5510925</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Escoba tipo Abanico.PNG" alt="">
+    <h3>Escoba tipo Abanico</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5527691</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Escobillon de 0.5 in.PNG" alt="">
+    <h3>Escobillon de 0.5 in</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5525773</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Escobillon de 316 in.PNG" alt="">
+    <h3>Escobillon de 3/16 in</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505873</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Esmalte Acrilico Transparente Aerocomex 400 ml.PNG" alt="">
+    <h3>Esmalte Acrilico Transparente Aerocomex 400 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:5532804</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Etiqueta Color Rojo 24 mm x 76 m.PNG" alt="">
+    <h3>Etiqueta Color Rojo 24 mm x 76 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529852</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Eurochlor Kg.PNG" alt="">
+    <h3>Eurochlor Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000849</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Faja Lumbar.PNG" alt="">
+    <h3>Faja Lumbar</h3>
+    <p>EPP</p>
+    <span>SKU:5507916</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Fibra de Acero Inoxidable.PNG" alt="">
+    <h3>Fibra de Acero Inoxidable</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505867</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Fibra Verde de Nylon.PNG" alt="">
+    <h3>Fibra Verde de Nylon</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5512669</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Fijador de Roscas LOCTITE 262 con 10 ml.PNG" alt="">
+    <h3>Fijador de Roscas LOCTITE 262 con 10 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:4053969</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Flash Liquido Desengrasante Kg.PNG" alt="">
+    <h3>Flash Liquido Desengrasante Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5505875</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<div class="card">
+    <img src="Images\Florete Rayado Forma Francesa.PNG" alt="">
+    <h3>Florete Rayado Forma Francesa</h3>
+    <p>Papeleria / Cuadernos, Libretas y Carpetas</p>
+    <span>SKU:5530118</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Formajuntas Loctite 118.8 gr.PNG" alt="">
+    <h3>Formajuntas Loctite 118.8 gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4057637</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Fosnik FS Kg.PNG" alt="">
+    <h3>Fosnik FS Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000840</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Franela Tramo de 1 m.PNG" alt="">
+    <h3>Franela Tramo de 1 m</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5521368</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Full Power Kg.PNG" alt="">
+    <h3>Full Power Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000842</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Glicerina 1 kg.PNG" alt="">
+    <h3>Glicerina 1 kg</h3>
+    <p>Solventes</p>
+    <span>SKU:4018343</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Goma Blanca para Lapiz y Color.PNG" alt="">
+    <h3>Goma Blanca para Lapiz y Color</h3>
+    <p>Papeleria / Artículos de Escritura</p>
+    <span>SKU:5530188</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Gorra Protectora de Impacto.PNG" alt="">
+    <h3>Gorra Protectora de Impacto</h3>
+    <p>EPP</p>
+    <span>SKU:5526580</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grapa Estandar con 5040 pzas.PNG" alt="">
+    <h3>Grapa Estandar con 5040 pzas</h3>
+    <p>Papeleria / Artículos para Escritorio</p>
+    <span>SKU:5529936</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Aliplex 2) Kg.PNG" alt="">
+    <h3>Grasa (Aliplex 2) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4057061</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Bentona BAT-3 Roshfrans) con 16 Kg.PNG" alt="">
+    <h3>Grasa (Bentona BAT-3 Roshfrans) con 16 Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:4081835</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Fluida Aliplex 00) Kg.PNG" alt="">
+    <h3>Grasa (Fluida Aliplex 00) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4142989</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobil FM 222) Kg.PNG" alt="">
+    <h3>Grasa (Mobil FM 222) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4090015</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobil SHC 007) Kg.PNG" alt="">
+    <h3>Grasa (Mobil SHC 007) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4056978</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobil SHC 100) Kg.PNG" alt="">
+    <h3>Grasa (Mobil SHC 100) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4057567</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobil SHC 460) Kg.PNG" alt="">
+    <h3>Grasa (Mobil SHC 460) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4057569</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobilith AW2) Kg.PNG" alt="">
+    <h3>Grasa (Mobilith AW2) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4056471</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobilux EP 1) Kg.PNG" alt="">
+    <h3>Grasa (Mobilux EP 1) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4057026</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Grasa (Mobilux EP 2) Kg.PNG" alt="">
+    <h3>Grasa (Mobilux EP 2) Kg</h3>
+    <p>Lubricantes</p>
+    <span>SKU:4033957</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+<div class="card">
+    <img src="Images\Grasa Fuchs 400 gr.PNG" alt="">
+    <h3>Grasa Fuchs 400 gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4056792</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+<div class="card">
+        <img src="Images\Guante Anticorte D-ROC.PNG" alt="">
+        <h3>Guante Anticorte D-ROC</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaGDROC" onchange="cambiarSKUGDROC()">
+                    
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuGDROC">SKU: 5539343</span>
+         <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+
+<div class="card">
+        <img src="Images\Guante Anticorte MAPA.PNG" alt="">
+        <h3>Guante Anticorte MAPA</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaMAPA" onchange="cambiarSKUMAPA()">
+                    
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuMAPA">SKU:5527331</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+
+
+<div class="card">
+        <img src="Images\Guante Anticorte Quimicos SHOWA.PNG" alt="">
+        <h3>Guante Anticorte Quimicos SHOWA</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallashowa" onchange="cambiarSKUshowa()">
+                    
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+
+                </select>
+             </div>
+
+        <span id="skushowa">SKU:5537483</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+<div class="card">
+        <img src="Images\Guante Color Cromo de Canraza.PNG" alt="">
+        <h3>Guante Color Cromo de Canraza</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallacanranza" onchange="cambiarSKUcanranza()">
+                    
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skucanranza">SKU:5506425</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+
+<div class="card">
+        <img src="Images\Guante de Hule Negro Adex.PNG" alt="">
+        <h3>Guante de Hule Negro Adex</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaadex" onchange="cambiarSKUadex()">
+                    
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+   
+                </select>
+             </div>
+
+        <span id="skucadex">SKU:5506408</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+
+
+<div class="card">
+    <img src="Images\Guante de Nitrilo Besto.PNG" alt="">
+    <h3>Guante de Nitrilo Besto</h3>
+    <p>EPP</p>
+    <span>SKU:5506473</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+        <img src="Images\Guante de Protección HY-FLEX.PNG" alt="">
+        <h3>Guante de Protección HY-FLEX</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaflex" onchange="cambiarSKUflex()">
+                    
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+   
+                </select>
+             </div>
+
+        <span id="skuflex">SKU:5519626</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+
+
+<div class="card">
+        <img src="Images\Guante en Piel Tipo Electricista.PNG" alt="">
+        <h3>Guante en Piel Tipo Electricista</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaelectricista" onchange="cambiarSKUelectricista()">
+                    
+                    
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                     <option value="11">11</option>
+
+   
+                </select>
+             </div>
+
+        <span id="skuelectricista">SKU:5506489</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+<div class="card">
+    <img src="Images\Guantes de Nitrilo con 100 pz.PNG" alt="">
+    <h3>Guantes de Nitrilo con 100 pz</h3>
+    <p>EPP</p>
+    <span>SKU:5519761</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Guantes de Nitrilo de Manga Corta con 100 pzs.PNG" alt="">
+    <h3>Guantes de Nitrilo de Manga Corta con 100 pzs</h3>
+    <p>EPP</p>
+    <span>SKU:5520030</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Guantes de Nitrilo de Manga Larga.PNG" alt="">
+    <h3>Guantes de Nitrilo de Manga Larga</h3>
+    <p>EPP</p>
+    <span>SKU:5518341</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Guantes de Nitrilo Purpura de Manga Corta con 100 pzs.PNG" alt="">
+    <h3>Guantes de Nitrilo Purpura de Manga Corta con 100 pzs</h3>
+    <p>EPP</p>
+    <span>SKU:5520020</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Gusano para Engargolar Negro 1 14 in.PNG" alt="">
+    <h3>Gusano para Engargolar Negro 1 1/4 in</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530197</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hipoclorito de Calcio (HTH) Kg.PNG" alt="">
+    <h3>Hipoclorito de Calcio (HTH) Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000505</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hipoclorito de Sodio Kg.PNG" alt="">
+    <h3>Hipoclorito de Sodio Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000522</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hoja Amarilla Fluoresente Tamaño Carta con 100 pzas.PNG" alt="">
+    <h3>Hoja Amarilla Fluoresente Tamaño Carta con 100 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530194</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hoja Doble Carta con 1000 pzas.PNG" alt="">
+    <h3>Hoja Doble Carta con 1000 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530141</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hoja Roja Tamaño Carta con 100 pzas.PNG" alt="">
+    <h3>Hoja Roja Tamaño Carta con 100 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530066</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hoja Tamaño Carta con Pleca a media hoja con 250 pzas.PNG" alt="">
+    <h3>Hoja Tamaño Carta con Pleca a media hoja con 250 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5506000</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Hoja Verde Tamaño Carta con 100 pzas.PNG" alt="">
+    <h3>Hoja Verde Tamaño Carta con 100 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530202</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+
+<div class="card">
+        <img src="Images\Impermeable Chamarra de Color Amarillo.PNG" alt="">
+        <h3>Impermeable Chamarra de Color Amarillo</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaIMCHA" onchange="cambiarSKUIMCHA()">
+                    
+                    <option value="XG">XG</option>
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuIMCHA">SKU:5506468</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div> 
+
+
+
+
+<div class="card">
+        <img src="Images\Impermeable Pantalon Color Amarillo.PNG" alt="">
+        <h3>Impermeable Pantalon Color Amarillo</h3>
+        <p>EPP</p>
+
+            <div>
+                Talla:
+                <select id="tallaIMPA" onchange="cambiarSKUIMPA()">
+                    
+                    <option value="XG">XG</option>
+                    <option value="G">G</option>
+                    <option value="M">M</option>
+                
+          
+
+                </select>
+             </div>
+
+        <span id="skuIMPA">SKU:5506466</span>
+          <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+    </div>
+
+
+<div class="card">
+    <img src="Images\Jabon de Espuma con 1 Litro.PNG" alt="">
+    <h3>Jabon de Espuma con 1 Litro</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5532430</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Jabon de Espuma con 6 Cartuchos de 600 ml.PNG" alt="">
+    <h3>Jabon de Espuma con 6 Cartuchos de 600 ml</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5536868</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Jabon Detergente en Polvo en Bolsa de 10 kg.PNG" alt="">
+    <h3>Jabon Detergente en Polvo en Bolsa de 10 kg</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5512671</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Jabon Detergente en Polvo en Bolsa marca Roma de 1 kg.PNG" alt="">
+    <h3>Jabon Detergente en Polvo en Bolsa marca Roma de 1 kg</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5506867</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Jabon Neutro Zote Barra de 400 gr.PNG" alt="">
+    <h3>Jabon Neutro Zote Barra de 400 gr</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505876</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Jalador de Doble Esponja.PNG" alt="">
+    <h3>Jalador de Doble Esponja</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5511361</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Kit de Limpieza HBO 90000.PNG" alt="">
+    <h3>Kit de LLimpieza HBO 90000</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5528438</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Lapiz Adhesivo con 22 gr.PNG" alt="">
+    <h3>Lapiz Adhesivo con 22 gr</h3>
+    <p>Papeleria - Artículos para Escritorio</p>
+    <span>SKU:5529937</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Lapiz No. 2 HB.PNG" alt="">
+    <h3>Lapiz No. 2 HB</h3>
+    <p>Papeleria - Artículos de Escritura</p>
+    <span>SKU:5530027</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Lente de Seguridad.PNG" alt="">
+    <h3>Lente de Seguridad</h3>
+    <p>EPP</p>
+    <span>SKU:5540479</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Lente de Seguridad Antiparra.PNG" alt="">
+    <h3>Lente de Seguridad Antiparra</h3>
+    <p>EPP</p>
+    <span>SKU:5541911</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Lente de Seguridad Lente sobre Lente.PNG" alt="">
+    <h3>Lente de Seguridad Lente sobre Lente</h3>
+    <p>EPP</p>
+    <span>SKU:5513660</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Limpiador de Pisos Concentrado Litro.PNG" alt="">
+    <h3>Limpiador de Pisos Concentrado Litro</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5505883</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Limpiador de Superficie Tipo Espuma 400 g.PNG" alt="">
+    <h3>Limpiador de Superficie Tipo Espuma 400 g</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5537478</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Limpiador de Vidrios Windex (650 ml).PNG" alt="">
+    <h3>Limpiador de Vidrios Windex (650 ml)</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5501989</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Liquido Limpiador para Pintarron con 237 ml.PNG" alt="">
+    <h3>Liquido Limpiador para Pintarron con 237 ml</h3>
+    <p>LLimpieza</p>
+    <span>SKU:5530005</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Loctite para Partes Cilindricas 50 ml.PNG" alt="">
+    <h3>Loctite para Partes Cilindricas 50 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:4053959</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Lubricador Automatico SKF System 24 con 60 ml.PNG" alt="">
+    <h3>Lubricador Automatico SKF System 24 con 60 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:4057435</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Lubricante Antiadherente LOCTITE LB 8150 con 453 g.PNG" alt="">
+    <h3>Lubricante Antiadherente LOCTITE LB 8150 con 453 g</h3>
+    <p>Solventes</p>
+    <span>SKU:4053951</span>    
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Magic Plus Kg.PNG" alt="">
+    <h3>Magic Plus Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000843</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<div class="card">
+    <img src="Images\Manga Anticorte.PNG" alt="">
+    <h3>Manga Anticorte</h3>
+    <p>EPP</p>
+    <span>SKU:5525030</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Manga Indicadora de Viento 10 in.PNG" alt="">
+    <h3>Manga Indicadora de Viento 10 in</h3>
+    <p>EPP</p>
+    <span>SKU:5523730</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Marcador Color Blanco.PNG" alt="">
+    <h3>Marcador Color Blanco</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529391</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<!--CAMBIAR EN BOTONES NEGRO Y AZUL-->
+<div class="card">
+    <img src="Images\Marcador Grueso Permanente Azul (Sharpie).PNG" alt="">
+    <h3>Marcador Grueso Permanente Azul (Sharpie)</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530073</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Marcador Grueso Permanente Negro (Sharpie).PNG" alt="">
+    <h3>Marcador Grueso Permanente Negro (Sharpie)</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529991</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<!--.-->
+
+<div class="card">
+    <img src="Images\Marcador Grueso Rojo.PNG" alt="">
+    <h3>Marcador Grueso Rojo</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530000</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<!--CAMBIAR EN BOTONES NEGRO Y AZUL-->
+
+<div class="card">
+    <img src="Images\Marcador Punto Fino Negro (Sharpie).PNG" alt="">
+    <h3>Marcador Punto Fino Negro (Sharpie)</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530007</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Marcador Punto Fino Verde (Sharpie).PNG" alt="">
+    <h3>Marcador Punto Fino Verde (Sharpie)</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530012</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<!--.-->
+
+<div class="card">
+    <img src="Images\Marcatextos Amarillo.PNG" alt="">
+    <h3>Marcatextos Amarillo</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529939</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mascarilla Cara Completa Advantage.PNG" alt="">
+    <h3>Mascarilla Cara Completa Advantage</h3>
+    <p>EPP</p>
+    <span>SKU:5527608</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mascarilla Cara Completa Ultravue.PNG" alt="">
+    <h3>Mascarilla Cara Completa Ultravue</h3>
+    <p>EPP</p>
+    <span>SKU:5523843</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mascarilla de Soldador Moldex.PNG" alt="">
+    <h3>Mascarilla de Soldador Moldex</h3>
+    <p>EPP</p>
+    <span>SKU:5506482</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mascarilla Media Cara.PNG" alt="">
+    <h3>Mascarilla Media Cara</h3>
+    <p>EPP</p>
+    <span>SKU:5506434</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mascarilla para Polvo y Neblina.PNG" alt="">
+    <h3>Mascarilla para Polvo y Neblina</h3>
+    <p>EPP</p>
+    <span>SKU:5506414</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mica para Careta Bionic.PNG" alt="">
+    <h3>Mica para Careta Bionic</h3>
+    <p>EPP</p>
+    <span>SKU:5525683</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Mica Termica Tamaño Carta.PNG" alt="">
+    <h3>Mica Termica Tamaño Carta</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529949</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Moop Completo.PNG" alt="">
+    <h3>Moop Completo</h3>
+    <p>Limpieza</p>
+    <span>SKU:5521338</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Navaja de Seguridad Autoretractil.PNG" alt="">
+    <h3>Navaja de Seguridad Autoretractil</h3>
+    <p>EPP</p>
+    <span>SKU:5535400</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Notas Autoadheribles Raya Neon 101 x 101 mm.PNG" alt="">
+    <h3>Notas Autoadheribles Raya Neon 101 x 101 mm</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530190</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Orejera Montable a Casco.PNG" alt="">
+    <h3>Orejera Montable a Casco</h3>
+    <p>EPP</p>
+    <span>SKU:5537402</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Overol Tyuek.PNG" alt="">
+    <h3>Overol Tyuek</h3>
+    <p>EPP</p>
+    <span>SKU:5506475</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<!--CAMBIAR EN BOTONES NEGRO Y AZUL-->
+<div class="card">
+    <img src="Images\Pantalon (Jeans) para Hombre de Mezclilla con Cinta Reflejante.PNG" alt="">
+    <h3>Pantalon (Jeans) para Hombre de Mezclilla con Cinta Reflejante</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539422</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pantalon (Jeans) para Mujer de Mezclilla con Cinta Reflejante.PNG" alt="">
+    <h3>Pantalon (Jeans) para Mujer de Mezclilla con Cinta Reflejante</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539424</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+
+<!--.L-->
+
+
+<div class="card">
+    <img src="Images\Pantalon (Jeans) para Mujer de Mezclilla con Cinta Reflejante y Bolsa Cargo.PNG" alt="">
+    <h3>Pantalon (Jeans) para Mujer de Mezclilla con Cinta Reflejante y Bolsa Cargo</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539448</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pantalon Caqui Ignifugo y Contra Arco Electrico.PNG" alt="">
+    <h3>Pantalon Caqui Ignifugo y Contra Arco Electrico</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539437</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pantalon de Cargo para Hombre Caqui.PNG" alt="">
+    <h3>Pantalon de Cargo para Hombre Caqui</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539431</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<div class="card">
+    <img src="Images\Papel Aluminio en Rollo (400 mt x 30 cm).PNG" alt="">
+    <h3>Papel Aluminio en Rollo (400 mt x 30 cm)</h3>
+    <p></p>
+    <span>SKU:5514168</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Papel Blanco Blancura 89 Caja con 5000 hojas.PNG" alt="">
+    <h3>Papel Blanco Blancura 89% Caja con 5000 hojas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530157</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Papel Higienico Fluido Centrico con 12 Rollos.PNG" alt="">
+    <h3>Papel Higienico Fluido Centrico con 12 Rollos</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5537989</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Papel Higienico Jumbo con 12 Rollos 70016532.PNG" alt="">
+    <h3>Papel Higienico Jumbo con 12 Rollos 70016532</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5541852</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Papel Higienico Jumbo con 12 Rollos TJ 12 22A.PNG" alt="">
+    <h3>Papel Higienico Jumbo con 12 Rollos TJ 12 22A</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5540477</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Papel Higienico Jumbo con 6 Rollos 70060433.PNG" alt="">
+    <h3>Papel Higienico Jumbo con 6 Rollos 70060433</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5540247</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Papel Tamaño Carta Caja con 5000 hojas.PNG" alt="">
+    <h3>Papel Tamaño Carta Caja con 5000 hojas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530047</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Parafina Lata Litro.PNG" alt="">
+    <h3>Parafina Lata Litro</h3>
+    <p>Quimicos</p>
+    <span>SKU:4057494</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pasta de Diamante Blanca para Pulir 5gr.PNG" alt="">
+    <h3>Pasta de Diamante Blanca para Pulir 5gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4233254</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pasta de Plasta Tamaño Carta Color Negro.PNG" alt="">
+    <h3>Pasta de Plasta Tamaño Carta Color Negro</h3>
+    <p>Papeleria</p>
+    <span>SKU:5506023</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pasta de Soldadura con 60 gr.PNG" alt="">
+    <h3>Pasta de Soldadura con 60 gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4185544</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pasta Decapante Garrafon Kg.PNG" alt="">
+    <h3>Pasta Decapante Garrafon Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:4072171</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pastilla Aromatizante Wiese.PNG" alt="">
+    <h3>Pastilla Aromatizante Wiese</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5502438</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pegamento de Contacto Resistol 5000 Litro.PNG" alt="">
+    <h3>Pegamento de Contacto Resistol 5000 Litro</h3>
+    <p>Solventes</p>
+    <span>SKU:4158534</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Perforadora Triple.PNG" alt="">
+    <h3>Perforadora Triple</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530042</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos.PNG" alt="">
+    <h3>Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos</h3>
+    <p>Solventes</p>
+    <span>SKU:4184746</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pinokrol Litro.PNG" alt="">
+    <h3>Pinokrol Litro</h3>
+    <p>Quimicos</p>
+    <span>SKU:5505869</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Pintura Vinil Acrilica Blanca Vinimex Litro.PNG" alt="">
+    <h3>Pintura Vinil Acrilica Blanca Vinimex Litro</h3>
+    <p>Solventes</p>
+    <span>SKU:4236449</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor.PNG" alt="">
+    <h3>Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 3 mm de Espesor</h3>
+    <p>Papeleria</p>
+    <span>SKU:4056931</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor.PNG" alt="">
+    <h3>Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 6 mm de Espesor</h3>
+    <p>Papeleria</p>
+    <span>SKU:4056625</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Plantilla Anticorte.PNG" alt="">
+    <h3>Plantilla Anticorte</h3>
+    <p>EPP</p>
+    <span>SKU:5526810</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+
+<!--Cambiar a botones-->
+<div class="card">
+    <img src="Images\Playera Manga Corta Azul Cielo.PNG" alt="">
+    <h3>Playera Manga Corta Azul Cielo</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539440</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Playera Manga Larga Azul Cielo.PNG" alt="">
+    <h3>Playera Manga Larga Azul Cielo</h3>
+    <p>Uniforme</p>
+    <span>SKU:5539441</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<!--.-->
+
+
+<div class="card">
+    <img src="Images\Polymar 75 Color Blanco con 15 litros.PNG" alt="">
+    <h3>Polymar 75 Color Blanco con 15 litros</h3>
+    <p>Solventes</p>
+    <span>SKU:4236485</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Prefiltro.PNG" alt="">
+    <h3>Prefiltro</h3>
+    <p>EPP</p>
+    <span>SKU:5506436</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Prevent Kg.PNG" alt="">
+    <h3>Prevent Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000022</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Protector de Hoja Tamaño Carta Caja con 100 pzas.PNG" alt="">
+    <h3>Protector de Hoja Tamaño Carta Caja con 100 pzas</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529971</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Protector Facial Bionic.PNG" alt="">
+    <h3>Protector Facial Bionic</h3>
+    <p>EPP</p>
+    <span>SKU:5520820</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Recogedor de Metal.PNG" alt="">
+    <h3>Recogedor de Metal</h3>
+    <p>Limpieza</p>
+    <span>SKU:5516098</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Regla Escolar.PNG" alt="">
+    <h3>Regla Escolar</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530034</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Repuesto para Moop.PNG" alt="">
+    <h3>Repuesto para Moop</h3>
+    <p>Limpieza</p>
+    <span>SKU:5513382</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Resina Epoxi 3M Scotchcast con 418 Gr.PNG" alt="">
+    <h3>Resina Epoxi 3M Scotchcast con 418 Gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4080551</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Resina Epoxi 3M Scotchcast con 90 Gr.PNG" alt="">
+    <h3>Resina Epoxi 3M Scotchcast con 90 Gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4053957</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Resina Epoxi Plasti Acero en Jeringa 25 ml.PNG" alt="">
+    <h3>Resina Epoxi Plasti Acero en Jeringa 25 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:4188277</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Respirador MSA Miniscape.PNG" alt="">
+    <h3>Respirador MSA Miniscape</h3>
+    <p>EPP</p>
+    <span>SKU:5541705</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rinse Clean Kg.PNG" alt="">
+    <h3>Rinse Clean Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000850</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rodillera Regular.PNG" alt="">
+    <h3>Rodillera Regular</h3>
+    <p>EPP</p>
+    <span>SKU:4242875</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de 1500 Etiquetas De 51 X 25 mm (2 x 1 in) Color Verde.PNG" alt="">
+    <h3>Rollo de 1500 Etiquetas De 51 X 25 mm (2 x 1 in) Color Verde</h3>
+    <p>Papeleria</p>
+    <span>SKU:5505945</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Papel Aplicación Premasking Transfer.PNG" alt="">
+    <h3>Rollo de Papel Aplicación Premasking Transfer</h3>
+    <p>Papeleria</p>
+    <span>SKU:5524099</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Papel Bond de 91 cm X 50 m.PNG" alt="">
+    <h3>Rollo de Papel Bond de 91 cm X 50 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5521001</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Señalamiento Peligro 12 cm x 50 m.PNG" alt="">
+    <h3>Rollo de Señalamiento Peligro 12 cm x 50 m</h3>
+    <p>EPP</p>
+    <span>SKU:5506406</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Señalamiento Precaucion 12 cm x 50 m.PNG" alt="">
+    <h3>Rollo de Señalamiento Precaucion 12 cm x 50 m</h3>
+    <p>EPP</p>
+    <span>SKU:5506405</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Microperforado de 1.52 x 50 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Microperforado de 1.52 x 50 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5525381</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Scotchcal Electrocut Color Amarillo de 24 in x 45.42 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Scotchcal Electrocut Color Amarillo de 24 in x 45.42 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5524028</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Scotchcal Electrocut Color Azul de 24 in x 45.42 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Scotchcal Electrocut Color Azul de 24 in x 45.42 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5524097</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Scotchcal Electrocut Color Blanco de 24 in x 45.42 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Scotchcal Electrocut Color Blanco de 24 in x 45.42 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5523989</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Scotchcal Electrocut Color Negro de 24 in x 45.42 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Scotchcal Electrocut Color Negro de 24 in x 45.42 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5524120</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Scotchcal Electrocut Color Rojo de 24 in x 45.42 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Scotchcal Electrocut Color Rojo de 24 in x 45.42 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5524098</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Scotchcal Electrocut Color Verde de 24 in x 45.42 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Scotchcal Electrocut Color Verde de 24 in x 45.42 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5524122</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Autoadherible Transparente 1.37 x 50 m.PNG" alt="">
+    <h3>Rollo de Vinil Autoadherible Transparente 1.37 x 50 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5533539</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil Microperforado 1.52 x 50 m.PNG" alt="">
+    <h3>Rollo de Vinil Microperforado 1.52 x 50 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530755</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Rollo de Vinil para Impresion Blanco Autodherible de 1.52 x 50 m.PNG" alt="">
+    <h3>Rollo de Vinil para Impresion Blanco Autodherible de 1.52 x 50 m</h3>
+    <p>Papeleria</p>
+    <span>SKU:5513893</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Sacapuntas Escolar.PNG" alt="">
+    <h3>Sacapuntas Escolar</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530035</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Sanitizante Oxonia Active Kg.PNG" alt="">
+    <h3>Sanitizante Oxonia Active Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5005790</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Sanitizante para Pisos Sani Step Kg.PNG" alt="">
+    <h3>Sanitizante para Pisos Sani Step Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5006010</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Shampoo Líquido Desengrasante de 4 Cartuchos de 1000 ml.PNG" alt="">
+    <h3>Shampoo Líquido Desengrasante de 4 Cartuchos de 1000 ml</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5540560</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Silicon Forma Juntex RTV Negro 80 ml.PNG" alt="">
+    <h3>Silicon Forma Juntex RTV Negro 80 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:4031302</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Silicon LOCTITE 5920 Copper 56 gr.PNG" alt="">
+    <h3>Silicon LOCTITE 5920 Copper 56 gr</h3>
+    <p>Solventes</p>
+    <span>SKU:4056356</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Silicona Pegaset 100 ml.PNG" alt="">
+    <h3>Silicona Pegaset 100 ml</h3>
+    <p>Solventes</p>
+    <span>SKU:4053950</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Solidex 4 gr.PNG" alt="">
+    <h3>Solidex 4 gr</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000845</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Solvente Descabonizante Batech Litro.PNG" alt="">
+    <h3>Solvente Descabonizante Batech Litro</h3>
+    <p>Solventes</p>
+    <span>SKU:4053968</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Solvente Dielectrico Desengrasante Litro.PNG" alt="">
+    <h3>Solvente Dielectrico Desengrasante Litro</h3>
+    <p>Solventes</p>
+    <span>SKU:4053958</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Stell Brite Kg.PNG" alt="">
+    <h3>Stell Brite Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000846</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Sulfito de Sodio Kg.PNG" alt="">
+    <h3>Sulfito de Sodio Kg</h3>
+    <p>Quimicos</p>
+    <span>SKU:5000052</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Suspension con Ajustes de Intervalos Mode para Casco.PNG" alt="">
+    <h3>Suspension con Ajustes de Intervalos Mode para Casco</h3>
+    <p>EPP</p>
+    <span>SKU:5506507</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tabla Sujetapapel Tamaño Carta.PNG" alt="">
+    <h3>Tabla Sujetapapel Tamaño Carta</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530056</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tanque de Acetileno con 5.1 kg.PNG" alt="">
+    <h3>Tanque de Acetileno con 5.1 kg</h3>
+    <p>Gases</p>
+    <span>SKU:4079694</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tanque de Argon (Ar) con 5.5 Kg.PNG" alt="">
+    <h3>Tanque de Argon (Ar) con 5.5 Kg</h3>
+    <p>Gases</p>
+    <span>SKU:4072222</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tanque de Hexafluoruro de Azufre (SF6).PNG" alt="">
+    <h3>Tanque de Hexafluoruro de Azufre (SF6)</h3>
+    <p>Gases</p>
+    <span>SKU:5000841</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tanque de Oxigeno (O2) con 9.50 m3.PNG" alt="">
+    <h3>Tanque de Oxigeno (O2) con 9.50 m3</h3>
+    <p>Gases</p>
+    <span>SKU:4056351</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tapon Auditivo de Cordon.PNG" alt="">
+    <h3>Tapon Auditivo de Cordon</h3>
+    <p>EPP</p>
+    <span>SKU:5506415</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tarjeta PVC Inteligente Tipo Mifar.PNG" alt="">
+    <h3>Tarjeta PVC Inteligente Tipo Mifar</h3>
+    <p>Papeleria</p>
+    <span>SKU:5526573</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Thinner Comex Litro.PNG" alt="">
+    <h3>Thinner Comex Litro</h3>
+    <p>Solventes</p>
+    <span>SKU:4074557</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tijera Universal.PNG" alt="">
+    <h3>Tijera Universal</h3>
+    <p>Papeleria</p>
+    <span>SKU:5530046</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Tinta para Sellos Negros.PNG" alt="">
+    <h3>Tinta para Sellos Negros</h3>
+    <p>Papeleria</p>
+    <span>SKU:5529964</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Toalla en Rollo para Manos 6 rollos con 160 m.PNG" alt="">
+    <h3>Toalla en Rollo para Manos 6 rollos con 160 m</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5530207</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Toalla en Rollo para Manos 6 rollos con 180 m.PNG" alt="">
+    <h3>Toalla en Rollo para Manos 6 rollos con 180 m</h3>
+    <p>Producto de LLimpieza</p>
+    <span>SKU:5540248</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+    <img src="Images\Trapeador.PNG" alt="">
+    <h3>Trapeador</h3>
+    <p>Limpieza</p>
+    <span>SKU:5527082</span>
+      <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+
 
 </section>
 
 <footer>
-    © 2026 Catálogo Partes Y Refacciones Lubrcantes V2 By Sofia Jimenez
+     2026 Catálogo Partes Y Refacciones V2 By Sofia Jimenez
 </footer>
+
+
+
+
 
 <script>
 function buscarProducto(){
@@ -274,6 +2701,714 @@ function buscarProducto(){
             cards[i].style.display = "none";
         }
     }
+}
+</script>
+
+
+<script src="scripts.js"></script>
+
+
+
+
+<!-- BOTAS DE HULE  -->
+<script>
+function cambiarSKU(){
+    const talla = document.getElementById("talla").value;
+    const skuElemento = document.getElementById("sku");
+
+    const skus = {
+         
+        "26": "SKU: 5506389",
+        "27": "SKU: 5506390",
+        "28": "SKU: 5506391",
+        "29": "SKU: 5506392",
+        "30": "SKU: 5506431"
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+<!-- BOTAS DE HULE  -->
+<script>
+function cambiarSKUBotasProcliff(){
+    const talla = document.getElementById("tallabp").value;
+    const skuElemento = document.getElementById("skubp");
+
+    const skus = {
+
+         "22": "SKU: 5542030",
+        "23": "SKU: 5542029",
+        "24": "SKU: 5542028",
+        "25": "SKU: 5542027",
+        "26": "SKU: 5542026",
+        "27": "SKU: 5542025",
+        "28": "SKU: 5542024",
+        "29": "SKU: 5542023",
+        "30": "SKU: 5542022",
+        "31": "SKU: 5542021",
+        "32": "SKU: 5542020"
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+
+<!-- BOTAS rhino  -->
+<script>
+function cambiarSKUBr(){
+    const talla = document.getElementById("tallaBr").value;
+    const skuElemento = document.getElementById("skuBr");
+
+    const skus = {
+
+         "23": "SKU: 5530796",
+        "23.5": "SKU: 5530797",
+        "24": "SKU: 5530798",
+        "24.5": "SKU: 5530799",
+        "25": "SKU: 5530800",
+        "25.5": "SKU: 5530801",
+        "26": "SKU: 5530802",
+        "26.5": "SKU: 5530803",
+        "27": "SKU: 5530804",
+        "27.5": "SKU: 5530805",
+        "28": "SKU: 5530806",
+        "28.5": "SKU: 5530807",
+        "29": "SKU: 5530808",
+        "29.5": "SKU: 5530809",
+        "30": "SKU: 5530810",
+        "31.5": "SKU: 5530811",
+        "32": "SKU: 5530812"
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+
+<script>
+function cambiarSKUCHALECONARANJA(){
+    const talla = document.getElementById("tallaCHALECONARANJA").value;
+    const skuElemento = document.getElementById("skuCHALECONARANJA");
+
+    const skus = {
+
+         "G": "SKU: 5528863",
+        "M": "SKU: 5528862"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+
+<script>
+function cambiarSKUCHALECONARANJA2(){
+    const talla = document.getElementById("tallaCHALECONARANJA2").value;
+    const skuElemento = document.getElementById("skuCHALECONARANJA2");
+
+    const skus = {
+
+        "XG": "SKU: 5520951",
+         "G": "SKU: 5520973",
+        "M": "SKU: 5520968"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<script>
+function cambiarSKUGDROC(){
+    const talla = document.getElementById("tallaGDROC").value;
+    const skuElemento = document.getElementById("skuGDROC");
+
+    const skus = {
+
+        "6": "SKU: 5539343",
+         "7": "SKU: 5539344",
+        "8": "SKU: 5539345",
+        "9": "SKU: 5539346"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+<!--mapa -->
+<script>
+function cambiarSKUMAPA(){
+    const talla = document.getElementById("tallaMAPA").value;
+    const skuElemento = document.getElementById("skuMAPA");
+
+    const skus = {
+
+        "8": "SKU: 5527331",
+         "9": "SKU: 5527332",
+        "10": "SKU: 5527333",
+        "12": "SKU: 5521186"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+<!--showa -->
+
+<script>
+function cambiarSKUshowa(){
+    const talla = document.getElementById("tallashowa").value;
+    const skuElemento = document.getElementById("skushowa");
+
+    const skus = {
+
+        "8": "SKU: 5537483",
+         "9": "SKU: 5537480",
+        "10": "SKU: 5537481"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--canranza-->
+<script>
+function cambiarSKUcanranza(){
+    const talla = document.getElementById("tallacanranza").value;
+    const skuElemento = document.getElementById("skucanranza");
+
+    const skus = {
+
+        "9": "SKU: 5506425",
+         "10": "SKU: 5506422",
+        "12": "SKU: 5506424"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--adex-->
+
+<script>
+function cambiarSKUadex(){
+    const talla = document.getElementById("tallaadex").value;
+    const skuElemento = document.getElementById("skucadex");
+
+    const skus = {
+
+        "9": "SKU: 5506408",
+         "10": "SKU: 5506409"
+        
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--flex-->
+
+<script>
+function cambiarSKUflex(){
+    const talla = document.getElementById("tallaflex").value;
+    const skuElemento = document.getElementById("skuflex");
+
+    const skus = {
+
+        "8": "SKU: 5519626",
+         "9": "SKU: 5520091",
+        "10": "SKU: 5520250"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+<!--electricista-->
+
+
+<script>
+function cambiarSKUelectricista(){
+    const talla = document.getElementById("tallaelectricista").value;
+    const skuElemento = document.getElementById("skuelectricista");
+
+    const skus = {
+
+        "9": "SKU: 5506489",
+         "10": "SKU: 5506498",
+        "11": "SKU: 5506499"
+        
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+
+
+<script>
+
+const productos = {
+    "2in": {
+        skupincel: "SKU:4187859",
+        img: "Images\\Brocha (Pinceleta) de 2 in.PNG"
+    },
+    "4in": {
+        skupincel: "SKU:4014690",
+        img: "Images\\Brocha (Pinceleta) de 4 in.PNG"
+    }
+};
+
+function cambiarOpcion(opcion, evento){
+
+    const imagen = document.getElementById("imagenProducto");
+    const skupincel = document.getElementById("skupincel");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productos[opcion].img;
+        skupincel.textContent = productos[opcion].skupincel;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+<!--IMPERNEABL CHAMARRA-->
+<script>
+function cambiarSKUIMCHA(){
+    const talla = document.getElementById("tallaIMCHA").value;
+    const skuElemento = document.getElementById("skuIMCHA");
+
+    const skus = {
+
+        "XG": "SKU: 5541922",
+         "G": "SKU: 5506469",
+        "M": "SKU: 5506468"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<!--IMPERNEABL PANTALON-->
+<script>
+function cambiarSKUIMPA(){
+    const talla = document.getElementById("tallaIMPA").value;
+    const skuElemento = document.getElementById("skuIMPA");
+
+    const skus = {
+
+        "XG": "SKU: 5541921",
+         "G": "SKU: 5506467",
+        "M": "SKU: 5506466"
+   
+
+    };
+
+    skuElemento.textContent = skus[talla];
+}
+</script>
+
+<script>
+
+const productosCAR = {
+    "Manga Corta": {
+        skuCAR: "SKU:5539416",
+        imgCAR: "Images\\Camisa Manga Corta Azul Rey.PNG"
+    },
+    "Manga Larga": {
+        skuCAR: "SKU:5539417",
+        imgCAR: "Images\\Camisa Manga Larga Azul Rey.PNG"
+    }
+};
+
+function cambiarOpcionCAR(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoCAR");
+    const skuCAR = document.getElementById("skuCAR");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosCAR[opcion].imgCAR;
+        skuCAR.textContent = productosCAR[opcion].skuCAR;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+<script>
+
+const productosCAN = {
+    "Azul 1 Llave": {
+        skuCAN: "SKU: 55410306",
+        imgCAN: "Images\\Candado de Seguridad Color Azul.PNG"
+    },
+    "Azul 2 Llave": {
+        skuCAN: "SKU: 4233278",
+        imgCAN: "Images\\Candado de Seguridad Color Azul.PNG"
+    },
+     "Rojo": {
+        skuCAN: "SKU:5524014",
+        imgCAN: "Images\\Candado de Seguridad Color Rojo.PNG"
+    },
+     "Verde": {
+        skuCAN: "SKU:4231438",
+        imgCAN: "Images\\Candado de Seguridad Color Verde.PNG"
+    }
+};
+
+function cambiarOpcionCAN(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoCAN");
+    const skuCAN = document.getElementById("skuCAN");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosCAN[opcion].imgCAN;
+        skuCAN.textContent = productosCAN[opcion].skuCAN;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+<script>
+
+const productosBUMCAP = {
+    "Azul": {
+        skuBUMCAP: "SKU:5517586",
+        imgBUMCAP: "Images\\Casco Azul BUM CAP.PNG"
+    },
+    "Blanco": {
+        skuBUMCAP: "SKU:5517584",
+        imgBUMCAP: "Images\\Casco Blanco BUM CAP.PNG"
+    }
+};
+
+function cambiarOpcionBUMCAP(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoBUMCAP");
+    const skuBUMCAP = document.getElementById("skuBUMCAP");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosBUMCAP[opcion].imgBUMCAP;
+        skuBUMCAP.textContent = productosBUMCAP[opcion].skuBUMCAP;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+
+
+
+
+<script>
+
+const productosInfracap = {
+    "Amarillo": {
+        skuInfracap: "SKU:5533306",
+        imgInfracap: "Images\\Casco Infracap Amarillo.PNG"
+    },
+    "Azul": {
+        skuInfracap: "SKU:5506506",
+        imgInfracap: "Images\\Casco Infracap Azul.PNG"
+    },
+    "Rojo": {
+        skuInfracap: "SKU:5533305",
+        imgInfracap: "Images\\Casco Infracap Rojo.PNG"
+    },
+    "Verde": {
+        skuInfracap: "SKU:5526770",
+        imgInfracap: "Images\\Casco Infracap Verde.PNG"
+    }
+};
+
+function cambiarOpcionInfracap(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoInfracap");
+    const skuInfracap = document.getElementById("skuInfracap");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosInfracap[opcion].imgInfracap;
+        skuInfracap.textContent = productosInfracap[opcion].skuInfracap;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+<script>
+
+const productosbat = {
+    "Hombre": {
+        skubat: "SKU:5539468",
+        imgbat: "Images\\Bata de Laboratorio para Hombre.PNG"
+    },
+    "Mujer": {
+        skubat: "SKU:5539469",
+        imgbat: "Images\\Bata de Laboratorio para Mujer.PNG"
+    }
+};
+
+function cambiarOpcionbat(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductobat");
+    const skubat = document.getElementById("skubat");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosbat[opcion].imgbat;
+        skubat.textContent = productosbat[opcion].skubat;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+
+<script>
+
+const productoscha = {
+    "Hombre": {
+        skucha: "SKU:5539465",
+        imgcha: "Images\\Chamarra para Hombre Azul Marino.PNG"
+    },
+    "Mujer": {
+        skucha: "SKU:5539467",
+        imgcha: "Images\\Chamarra para Mujer Azul Marino.PNG"
+    }
+};
+
+function cambiarOpcioncha(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductocha");
+    const skucha = document.getElementById("skucha");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productoscha[opcion].imgcha;
+        skucha.textContent = productoscha[opcion].skucha;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+    
+
+    <script>
+
+const productosMGCORTA = {
+    "Manga Corta": {
+        skuMGCORTA: "SKU:5539444",
+        imgMGCORTA: "Images\\Blusa Manga Corta Azul Cielo.PNG"
+    },
+    "Manga Larga": {
+        skuMGCORTA: "SKU:5539445",
+        imgMGCORTA: "Images\\Blusa Manga Larga Azul Cielo.PNG"
+    }
+};
+
+function cambiarOpcionMGCORTA(opcion, evento){
+
+    const imagen = document.getElementById("imagenProductoMGCORTA");
+    const skuMGCORTA = document.getElementById("skuMGCORTA");
+    const botones = document.querySelectorAll(".opcion-btn");
+
+    botones.forEach(btn => btn.classList.remove("active"));
+    evento.target.classList.add("active");
+
+    imagen.classList.add("fade");
+
+    setTimeout(()=>{
+        imagen.src = productosMGCORTA[opcion].imgMGCORTA;
+        skUMGCORTA.textContent = productosMGCORTA[opcion].skuMGCORTA;
+        imagen.classList.remove("fade");
+    },200);
+}
+
+</script>
+
+
+
+<script>
+
+const productosMGLARGA= {
+    "Manga Corta": {
+        skuMGLARGA: "SKU:5539420",
+        imgMGLARGA: "Images\\Blusa Manga Corta Azul Rey.PNG"
+    },
+    "Manga Larga": {
+        skuMGLARGA: "SKU:5539421",
+        imgMGLARGA: "Images\\Blusa Manga Larga Azul Rey.PNG"
+    }
+};
+
+function renderCarrito(){
+    const contenedor = document.getElementById("cart-items");
+    contenedor.innerHTML = "";
+
+    carrito.forEach((producto, index) => {
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+
+        div.innerHTML = `
+            <span>${producto.nombre}</span>
+            <button class="btn-eliminar" onclick="eliminarProducto(${index})">X</button>
+        `;
+
+        contenedor.appendChild(div);
+    });
+}
+
+</script>
+
+
+<script>
+let carrito = [];
+
+function agregarAlCarrito(boton){
+    const card = boton.closest(".card");
+
+    const nombre = card.querySelector("h3").innerText;
+    const sku = card.querySelector("span").innerText;
+    const img = card.querySelector("img").src;
+
+    const producto = {
+        nombre,
+        sku,
+        img
+    };
+
+    carrito.push(producto);
+
+    actualizarCarrito();
+    renderCarrito();
+}
+
+function actualizarCarrito(){
+    document.getElementById("cart-count").innerText = carrito.length;
+}
+
+function toggleCarrito(){
+    const panel = document.getElementById("cart-panel");
+    panel.style.display = panel.style.display === "none" ? "block" : "none";
+}
+
+function renderCarrito(){
+    const contenedor = document.getElementById("cart-items");
+    contenedor.innerHTML = "";
+
+    carrito.forEach((producto, index) => {
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+
+        div.innerHTML = `
+            <img src="${producto.img}" class="cart-img">
+            <div class="cart-info">
+                <span class="cart-nombre">${producto.nombre}</span>
+                <span class="cart-sku">${producto.sku}</span>
+            </div>
+            <button class="btn-eliminar" onclick="eliminarProducto(${index})">X</button>
+        `;
+
+        contenedor.appendChild(div);
+    });
+}
+
+function eliminarProducto(index){
+    carrito.splice(index, 1);
+    actualizarCarrito();
+    renderCarrito();
+}
+
+function vaciarCarrito(){
+    carrito = [];
+    actualizarCarrito();
+    renderCarrito();
 }
 </script>
 
