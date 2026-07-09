@@ -1,0 +1,415 @@
+
+:root{
+    --primary:#111111;
+    --secondary:#1f1f1f;
+    --accent:#C9A227;
+    --light:#f4f4f4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--light);
+}
+
+/* HEADER */
+header{
+
+     background:var(--primary);
+    color: #e5b611;
+    padding:20px 40px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.cart-container{
+    position:absolute;
+    right:40px;
+    font-size:22px;
+    cursor:pointer;
+    color:var(--accent);
+}
+
+.cart-container span{
+    font-weight:bold;
+    margin-left:5px;
+}
+
+/* PANEL DEL CARRITO */
+#cart-panel{
+    display:none;
+    position:absolute;
+    right:40px;
+    top:80px;
+    background:#111;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+    width:250px;
+}
+
+/* TITULO */
+#cart-panel h3{
+    color:#C9A227;
+    margin-bottom:10px;
+}
+
+/* ITEMS */
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+    font-size:14px;
+    color:white;
+}
+
+/* BOTON ELIMINAR INDIVIDUAL */
+.btn-eliminar{
+    background:#ff4d4d;
+    border:none;
+    color:white;
+    border-radius:5px;
+    padding:4px 8px;
+    cursor:pointer;
+    font-size:12px;
+    transition:0.3s;
+}
+
+.btn-eliminar:hover{
+    background:#cc0000;
+}
+
+/* BOTON VACIAR */
+.btn-vaciar{
+    margin-top:10px;
+    width:100%;
+    padding:8px;
+    background:#C9A227;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-vaciar:hover{
+    background:#b8951f;
+}
+
+
+/* ITEM COMPLETO */
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+/* IMAGEN */
+.cart-img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    background:white;
+    border-radius:5px;
+    padding:3px;
+}
+
+/* INFO */
+.cart-info{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* NOMBRE */
+.cart-nombre{
+    font-size:13px;
+    color:white;
+}
+
+/* SKU */
+.cart-sku{
+    font-size:11px;
+    color:#C9A227;
+}
+
+
+
+/* Logo */
+.logo-container{
+    position:absolute;
+    left:40px;
+}
+
+.logo-container img{
+    height:150px;
+}
+
+
+
+header h1{
+    font-weight:600;
+    letter-spacing:2px;
+    color:var(--accent);
+    align-items: justify-content;
+}
+
+/* NAV */
+nav{
+    background:var(--secondary);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+}
+
+.menu li{
+    position:relative;
+}
+
+.menu li a{
+    display:block;
+    padding:15px 18px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.menu li a:hover{
+    background:var(--accent);
+    color:black;
+}
+
+/* Dropdown */
+.menu li ul{
+    position:absolute;
+    top:50px;
+    left:0;
+    background:var(--secondary);
+    list-style:none;
+    display:none;
+    min-width:180px;
+}
+
+.menu li:hover ul{
+    display:block;
+}
+
+.menu li ul li a{
+    padding:12px;
+}
+
+/* SEARCH */
+.search-container{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.search-container input{
+    width:50%;
+    padding:12px;
+    border:2px solid var(--accent);
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+/* CATALOG */
+.catalogo{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    padding:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:8px;
+    color:var(--primary);
+}
+
+.card p{
+    color:#666;
+    font-size:14px;
+}
+
+.card button{
+    margin-top:10px;
+    padding:8px 12px;
+    border:none;
+    background:var(--light);
+    color:var(--accent);
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card button:hover{
+    background:#f6cc41;
+}
+
+
+
+.card span{
+    display:block;
+    margin-top:10px;
+    color:var(--accent);
+    font-weight:bold;
+}
+
+
+select{
+    padding:5px 8px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+    cursor:pointer;
+}
+
+/* Cuando el mouse está encima */
+select:hover{
+    border-color:#f6cc41;
+    background:#f9f4e6;
+}
+
+/* Cuando está activo (abierto o seleccionado) */
+select:focus{
+    outline:none;
+    border-color:#f6cc41;
+    box-shadow:0 0 5px rgba(201,162,39,0.5);
+}
+.menu-opciones{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+.opcion-btn{
+    padding:8px 16px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.opcion-btn:hover{
+    border-color:var(--accent);
+    transform:scale(1.05);
+}
+
+.opcion-btn.active{
+    background:var(--accent);
+    color:white;
+    border-color:var(--accent);
+    box-shadow:0 4px 10px rgba(201,162,39,0.4);
+}
+
+/* FOOTER */
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        padding:20px;
+        text-align:center;
+    }
+
+    .logo-container{
+        position:static;
+        margin-bottom:10px;
+    }
+
+    .logo-container img{
+        width:180px;
+        max-width:80%;
+        height:auto;      
+    }
+
+    header h1{
+        font-size:20px;
+        letter-spacing:1px;
+    }
+
+    .search-container input{
+        width:90%;
+    }
+
+    /* RESPONSIVE CARRITO */
+@media(max-width:768px){
+
+    #cart-panel{
+        right:10px;
+        top:70px;
+        width:90%;
+        max-width:300px;
+        z-index:999;
+    }
+
+    header{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    .cart-container{
+        position:absolute;
+        right:15px;
+        top:15px;
+    }
+
+    header h1{
+        font-size:16px;
+        text-align:center;
+        margin-top:10px;
+    }
+
+}
+
+}
+
