@@ -36,14 +36,14 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
 <li><a href="SOLVENTES.html">Solventes</a></li>
 <li><a href="LUBRICANTES.html">Lubricantes</a></li>
-<li><a href="QUIMICOS.html">Químicos</a></li>
+<li><a href="QUIMICOS.html" aria-current="page">Químicos</a></li>
 <li><a href="UNIFORMES.html">Uniformes</a></li>
 <li><a href="REFACCIONES.html">Refacciones</a></li>
 <li><a href="GASES.html">Gases</a></li>
@@ -61,225 +61,215 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Químicos</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS" selected>Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-27" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-27" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5003550&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Antiespumante Hach Litro.PNG&quot;, &quot;name&quot;: &quot;Antiespumante Hach Litro&quot;, &quot;source_id&quot;: &quot;dispatch-27&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Antiespumante Hach Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Antiespumante Hach Litro.PNG" alt="Antiespumante Hach Litro">
     <h3>Antiespumante Hach Litro</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5003550</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-28" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-28" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000848&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Arrow Kg.PNG&quot;, &quot;name&quot;: &quot;Arrow Kg&quot;, &quot;source_id&quot;: &quot;dispatch-28&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Arrow Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Arrow Kg.PNG" alt="Arrow Kg">
     <h3>Arrow Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000848</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-37" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-37" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000527&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bicarbonato de Sodio G.I. Kg.PNG&quot;, &quot;name&quot;: &quot;Bicarbonato de Sodio G.I. Kg&quot;, &quot;source_id&quot;: &quot;dispatch-37&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bicarbonato de Sodio G.I. Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bicarbonato de Sodio G.I. Kg.PNG" alt="Bicarbonato de Sodio G.I. Kg">
     <h3>Bicarbonato de Sodio G.I. Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000527</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-150" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-150" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000849&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Eurochlor Kg.PNG&quot;, &quot;name&quot;: &quot;Eurochlor Kg&quot;, &quot;source_id&quot;: &quot;dispatch-150&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Eurochlor Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Eurochlor Kg.PNG" alt="Eurochlor Kg">
     <h3>Eurochlor Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000849</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-155" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-155" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5505875&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Flash Liquido Desengrasante Kg.PNG&quot;, &quot;name&quot;: &quot;Flash Liquido Desengrasante Kg&quot;, &quot;source_id&quot;: &quot;dispatch-155&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Flash Liquido Desengrasante Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Flash Liquido Desengrasante Kg.PNG" alt="Flash Liquido Desengrasante Kg">
     <h3>Flash Liquido Desengrasante Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5505875</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-158" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-158" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000840&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Fosnik FS Kg.PNG&quot;, &quot;name&quot;: &quot;Fosnik FS Kg&quot;, &quot;source_id&quot;: &quot;dispatch-158&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Fosnik FS Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Fosnik FS Kg.PNG" alt="Fosnik FS Kg">
     <h3>Fosnik FS Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000840</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-160" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-160" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000842&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Full Power Kg.PNG&quot;, &quot;name&quot;: &quot;Full Power Kg&quot;, &quot;source_id&quot;: &quot;dispatch-160&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Full Power Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Full Power Kg.PNG" alt="Full Power Kg">
     <h3>Full Power Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000842</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-161" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-161" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;4018343&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Glicerina 1 kg.PNG&quot;, &quot;name&quot;: &quot;Glicerina 1 kg&quot;, &quot;source_id&quot;: &quot;dispatch-161&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Glicerina 1 kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Glicerina 1 kg.PNG" alt="Glicerina 1 kg">
     <h3>Glicerina 1 kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4018343</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-189" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-189" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000505&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Hipoclorito de Calcio (HTH) Kg.PNG&quot;, &quot;name&quot;: &quot;Hipoclorito de Calcio (HTH) Kg&quot;, &quot;source_id&quot;: &quot;dispatch-189&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Hipoclorito de Calcio (HTH) Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Hipoclorito de Calcio (HTH) Kg.PNG" alt="Hipoclorito de Calcio (HTH) Kg">
     <h3>Hipoclorito de Calcio (HTH) Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000505</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-190" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-190" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000522&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Hipoclorito de Sodio Kg.PNG&quot;, &quot;name&quot;: &quot;Hipoclorito de Sodio Kg&quot;, &quot;source_id&quot;: &quot;dispatch-190&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Hipoclorito de Sodio Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Hipoclorito de Sodio Kg.PNG" alt="Hipoclorito de Sodio Kg">
     <h3>Hipoclorito de Sodio Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000522</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-217" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-217" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000843&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Magic Plus Kg.PNG&quot;, &quot;name&quot;: &quot;Magic Plus Kg&quot;, &quot;source_id&quot;: &quot;dispatch-217&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Magic Plus Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Magic Plus Kg.PNG" alt="Magic Plus Kg">
     <h3>Magic Plus Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000843</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-251" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-251" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;4057494&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Parafina Lata Litro.PNG&quot;, &quot;name&quot;: &quot;Parafina Lata Litro&quot;, &quot;source_id&quot;: &quot;dispatch-251&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Parafina Lata Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Parafina Lata Litro.PNG" alt="Parafina Lata Litro">
     <h3>Parafina Lata Litro</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4057494</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-255" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-255" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;4072171&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Pasta Decapante Garrafon Kg.PNG&quot;, &quot;name&quot;: &quot;Pasta Decapante Garrafon Kg&quot;, &quot;source_id&quot;: &quot;dispatch-255&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Pasta Decapante Garrafon Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pasta Decapante Garrafon Kg.PNG" alt="Pasta Decapante Garrafon Kg">
     <h3>Pasta Decapante Garrafon Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4072171</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-260" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-260" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5505869&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Pinokrol Litro.PNG&quot;, &quot;name&quot;: &quot;Pinokrol Litro&quot;, &quot;source_id&quot;: &quot;dispatch-260&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Pinokrol Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pinokrol Litro.PNG" alt="Pinokrol Litro">
     <h3>Pinokrol Litro</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5505869</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-269" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-269" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000022&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Prevent Kg.PNG&quot;, &quot;name&quot;: &quot;Prevent Kg&quot;, &quot;source_id&quot;: &quot;dispatch-269&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Prevent Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Prevent Kg.PNG" alt="Prevent Kg">
     <h3>Prevent Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000022</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-279" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-279" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000850&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Rinse Clean Kg.PNG&quot;, &quot;name&quot;: &quot;Rinse Clean Kg&quot;, &quot;source_id&quot;: &quot;dispatch-279&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Rinse Clean Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Rinse Clean Kg.PNG" alt="Rinse Clean Kg">
     <h3>Rinse Clean Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000850</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-297" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-297" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5005790&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Sanitizante Oxonia Active Kg.PNG&quot;, &quot;name&quot;: &quot;Sanitizante Oxonia Active Kg&quot;, &quot;source_id&quot;: &quot;dispatch-297&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Sanitizante Oxonia Active Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Sanitizante Oxonia Active Kg.PNG" alt="Sanitizante Oxonia Active Kg">
     <h3>Sanitizante Oxonia Active Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5005790</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-298" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-298" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5006010&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Sanitizante para Pisos Sani Step Kg.PNG&quot;, &quot;name&quot;: &quot;Sanitizante para Pisos Sani Step Kg&quot;, &quot;source_id&quot;: &quot;dispatch-298&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Sanitizante para Pisos Sani Step Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Sanitizante para Pisos Sani Step Kg.PNG" alt="Sanitizante para Pisos Sani Step Kg">
     <h3>Sanitizante para Pisos Sani Step Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5006010</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-303" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-303" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000845&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Solidex 4 gr.PNG&quot;, &quot;name&quot;: &quot;Solidex 4 gr&quot;, &quot;source_id&quot;: &quot;dispatch-303&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Solidex 4 gr&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Solidex 4 gr.PNG" alt="Solidex 4 gr">
     <h3>Solidex 4 gr</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000845</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-306" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-306" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000846&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Stell Brite Kg.PNG&quot;, &quot;name&quot;: &quot;Stell Brite Kg&quot;, &quot;source_id&quot;: &quot;dispatch-306&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Stell Brite Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Stell Brite Kg.PNG" alt="Stell Brite Kg">
     <h3>Stell Brite Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000846</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-307" data-category="QUIMICOS" data-subcategory="">
+<div class="card" data-id="dispatch-307" data-category="QUIMICOS" data-variants="[{&quot;sku&quot;: &quot;5000052&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Sulfito de Sodio Kg.PNG&quot;, &quot;name&quot;: &quot;Sulfito de Sodio Kg&quot;, &quot;source_id&quot;: &quot;dispatch-307&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Sulfito de Sodio Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Sulfito de Sodio Kg.PNG" alt="Sulfito de Sodio Kg">
     <h3>Sulfito de Sodio Kg</h3>
     <p>Químicos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000052</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

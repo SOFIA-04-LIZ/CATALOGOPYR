@@ -36,7 +36,7 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
 {{CATEGORY_LINKS}}
         </li>
     </ul>
@@ -47,16 +47,6 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>{{HEADING}}</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria">{{CATEGORY_OPTIONS}}</select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria">{{SUBCATEGORY_OPTIONS}}</select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
 {{CARDS}}
 </section>

@@ -3,8 +3,12 @@ from html.parser import HTMLParser
 from pathlib import Path
 import json
 import unittest
+import csv
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'tools'))
+from catalog_model import organize_catalog
 
 class Page(HTMLParser):
     def __init__(self):
@@ -14,6 +18,7 @@ class Page(HTMLParser):
         self.cards = 0
         self.product_ids = []
         self.skus = set()
+        self.variants = []
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if 'id' in attrs:
@@ -23,6 +28,10 @@ class Page(HTMLParser):
         if 'card' in attrs.get('class', '').split():
             self.cards += 1
             self.product_ids.append(attrs.get('data-id'))
+        if 'data-variants' in attrs:
+            variants = json.loads(attrs['data-variants'])
+            self.variants.extend(variants)
+            self.assets.extend(item['image'] for item in variants)
         for key in ('data-productos', 'data-skus'):
             if key in attrs:
                 data = json.loads(attrs[key])
@@ -40,11 +49,17 @@ class CatalogTests(unittest.TestCase):
                     self.assertTrue((ROOT / asset).is_file(), asset)
                 self.assertIn('sin-resultados', page.ids)
                 self.assertIn('catalogo', page.ids)
+                self.assertIn('categories-menu', page.ids)
+                self.assertNotIn('filtro-categoria', page.ids)
+                self.assertNotIn('filtro-subcategoria', page.ids)
+                self.assertNotIn('result-count', page.ids)
 
 class InventoryTests(unittest.TestCase):
     def setUp(self):
         self.catalog = json.loads((ROOT / 'data/catalog.json').read_text())
         self.source = json.loads((ROOT / 'data/source-dispatch.json').read_text())
+        groups = json.loads((ROOT / 'data/product-groups.json').read_text())
+        self.views = organize_catalog(self.catalog, groups)
 
     def test_every_source_material_and_variant_is_present(self):
         products = {p.get('source_name'): p for p in self.catalog['products'] if p['source'] == 'dispatch'}
@@ -60,10 +75,10 @@ class InventoryTests(unittest.TestCase):
         for category in self.catalog['categories']:
             page = Page()
             page.feed((ROOT / (category + '.html')).read_text())
-            expected = [p['id'] for p in self.catalog['products'] if p['category'] == category]
+            expected = [p['id'] for p in self.views if p['category'] == category]
             self.assertCountEqual(page.product_ids, expected)
             ids.extend(page.product_ids)
-        self.assertCountEqual(ids, [p['id'] for p in self.catalog['products']])
+        self.assertCountEqual(ids, [p['id'] for p in self.views])
         self.assertEqual(len(ids), len(set(ids)))
         page = Page()
         page.feed((ROOT / 'index.html').read_text())
@@ -78,6 +93,35 @@ class InventoryTests(unittest.TestCase):
                 self.assertNotEqual(product['image'], 'Images/placeholder.svg')
                 if product['sizes']:
                     self.assertIn(product['sku'], product['sizes'].values())
+
+    def test_grouping_keeps_every_sku_name_and_image(self):
+        page = Page()
+        page.feed((ROOT / 'index.html').read_text())
+        expected = []
+        for product in self.catalog['products']:
+            for sku in (product['sizes'].values() if product['sizes'] else [product['sku']]):
+                expected.append((product['id'], sku, product['name'], product['image']))
+        actual = [(v['source_id'], v['sku'], v['name'], v['image']) for v in page.variants]
+        self.assertCountEqual(actual, expected)
+        self.assertEqual(len({v['sku'] for v in page.variants}), len(page.variants))
+        with (ROOT / 'data/inventario-clasificado.csv').open(encoding='utf-8-sig') as file:
+            rows = list(csv.DictReader(file))
+        self.assertCountEqual([r['SKU'] for r in rows], [v['sku'] for v in page.variants])
+
+    def test_color_and_gender_families_are_grouped(self):
+        views = {p['id']: p for p in self.views}
+        expected = {
+            'cascos-bum-cap': {'5517586', '5517584'},
+            'cascos-infracap': {'5533306', '5506506', '5533305', '5526770'},
+            'cascos-mca': {'5541826', '5541827'},
+            'batas-laboratorio': {'5539468', '5539469'},
+            'candados-seguridad': {'5541030', '4233278', '5524014', '4231438'},
+        }
+        for group, skus in expected.items():
+            self.assertEqual({v['sku'] for v in views[group]['variants']}, skus)
+        # Safety functions and different models remain separate products.
+        for product_id in ['dispatch-67', 'dispatch-71', 'dispatch-97', 'dispatch-98']:
+            self.assertIn(product_id, views)
 
     def test_conflicting_local_sku_is_preserved(self):
         local = [p for p in self.catalog['products'] if p['source'] == 'local']

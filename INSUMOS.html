@@ -36,8 +36,8 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
@@ -50,7 +50,7 @@
 <li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
 <li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
 <li><a href="HERRAMIENTAS.html">Herramientas y consumibles</a></li>
-<li><a href="INSUMOS.html">Insumos generales</a></li>
+<li><a href="INSUMOS.html" aria-current="page">Insumos generales</a></li>
 </ul>
         </li>
     </ul>
@@ -61,45 +61,25 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Insumos generales</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS" selected>Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-244" data-category="INSUMOS" data-subcategory="">
+<div class="card" data-id="dispatch-244" data-category="INSUMOS" data-variants="[{&quot;sku&quot;: &quot;5514168&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Papel Aluminio en Rollo (400 mt x 30 cm).PNG&quot;, &quot;name&quot;: &quot;Papel Aluminio en Rollo (400 mt x 30 cm)&quot;, &quot;source_id&quot;: &quot;dispatch-244&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Papel Aluminio en Rollo (400 mt x 30 cm)&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Papel Aluminio en Rollo (400 mt x 30 cm).PNG" alt="Papel Aluminio en Rollo (400 mt x 30 cm)">
     <h3>Papel Aluminio en Rollo (400 mt x 30 cm)</h3>
     <p>Insumos generales</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5514168</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-262" data-category="INSUMOS" data-subcategory="">
+<div class="card" data-id="placas-acrilicas" data-category="INSUMOS" data-variants="[{&quot;sku&quot;: &quot;4056931&quot;, &quot;label&quot;: &quot;3 mm&quot;, &quot;image&quot;: &quot;Images/Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 3 mm de Espesor.PNG&quot;, &quot;name&quot;: &quot;Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor&quot;, &quot;source_id&quot;: &quot;dispatch-262&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;4056625&quot;, &quot;label&quot;: &quot;6 mm&quot;, &quot;image&quot;: &quot;Images/Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 6 mm de Espesor.PNG&quot;, &quot;name&quot;: &quot;Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor&quot;, &quot;source_id&quot;: &quot;dispatch-263&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 3 mm de Espesor.PNG" alt="Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor">
-    <h3>Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor</h3>
+    <h3>Placa acrílica cristal L-051 (2.40 × 1.20 m)</h3>
     <p>Insumos generales</p>
     <p class="product-type"></p>
-
+    <label class="variant-field">Espesor<select class="variant-select" aria-label="Espesor de Placa acrílica cristal L-051 (2.40 × 1.20 m)"><option value="4056931">3 mm</option><option value="4056625">6 mm</option></select></label>
     <span class="sku-display">SKU: 4056931</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-263" data-category="INSUMOS" data-subcategory="">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 6 mm de Espesor.PNG" alt="Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor">
-    <h3>Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor</h3>
-    <p>Insumos generales</p>
-    <p class="product-type"></p>
-
-    <span class="sku-display">SKU: 4056625</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

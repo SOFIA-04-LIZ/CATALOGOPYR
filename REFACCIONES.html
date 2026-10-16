@@ -36,8 +36,8 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
@@ -45,7 +45,7 @@
 <li><a href="LUBRICANTES.html">Lubricantes</a></li>
 <li><a href="QUIMICOS.html">Químicos</a></li>
 <li><a href="UNIFORMES.html">Uniformes</a></li>
-<li><a href="REFACCIONES.html">Refacciones</a></li>
+<li><a href="REFACCIONES.html" aria-current="page">Refacciones</a></li>
 <li><a href="GASES.html">Gases</a></li>
 <li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
 <li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
@@ -61,25 +61,15 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Refacciones</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES" selected>Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-259" data-category="REFACCIONES" data-subcategory="">
+<div class="card" data-id="dispatch-259" data-category="REFACCIONES" data-variants="[{&quot;sku&quot;: &quot;4184746&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos.PNG&quot;, &quot;name&quot;: &quot;Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos&quot;, &quot;source_id&quot;: &quot;dispatch-259&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos.PNG" alt="Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos">
     <h3>Philips 175 Watt Foco (Bombilla) de Halogenuros Metalicos</h3>
     <p>Refacciones</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4184746</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

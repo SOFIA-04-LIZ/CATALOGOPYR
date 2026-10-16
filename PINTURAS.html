@@ -36,8 +36,8 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
@@ -48,7 +48,7 @@
 <li><a href="REFACCIONES.html">Refacciones</a></li>
 <li><a href="GASES.html">Gases</a></li>
 <li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
-<li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
+<li><a href="PINTURAS.html" aria-current="page">Pinturas y recubrimientos</a></li>
 <li><a href="HERRAMIENTAS.html">Herramientas y consumibles</a></li>
 <li><a href="INSUMOS.html">Insumos generales</a></li>
 </ul>
@@ -61,65 +61,55 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Pinturas y recubrimientos</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS" selected>Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-31" data-category="PINTURAS" data-subcategory="">
+<div class="card" data-id="dispatch-31" data-category="PINTURAS" data-variants="[{&quot;sku&quot;: &quot;4057853&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Barniz Aislante Eléctrico Litro.PNG&quot;, &quot;name&quot;: &quot;Barniz Aislante Eléctrico Litro&quot;, &quot;source_id&quot;: &quot;dispatch-31&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Barniz Aislante Eléctrico Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Barniz Aislante Eléctrico Litro.PNG" alt="Barniz Aislante Eléctrico Litro">
     <h3>Barniz Aislante Eléctrico Litro</h3>
     <p>Pinturas y recubrimientos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4057853</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-32" data-category="PINTURAS" data-subcategory="">
+<div class="card" data-id="dispatch-32" data-category="PINTURAS" data-variants="[{&quot;sku&quot;: &quot;4057858&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Barniz Therm Litro.PNG&quot;, &quot;name&quot;: &quot;Barniz Therm Litro&quot;, &quot;source_id&quot;: &quot;dispatch-32&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Barniz Therm Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Barniz Therm Litro.PNG" alt="Barniz Therm Litro">
     <h3>Barniz Therm Litro</h3>
     <p>Pinturas y recubrimientos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4057858</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-148" data-category="PINTURAS" data-subcategory="">
+<div class="card" data-id="dispatch-148" data-category="PINTURAS" data-variants="[{&quot;sku&quot;: &quot;5532804&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Esmalte Acrilico Transparente Aerocomex 400 ml.PNG&quot;, &quot;name&quot;: &quot;Esmalte Acrilico Transparente Aerocomex  400 ml&quot;, &quot;source_id&quot;: &quot;dispatch-148&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Esmalte Acrilico Transparente Aerocomex  400 ml&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Esmalte Acrilico Transparente Aerocomex 400 ml.PNG" alt="Esmalte Acrilico Transparente Aerocomex  400 ml">
     <h3>Esmalte Acrilico Transparente Aerocomex  400 ml</h3>
     <p>Pinturas y recubrimientos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5532804</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-261" data-category="PINTURAS" data-subcategory="">
+<div class="card" data-id="dispatch-261" data-category="PINTURAS" data-variants="[{&quot;sku&quot;: &quot;4236449&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Pintura Vinil Acrilica Blanca Vinimex Litro.PNG&quot;, &quot;name&quot;: &quot;Pintura Vinil Acrilica Blanca Vinimex Litro&quot;, &quot;source_id&quot;: &quot;dispatch-261&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Pintura Vinil Acrilica Blanca Vinimex Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pintura Vinil Acrilica Blanca Vinimex Litro.PNG" alt="Pintura Vinil Acrilica Blanca Vinimex Litro">
     <h3>Pintura Vinil Acrilica Blanca Vinimex Litro</h3>
     <p>Pinturas y recubrimientos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4236449</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-267" data-category="PINTURAS" data-subcategory="">
+<div class="card" data-id="dispatch-267" data-category="PINTURAS" data-variants="[{&quot;sku&quot;: &quot;4236485&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Polymar 75 Color Blanco con 15 litros.PNG&quot;, &quot;name&quot;: &quot;Polymar 75 Color Blanco con 15 litros&quot;, &quot;source_id&quot;: &quot;dispatch-267&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Polymar 75 Color Blanco con 15 litros&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Polymar 75 Color Blanco con 15 litros.PNG" alt="Polymar 75 Color Blanco con 15 litros">
     <h3>Polymar 75 Color Blanco con 15 litros</h3>
     <p>Pinturas y recubrimientos</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4236485</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

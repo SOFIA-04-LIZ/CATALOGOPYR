@@ -36,8 +36,8 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
@@ -49,7 +49,7 @@
 <li><a href="GASES.html">Gases</a></li>
 <li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
 <li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
-<li><a href="HERRAMIENTAS.html">Herramientas y consumibles</a></li>
+<li><a href="HERRAMIENTAS.html" aria-current="page">Herramientas y consumibles</a></li>
 <li><a href="INSUMOS.html">Insumos generales</a></li>
 </ul>
         </li>
@@ -61,65 +61,45 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Herramientas y consumibles</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS" selected>Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-56" data-category="HERRAMIENTAS" data-subcategory="">
+<div class="card" data-id="brochas" data-category="HERRAMIENTAS" data-variants="[{&quot;sku&quot;: &quot;4187859&quot;, &quot;label&quot;: &quot;2 in&quot;, &quot;image&quot;: &quot;Images/Brocha (Pinceleta) de 2 in.PNG&quot;, &quot;name&quot;: &quot;Brocha (Pinceleta) de 2 in&quot;, &quot;source_id&quot;: &quot;dispatch-56&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Brocha (Pinceleta) de 2 in&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;4014690&quot;, &quot;label&quot;: &quot;4 in&quot;, &quot;image&quot;: &quot;Images/Brocha (Pinceleta) de 4 in.PNG&quot;, &quot;name&quot;: &quot;Brocha (Pinceleta) de 4 in&quot;, &quot;source_id&quot;: &quot;dispatch-57&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Brocha (Pinceleta) de 4 in&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Brocha (Pinceleta) de 2 in.PNG" alt="Brocha (Pinceleta) de 2 in">
-    <h3>Brocha (Pinceleta) de 2 in</h3>
+    <h3>Brocha (pinceleta)</h3>
     <p>Herramientas y consumibles</p>
     <p class="product-type"></p>
-
+    <label class="variant-field">Medida<select class="variant-select" aria-label="Medida de Brocha (pinceleta)"><option value="4187859">2 in</option><option value="4014690">4 in</option></select></label>
     <span class="sku-display">SKU: 4187859</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-57" data-category="HERRAMIENTAS" data-subcategory="">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Brocha (Pinceleta) de 4 in.PNG" alt="Brocha (Pinceleta) de 4 in">
-    <h3>Brocha (Pinceleta) de 4 in</h3>
-    <p>Herramientas y consumibles</p>
-    <p class="product-type"></p>
-
-    <span class="sku-display">SKU: 4014690</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-126" data-category="HERRAMIENTAS" data-subcategory="">
+<div class="card" data-id="dispatch-126" data-category="HERRAMIENTAS" data-variants="[{&quot;sku&quot;: &quot;5542016&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cinta Metrica Truper 50 m.PNG&quot;, &quot;name&quot;: &quot;Cinta Metrica Truper 50 m&quot;, &quot;source_id&quot;: &quot;dispatch-126&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cinta Metrica Truper 50 m&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cinta Metrica Truper 50 m.PNG" alt="Cinta Metrica Truper 50 m">
     <h3>Cinta Metrica Truper 50 m</h3>
     <p>Herramientas y consumibles</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5542016</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-252" data-category="HERRAMIENTAS" data-subcategory="">
+<div class="card" data-id="dispatch-252" data-category="HERRAMIENTAS" data-variants="[{&quot;sku&quot;: &quot;4233254&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Pasta de Diamante Blanca para Pulir 5gr.PNG&quot;, &quot;name&quot;: &quot;Pasta de Diamante Blanca para Pulir 5gr&quot;, &quot;source_id&quot;: &quot;dispatch-252&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Pasta de Diamante Blanca para Pulir 5gr&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pasta de Diamante Blanca para Pulir 5gr.PNG" alt="Pasta de Diamante Blanca para Pulir 5gr">
     <h3>Pasta de Diamante Blanca para Pulir 5gr</h3>
     <p>Herramientas y consumibles</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4233254</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-254" data-category="HERRAMIENTAS" data-subcategory="">
+<div class="card" data-id="dispatch-254" data-category="HERRAMIENTAS" data-variants="[{&quot;sku&quot;: &quot;4185544&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Pasta de Soldadura con 60 gr.PNG&quot;, &quot;name&quot;: &quot;Pasta de Soldadura con 60 gr&quot;, &quot;source_id&quot;: &quot;dispatch-254&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Pasta de Soldadura con 60 gr&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pasta de Soldadura con 60 gr.PNG" alt="Pasta de Soldadura con 60 gr">
     <h3>Pasta de Soldadura con 60 gr</h3>
     <p>Herramientas y consumibles</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4185544</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

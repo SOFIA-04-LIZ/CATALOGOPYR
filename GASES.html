@@ -36,8 +36,8 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
@@ -46,7 +46,7 @@
 <li><a href="QUIMICOS.html">Químicos</a></li>
 <li><a href="UNIFORMES.html">Uniformes</a></li>
 <li><a href="REFACCIONES.html">Refacciones</a></li>
-<li><a href="GASES.html">Gases</a></li>
+<li><a href="GASES.html" aria-current="page">Gases</a></li>
 <li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
 <li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
 <li><a href="HERRAMIENTAS.html">Herramientas y consumibles</a></li>
@@ -61,55 +61,45 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Gases</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES" selected>Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-310" data-category="GASES" data-subcategory="">
+<div class="card" data-id="dispatch-310" data-category="GASES" data-variants="[{&quot;sku&quot;: &quot;4079694&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Tanque de Acetileno con 5.1 kg.PNG&quot;, &quot;name&quot;: &quot;Tanque de Acetileno con 5.1 kg&quot;, &quot;source_id&quot;: &quot;dispatch-310&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Tanque de Acetileno con 5.1 kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Tanque de Acetileno con 5.1 kg.PNG" alt="Tanque de Acetileno con 5.1 kg">
     <h3>Tanque de Acetileno con 5.1 kg</h3>
     <p>Gases</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4079694</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-311" data-category="GASES" data-subcategory="">
+<div class="card" data-id="dispatch-311" data-category="GASES" data-variants="[{&quot;sku&quot;: &quot;4072222&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Tanque de Argon (Ar) con 5.5 Kg.PNG&quot;, &quot;name&quot;: &quot;Tanque de Argon (Ar) con 5.5 Kg&quot;, &quot;source_id&quot;: &quot;dispatch-311&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Tanque de Argon (Ar) con 5.5 Kg&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Tanque de Argon (Ar) con 5.5 Kg.PNG" alt="Tanque de Argon (Ar) con 5.5 Kg">
     <h3>Tanque de Argon (Ar) con 5.5 Kg</h3>
     <p>Gases</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4072222</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-312" data-category="GASES" data-subcategory="">
+<div class="card" data-id="dispatch-312" data-category="GASES" data-variants="[{&quot;sku&quot;: &quot;5000841&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Tanque de Hexafluoruro de Azufre (SF6).PNG&quot;, &quot;name&quot;: &quot;Tanque de Hexafluoruro de Azufre (SF6)&quot;, &quot;source_id&quot;: &quot;dispatch-312&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Tanque de Hexafluoruro de Azufre (SF6)&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Tanque de Hexafluoruro de Azufre (SF6).PNG" alt="Tanque de Hexafluoruro de Azufre (SF6)">
     <h3>Tanque de Hexafluoruro de Azufre (SF6)</h3>
     <p>Gases</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5000841</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-313" data-category="GASES" data-subcategory="">
+<div class="card" data-id="dispatch-313" data-category="GASES" data-variants="[{&quot;sku&quot;: &quot;4056351&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Tanque de Oxigeno (O2) con 9.50 m3.PNG&quot;, &quot;name&quot;: &quot;Tanque de Oxigeno (O2) con 9.50 m3&quot;, &quot;source_id&quot;: &quot;dispatch-313&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Tanque de Oxigeno (O2) con 9.50 m3&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Tanque de Oxigeno (O2) con 9.50 m3.PNG" alt="Tanque de Oxigeno (O2) con 9.50 m3">
     <h3>Tanque de Oxigeno (O2) con 9.50 m3</h3>
     <p>Gases</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4056351</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

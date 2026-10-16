@@ -36,12 +36,12 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
 <li><a href="EPP.html">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
-<li><a href="SOLVENTES.html">Solventes</a></li>
+<li><a href="SOLVENTES.html" aria-current="page">Solventes</a></li>
 <li><a href="LUBRICANTES.html">Lubricantes</a></li>
 <li><a href="QUIMICOS.html">Químicos</a></li>
 <li><a href="UNIFORMES.html">Uniformes</a></li>
@@ -61,75 +61,65 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>Solventes</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES" selected>Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-22" data-category="SOLVENTES" data-subcategory="">
+<div class="card" data-id="dispatch-22" data-category="SOLVENTES" data-variants="[{&quot;sku&quot;: &quot;5523881&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Alcohol etílico 70° G.L. Desnaturalizado Litro.PNG&quot;, &quot;name&quot;: &quot;Alcohol etílico 70° G.L. Desnaturalizado Litro&quot;, &quot;source_id&quot;: &quot;dispatch-22&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Alcohol etílico 70° G.L. Desnaturalizado Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Alcohol etílico 70° G.L. Desnaturalizado Litro.PNG" alt="Alcohol etílico 70° G.L. Desnaturalizado Litro">
     <h3>Alcohol etílico 70° G.L. Desnaturalizado Litro</h3>
     <p>Solventes</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 5523881</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-23" data-category="SOLVENTES" data-subcategory="">
+<div class="card" data-id="dispatch-23" data-category="SOLVENTES" data-variants="[{&quot;sku&quot;: &quot;4053948&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Alcohol EtIlico al 96 para Laboratorio Litro.PNG&quot;, &quot;name&quot;: &quot;Alcohol Etílico al 96% para Laboratorio Litro&quot;, &quot;source_id&quot;: &quot;dispatch-23&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Alcohol Etílico al 96% para Laboratorio Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Alcohol EtIlico al 96 para Laboratorio Litro.PNG" alt="Alcohol Etílico al 96% para Laboratorio Litro">
     <h3>Alcohol Etílico al 96% para Laboratorio Litro</h3>
     <p>Solventes</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4053948</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-24" data-category="SOLVENTES" data-subcategory="">
+<div class="card" data-id="dispatch-24" data-category="SOLVENTES" data-variants="[{&quot;sku&quot;: &quot;4057201&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Alcohol Isopropilico en aerosol 280 g.PNG&quot;, &quot;name&quot;: &quot;Alcohol Isopropilico en aerosol 280 g&quot;, &quot;source_id&quot;: &quot;dispatch-24&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Alcohol Isopropilico en aerosol 280 g&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Alcohol Isopropilico en aerosol 280 g.PNG" alt="Alcohol Isopropilico en aerosol 280 g">
     <h3>Alcohol Isopropilico en aerosol 280 g</h3>
     <p>Solventes</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4057201</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-304" data-category="SOLVENTES" data-subcategory="">
+<div class="card" data-id="dispatch-304" data-category="SOLVENTES" data-variants="[{&quot;sku&quot;: &quot;4053968&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Solvente Descabonizante Batech Litro.PNG&quot;, &quot;name&quot;: &quot;Solvente Descabonizante Batech Litro&quot;, &quot;source_id&quot;: &quot;dispatch-304&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Solvente Descabonizante Batech Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Solvente Descabonizante Batech Litro.PNG" alt="Solvente Descabonizante Batech Litro">
     <h3>Solvente Descabonizante Batech Litro</h3>
     <p>Solventes</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4053968</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-305" data-category="SOLVENTES" data-subcategory="">
+<div class="card" data-id="dispatch-305" data-category="SOLVENTES" data-variants="[{&quot;sku&quot;: &quot;4053958&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Solvente Dielectrico Desengrasante Litro.PNG&quot;, &quot;name&quot;: &quot;Solvente Dielectrico Desengrasante Litro&quot;, &quot;source_id&quot;: &quot;dispatch-305&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Solvente Dielectrico Desengrasante Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Solvente Dielectrico Desengrasante Litro.PNG" alt="Solvente Dielectrico Desengrasante Litro">
     <h3>Solvente Dielectrico Desengrasante Litro</h3>
     <p>Solventes</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4053958</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-316" data-category="SOLVENTES" data-subcategory="">
+<div class="card" data-id="dispatch-316" data-category="SOLVENTES" data-variants="[{&quot;sku&quot;: &quot;4074557&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Thinner Comex Litro.PNG&quot;, &quot;name&quot;: &quot;Thinner Comex Litro&quot;, &quot;source_id&quot;: &quot;dispatch-316&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Thinner Comex Litro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Thinner Comex Litro.PNG" alt="Thinner Comex Litro">
     <h3>Thinner Comex Litro</h3>
     <p>Solventes</p>
     <p class="product-type"></p>
 
     <span class="sku-display">SKU: 4074557</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>

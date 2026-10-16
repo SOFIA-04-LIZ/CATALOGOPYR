@@ -36,10 +36,10 @@
         <li><a href="index.html">Inicio</a></li>
 
         <li>
-            <a href="#">Categorías ▼</a>
-<ul>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
 <li><a href="LIMPIEZA.html">Limpieza</a></li>
-<li><a href="EPP.html">EPP</a></li>
+<li><a href="EPP.html" aria-current="page">EPP</a></li>
 <li><a href="PAPELERIA.html">Papelería</a></li>
 <li><a href="SOLVENTES.html">Solventes</a></li>
 <li><a href="LUBRICANTES.html">Lubricantes</a></li>
@@ -61,785 +61,695 @@
     <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
 </section>
 
-<section class="catalog-heading">
-    <h2>EPP</h2>
-    <div class="catalog-filters">
-        <label for="filtro-categoria">Categoría</label>
-        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP" selected>EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS">Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
-        <label for="filtro-subcategoria">Tipo de material</label>
-        <select id="filtro-subcategoria"><option value="">Todos los tipos</option><option value="Bloqueo y etiquetado (LOTOTO)">Bloqueo y etiquetado (LOTOTO)</option><option value="Calzado de seguridad">Calzado de seguridad</option><option value="Protección auditiva">Protección auditiva</option><option value="Protección de cabeza">Protección de cabeza</option><option value="Protección de manos y brazos">Protección de manos y brazos</option><option value="Protección ocular y facial">Protección ocular y facial</option><option value="Protección respiratoria">Protección respiratoria</option><option value="Ropa y protección corporal">Ropa y protección corporal</option><option value="Señalización y seguridad">Señalización y seguridad</option><option value="Soporte y protección corporal">Soporte y protección corporal</option></select>
-    </div>
-    <p id="result-count" role="status"></p>
-</section>
 <section class="catalogo" id="catalogo">
-<div class="card" data-id="dispatch-25" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-25" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506417&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Antebrazo De Carnaza Con Ojillo De Metal.PNG&quot;, &quot;name&quot;: &quot;Antebrazo De Carnaza Con Ojillo De Metal&quot;, &quot;source_id&quot;: &quot;dispatch-25&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Antebrazo De Carnaza Con Ojillo De Metal&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Antebrazo De Carnaza Con Ojillo De Metal.PNG" alt="Antebrazo De Carnaza Con Ojillo De Metal">
     <h3>Antebrazo De Carnaza Con Ojillo De Metal</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5506417</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-30" data-category="EPP" data-subcategory="Protección de cabeza">
+<div class="card" data-id="dispatch-30" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5524482&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Barbiquejo de Elastico para Casco de Seguridad.PNG&quot;, &quot;name&quot;: &quot;Barbiquejo de Elastico para Casco de Seguridad&quot;, &quot;source_id&quot;: &quot;dispatch-30&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Barbiquejo de Elastico para Casco de Seguridad&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Barbiquejo de Elastico para Casco de Seguridad.PNG" alt="Barbiquejo de Elastico para Casco de Seguridad">
     <h3>Barbiquejo de Elastico para Casco de Seguridad</h3>
     <p>EPP</p>
     <p class="product-type">Protección de cabeza</p>
 
     <span class="sku-display">SKU: 5524482</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-33" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-33" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5530750&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Base de Bloqueo Grande para Valvulas Universales.PNG&quot;, &quot;name&quot;: &quot;Base de Bloqueo Grande para Valvulas Universales&quot;, &quot;source_id&quot;: &quot;dispatch-33&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Base de Bloqueo Grande para Valvulas Universales&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Base de Bloqueo Grande para Valvulas Universales.PNG" alt="Base de Bloqueo Grande para Valvulas Universales">
     <h3>Base de Bloqueo Grande para Valvulas Universales</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5530750</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-36" data-category="EPP" data-subcategory="Señalización y seguridad">
+<div class="card" data-id="dispatch-36" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5524397&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bengala Led.PNG&quot;, &quot;name&quot;: &quot;Bengala Led&quot;, &quot;source_id&quot;: &quot;dispatch-36&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bengala Led&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bengala Led.PNG" alt="Bengala Led">
     <h3>Bengala Led</h3>
     <p>EPP</p>
     <p class="product-type">Señalización y seguridad</p>
 
     <span class="sku-display">SKU: 5524397</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-39" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-39" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5524011&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bloqueo Ajustable para Valvulas de Compuerta.PNG&quot;, &quot;name&quot;: &quot;Bloqueo Ajustable para Valvulas de Compuerta&quot;, &quot;source_id&quot;: &quot;dispatch-39&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bloqueo Ajustable para Valvulas de Compuerta&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bloqueo Ajustable para Valvulas de Compuerta.PNG" alt="Bloqueo Ajustable para Valvulas de Compuerta">
     <h3>Bloqueo Ajustable para Valvulas de Compuerta</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5524011</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-40" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-40" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5530733&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bloqueo de Cable para Cualquier Proposito.PNG&quot;, &quot;name&quot;: &quot;Bloqueo de Cable para Cualquier Proposito&quot;, &quot;source_id&quot;: &quot;dispatch-40&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bloqueo de Cable para Cualquier Proposito&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bloqueo de Cable para Cualquier Proposito.PNG" alt="Bloqueo de Cable para Cualquier Proposito">
     <h3>Bloqueo de Cable para Cualquier Proposito</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5530733</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-41" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-41" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5524006&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bloqueo de Valvula Universal con Cable de Mylon.PNG&quot;, &quot;name&quot;: &quot;Bloqueo de Valvula Universal con Cable de Mylon&quot;, &quot;source_id&quot;: &quot;dispatch-41&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bloqueo de Valvula Universal con Cable de Mylon&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bloqueo de Valvula Universal con Cable de Mylon.PNG" alt="Bloqueo de Valvula Universal con Cable de Mylon">
     <h3>Bloqueo de Valvula Universal con Cable de Mylon</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5524006</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-42" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-42" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5530748&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bloqueo Grande Prinzing para Valvulas de Bola.PNG&quot;, &quot;name&quot;: &quot;Bloqueo Grande Prinzing para Valvulas de Bola&quot;, &quot;source_id&quot;: &quot;dispatch-42&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bloqueo Grande Prinzing para Valvulas de Bola&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bloqueo Grande Prinzing para Valvulas de Bola.PNG" alt="Bloqueo Grande Prinzing para Valvulas de Bola">
     <h3>Bloqueo Grande Prinzing para Valvulas de Bola</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5530748</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-43" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-43" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5530749&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Bloqueo Prinzing para Valvulas de Bola.PNG&quot;, &quot;name&quot;: &quot;Bloqueo Prinzing para Valvulas de Bola&quot;, &quot;source_id&quot;: &quot;dispatch-43&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bloqueo Prinzing para Valvulas de Bola&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bloqueo Prinzing para Valvulas de Bola.PNG" alt="Bloqueo Prinzing para Valvulas de Bola">
     <h3>Bloqueo Prinzing para Valvulas de Bola</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5530749</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-53" data-category="EPP" data-subcategory="Calzado de seguridad" data-skus="{&quot;26&quot;: &quot;SKU: 5506389&quot;, &quot;27&quot;: &quot;SKU: 5506390&quot;, &quot;28&quot;: &quot;SKU: 5506391&quot;, &quot;29&quot;: &quot;SKU: 5506392&quot;, &quot;30&quot;: &quot;SKU: 5506431&quot;}">
+<div class="card" data-id="dispatch-53" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506389&quot;, &quot;label&quot;: &quot;26&quot;, &quot;image&quot;: &quot;Images/Bota de Hule con Casquillo.PNG&quot;, &quot;name&quot;: &quot;Bota de Hule con Casquillo&quot;, &quot;source_id&quot;: &quot;dispatch-53&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bota de Hule con Casquillo — Talla: 26&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506390&quot;, &quot;label&quot;: &quot;27&quot;, &quot;image&quot;: &quot;Images/Bota de Hule con Casquillo.PNG&quot;, &quot;name&quot;: &quot;Bota de Hule con Casquillo&quot;, &quot;source_id&quot;: &quot;dispatch-53&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bota de Hule con Casquillo — Talla: 27&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506391&quot;, &quot;label&quot;: &quot;28&quot;, &quot;image&quot;: &quot;Images/Bota de Hule con Casquillo.PNG&quot;, &quot;name&quot;: &quot;Bota de Hule con Casquillo&quot;, &quot;source_id&quot;: &quot;dispatch-53&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bota de Hule con Casquillo — Talla: 28&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506392&quot;, &quot;label&quot;: &quot;29&quot;, &quot;image&quot;: &quot;Images/Bota de Hule con Casquillo.PNG&quot;, &quot;name&quot;: &quot;Bota de Hule con Casquillo&quot;, &quot;source_id&quot;: &quot;dispatch-53&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bota de Hule con Casquillo — Talla: 29&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506431&quot;, &quot;label&quot;: &quot;30&quot;, &quot;image&quot;: &quot;Images/Bota de Hule con Casquillo.PNG&quot;, &quot;name&quot;: &quot;Bota de Hule con Casquillo&quot;, &quot;source_id&quot;: &quot;dispatch-53&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Bota de Hule con Casquillo — Talla: 30&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Bota de Hule con Casquillo.PNG" alt="Bota de Hule con Casquillo">
     <h3>Bota de Hule con Casquillo</h3>
     <p>EPP</p>
     <p class="product-type">Calzado de seguridad</p>
-    <label>Talla: <select class="selector-talla"><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Bota de Hule con Casquillo"><option value="5506389">26</option><option value="5506390">27</option><option value="5506391">28</option><option value="5506392">29</option><option value="5506431">30</option></select></label>
     <span class="sku-display">SKU: 5506389</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-54" data-category="EPP" data-subcategory="Calzado de seguridad" data-skus="{&quot;22&quot;: &quot;SKU: 5542030&quot;, &quot;23&quot;: &quot;SKU: 5542029&quot;, &quot;24&quot;: &quot;SKU: 5542028&quot;, &quot;25&quot;: &quot;SKU: 5542027&quot;, &quot;26&quot;: &quot;SKU: 5542026&quot;, &quot;27&quot;: &quot;SKU: 5542025&quot;, &quot;28&quot;: &quot;SKU: 5542024&quot;, &quot;29&quot;: &quot;SKU: 5542023&quot;, &quot;30&quot;: &quot;SKU: 5542022&quot;, &quot;31&quot;: &quot;SKU: 5542021&quot;, &quot;32&quot;: &quot;SKU: 5542020&quot;}">
+<div class="card" data-id="dispatch-54" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5542030&quot;, &quot;label&quot;: &quot;22&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 22&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542029&quot;, &quot;label&quot;: &quot;23&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 23&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542028&quot;, &quot;label&quot;: &quot;24&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 24&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542027&quot;, &quot;label&quot;: &quot;25&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 25&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542026&quot;, &quot;label&quot;: &quot;26&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 26&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542025&quot;, &quot;label&quot;: &quot;27&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 27&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542024&quot;, &quot;label&quot;: &quot;28&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 28&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542023&quot;, &quot;label&quot;: &quot;29&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 29&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542022&quot;, &quot;label&quot;: &quot;30&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 30&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542021&quot;, &quot;label&quot;: &quot;31&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 31&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5542020&quot;, &quot;label&quot;: &quot;32&quot;, &quot;image&quot;: &quot;Images/Proximamente Botas Procliff.PNG&quot;, &quot;name&quot;: &quot;Botas Procliff&quot;, &quot;source_id&quot;: &quot;dispatch-54&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Procliff — Talla: 32&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Proximamente Botas Procliff.PNG" alt="Botas Procliff">
     <h3>Botas Procliff</h3>
     <p>EPP</p>
     <p class="product-type">Calzado de seguridad</p>
-    <label>Talla: <select class="selector-talla"><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Botas Procliff"><option value="5542030">22</option><option value="5542029">23</option><option value="5542028">24</option><option value="5542027">25</option><option value="5542026">26</option><option value="5542025">27</option><option value="5542024">28</option><option value="5542023">29</option><option value="5542022">30</option><option value="5542021">31</option><option value="5542020">32</option></select></label>
     <span class="sku-display">SKU: 5542030</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-55" data-category="EPP" data-subcategory="Calzado de seguridad" data-skus="{&quot;23&quot;: &quot;SKU: 5530796&quot;, &quot;23.5&quot;: &quot;SKU: 5530797&quot;, &quot;24&quot;: &quot;SKU: 5530798&quot;, &quot;24.5&quot;: &quot;SKU: 5530799&quot;, &quot;25&quot;: &quot;SKU: 5530800&quot;, &quot;25.5&quot;: &quot;SKU: 5530801&quot;, &quot;26&quot;: &quot;SKU: 5530802&quot;, &quot;26.5&quot;: &quot;SKU: 5530803&quot;, &quot;27&quot;: &quot;SKU: 5530804&quot;, &quot;27.5&quot;: &quot;SKU: 5530805&quot;, &quot;28&quot;: &quot;SKU: 5530806&quot;, &quot;28.5&quot;: &quot;SKU: 5530807&quot;, &quot;29&quot;: &quot;SKU: 5530808&quot;, &quot;29.5&quot;: &quot;SKU: 5530809&quot;, &quot;30&quot;: &quot;SKU: 5530810&quot;, &quot;31.5&quot;: &quot;SKU: 5530811&quot;, &quot;32&quot;: &quot;SKU: 5530812&quot;}">
+<div class="card" data-id="dispatch-55" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5530796&quot;, &quot;label&quot;: &quot;23&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 23&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530797&quot;, &quot;label&quot;: &quot;23.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 23.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530798&quot;, &quot;label&quot;: &quot;24&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 24&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530799&quot;, &quot;label&quot;: &quot;24.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 24.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530800&quot;, &quot;label&quot;: &quot;25&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 25&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530801&quot;, &quot;label&quot;: &quot;25.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 25.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530802&quot;, &quot;label&quot;: &quot;26&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 26&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530803&quot;, &quot;label&quot;: &quot;26.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 26.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530804&quot;, &quot;label&quot;: &quot;27&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 27&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530805&quot;, &quot;label&quot;: &quot;27.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 27.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530806&quot;, &quot;label&quot;: &quot;28&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 28&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530807&quot;, &quot;label&quot;: &quot;28.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 28.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530808&quot;, &quot;label&quot;: &quot;29&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 29&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530809&quot;, &quot;label&quot;: &quot;29.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 29.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530810&quot;, &quot;label&quot;: &quot;30&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 30&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530811&quot;, &quot;label&quot;: &quot;31.5&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 31.5&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5530812&quot;, &quot;label&quot;: &quot;32&quot;, &quot;image&quot;: &quot;Images/Botas Rhino.PNG&quot;, &quot;name&quot;: &quot;Botas Rhino&quot;, &quot;source_id&quot;: &quot;dispatch-55&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Botas Rhino — Talla: 32&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Botas Rhino.PNG" alt="Botas Rhino">
     <h3>Botas Rhino</h3>
     <p>EPP</p>
     <p class="product-type">Calzado de seguridad</p>
-    <label>Talla: <select class="selector-talla"><option value="23">23</option><option value="23.5">23.5</option><option value="24">24</option><option value="24.5">24.5</option><option value="25">25</option><option value="25.5">25.5</option><option value="26">26</option><option value="26.5">26.5</option><option value="27">27</option><option value="27.5">27.5</option><option value="28">28</option><option value="28.5">28.5</option><option value="29">29</option><option value="29.5">29.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="32">32</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Botas Rhino"><option value="5530796">23</option><option value="5530797">23.5</option><option value="5530798">24</option><option value="5530799">24.5</option><option value="5530800">25</option><option value="5530801">25.5</option><option value="5530802">26</option><option value="5530803">26.5</option><option value="5530804">27</option><option value="5530805">27.5</option><option value="5530806">28</option><option value="5530807">28.5</option><option value="5530808">29</option><option value="5530809">29.5</option><option value="5530810">30</option><option value="5530811">31.5</option><option value="5530812">32</option></select></label>
     <span class="sku-display">SKU: 5530796</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-59" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-59" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;4243629&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Broche para Bloqueo Grupal 1.5 in.PNG&quot;, &quot;name&quot;: &quot;Broche para Bloqueo Grupal 1.5 in&quot;, &quot;source_id&quot;: &quot;dispatch-59&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Broche para Bloqueo Grupal 1.5 in&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Broche para Bloqueo Grupal 1.5 in.PNG" alt="Broche para Bloqueo Grupal 1.5 in">
     <h3>Broche para Bloqueo Grupal 1.5 in</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 4243629</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-62" data-category="EPP" data-subcategory="Señalización y seguridad">
+<div class="card" data-id="dispatch-62" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5523909&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cadena Amarilla Plastica 3 in.PNG&quot;, &quot;name&quot;: &quot;Cadena Amarilla Plastica 3 in&quot;, &quot;source_id&quot;: &quot;dispatch-62&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cadena Amarilla Plastica 3 in&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cadena Amarilla Plastica 3 in.PNG" alt="Cadena Amarilla Plastica 3 in">
     <h3>Cadena Amarilla Plastica 3 in</h3>
     <p>EPP</p>
     <p class="product-type">Señalización y seguridad</p>
 
     <span class="sku-display">SKU: 5523909</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-68" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)" data-skus="{&quot;1&quot;: &quot;SKU: 5541030&quot;, &quot;2&quot;: &quot;SKU: 4233278&quot;}">
+<div class="card" data-id="candados-seguridad" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5541030&quot;, &quot;label&quot;: &quot;Azul — 1 llave&quot;, &quot;image&quot;: &quot;Images/Candado de Seguridad Color Azul.PNG&quot;, &quot;name&quot;: &quot;Candado de Seguridad Color Azul&quot;, &quot;source_id&quot;: &quot;dispatch-68&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Candado de Seguridad Color Azul — Llaves: 1&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;4233278&quot;, &quot;label&quot;: &quot;Azul — 2 llaves&quot;, &quot;image&quot;: &quot;Images/Candado de Seguridad Color Azul.PNG&quot;, &quot;name&quot;: &quot;Candado de Seguridad Color Azul&quot;, &quot;source_id&quot;: &quot;dispatch-68&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Candado de Seguridad Color Azul — Llaves: 2&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5524014&quot;, &quot;label&quot;: &quot;Rojo&quot;, &quot;image&quot;: &quot;Images/Candado de Seguridad Color Rojo.PNG&quot;, &quot;name&quot;: &quot;Candado de Seguridad Color Rojo&quot;, &quot;source_id&quot;: &quot;dispatch-69&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Candado de Seguridad Color Rojo&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;4231438&quot;, &quot;label&quot;: &quot;Verde&quot;, &quot;image&quot;: &quot;Images/Candado de Seguridad Color Verde.PNG&quot;, &quot;name&quot;: &quot;Candado de Seguridad Color Verde&quot;, &quot;source_id&quot;: &quot;dispatch-70&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Candado de Seguridad Color Verde&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Candado de Seguridad Color Azul.PNG" alt="Candado de Seguridad Color Azul">
-    <h3>Candado de Seguridad Color Azul</h3>
+    <h3>Candado de seguridad</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
-    <label>Llaves: <select class="selector-talla"><option value="1">1</option><option value="2">2</option></select></label>
+    <label class="variant-field">Color / llaves<select class="variant-select" aria-label="Color / llaves de Candado de seguridad"><option value="5541030">Azul — 1 llave</option><option value="4233278">Azul — 2 llaves</option><option value="5524014">Rojo</option><option value="4231438">Verde</option></select></label>
     <span class="sku-display">SKU: 5541030</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-69" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Candado de Seguridad Color Rojo.PNG" alt="Candado de Seguridad Color Rojo">
-    <h3>Candado de Seguridad Color Rojo</h3>
-    <p>EPP</p>
-    <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
-
-    <span class="sku-display">SKU: 5524014</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-70" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Candado de Seguridad Color Verde.PNG" alt="Candado de Seguridad Color Verde">
-    <h3>Candado de Seguridad Color Verde</h3>
-    <p>EPP</p>
-    <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
-
-    <span class="sku-display">SKU: 4231438</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-71" data-category="EPP" data-subcategory="Bloqueo y etiquetado (LOTOTO)">
+<div class="card" data-id="dispatch-71" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5536106&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Candado Dielectrico para Bloqueo Color Azul.jpg&quot;, &quot;name&quot;: &quot;Candado Dielectrico para Bloqueo Color Azul&quot;, &quot;source_id&quot;: &quot;dispatch-71&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Candado Dielectrico para Bloqueo Color Azul&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Candado Dielectrico para Bloqueo Color Azul.jpg" alt="Candado Dielectrico para Bloqueo Color Azul">
     <h3>Candado Dielectrico para Bloqueo Color Azul</h3>
     <p>EPP</p>
     <p class="product-type">Bloqueo y etiquetado (LOTOTO)</p>
 
     <span class="sku-display">SKU: 5536106</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-77" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-77" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506435&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cartucho 6001 para Vapores Organicos.PNG&quot;, &quot;name&quot;: &quot;Cartucho 6001 para Vapores Organicos&quot;, &quot;source_id&quot;: &quot;dispatch-77&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cartucho 6001 para Vapores Organicos&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cartucho 6001 para Vapores Organicos.PNG" alt="Cartucho 6001 para Vapores Organicos">
     <h3>Cartucho 6001 para Vapores Organicos</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506435</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-84" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-84" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506426&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cartucho de Repuesto Canister.PNG&quot;, &quot;name&quot;: &quot;Cartucho de Repuesto Canister&quot;, &quot;source_id&quot;: &quot;dispatch-84&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cartucho de Repuesto Canister&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cartucho de Repuesto Canister.PNG" alt="Cartucho de Repuesto Canister">
     <h3>Cartucho de Repuesto Canister</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506426</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-97" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-97" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506480&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cartucho para Amoniaco y Metilamina.PNG&quot;, &quot;name&quot;: &quot;Cartucho para Amoniaco y Metilamina&quot;, &quot;source_id&quot;: &quot;dispatch-97&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cartucho para Amoniaco y Metilamina&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cartucho para Amoniaco y Metilamina.PNG" alt="Cartucho para Amoniaco y Metilamina">
     <h3>Cartucho para Amoniaco y Metilamina</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506480</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-98" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-98" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506479&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno.PNG&quot;, &quot;name&quot;: &quot;Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno&quot;, &quot;source_id&quot;: &quot;dispatch-98&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno.PNG" alt="Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno">
     <h3>Cartucho para Vapores Organicos (Cloro, Hidrógeno, Dioxido de Azufre, Sulfuro y Fluoruro de Hidrogeno</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506479</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-100" data-category="EPP" data-subcategory="Protección de cabeza">
+<div class="card" data-id="cascos-bum-cap" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5517586&quot;, &quot;label&quot;: &quot;Azul&quot;, &quot;image&quot;: &quot;Images/Casco Azul BUM CAP.PNG&quot;, &quot;name&quot;: &quot;Casco Azul BUM CAP&quot;, &quot;source_id&quot;: &quot;dispatch-100&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Azul BUM CAP&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5517584&quot;, &quot;label&quot;: &quot;Blanco&quot;, &quot;image&quot;: &quot;Images/Casco Blanco BUM CAP.PNG&quot;, &quot;name&quot;: &quot;Casco Blanco BUM CAP&quot;, &quot;source_id&quot;: &quot;dispatch-101&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Blanco BUM CAP&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Azul BUM CAP.PNG" alt="Casco Azul BUM CAP">
-    <h3>Casco Azul BUM CAP</h3>
+    <h3>Casco BUM CAP</h3>
     <p>EPP</p>
     <p class="product-type">Protección de cabeza</p>
-
+    <label class="variant-field">Color<select class="variant-select" aria-label="Color de Casco BUM CAP"><option value="5517586">Azul</option><option value="5517584">Blanco</option></select></label>
     <span class="sku-display">SKU: 5517586</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-101" data-category="EPP" data-subcategory="Protección de cabeza">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Blanco BUM CAP.PNG" alt="Casco Blanco BUM CAP">
-    <h3>Casco Blanco BUM CAP</h3>
-    <p>EPP</p>
-    <p class="product-type">Protección de cabeza</p>
-
-    <span class="sku-display">SKU: 5517584</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-102" data-category="EPP" data-subcategory="Protección de cabeza">
+<div class="card" data-id="cascos-mca" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5541826&quot;, &quot;label&quot;: &quot;Blanco&quot;, &quot;image&quot;: &quot;Images/Casco Blanco MCA.PNG&quot;, &quot;name&quot;: &quot;Casco Blanco MCA&quot;, &quot;source_id&quot;: &quot;dispatch-102&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Blanco MCA&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5541827&quot;, &quot;label&quot;: &quot;Naranja&quot;, &quot;image&quot;: &quot;Images/Casco Naranja MCA.PNG&quot;, &quot;name&quot;: &quot;Casco Naranja MCA&quot;, &quot;source_id&quot;: &quot;dispatch-107&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Naranja MCA&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Blanco MCA.PNG" alt="Casco Blanco MCA">
-    <h3>Casco Blanco MCA</h3>
+    <h3>Casco MCA</h3>
     <p>EPP</p>
     <p class="product-type">Protección de cabeza</p>
-
+    <label class="variant-field">Color<select class="variant-select" aria-label="Color de Casco MCA"><option value="5541826">Blanco</option><option value="5541827">Naranja</option></select></label>
     <span class="sku-display">SKU: 5541826</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-103" data-category="EPP" data-subcategory="Protección de cabeza">
+<div class="card" data-id="cascos-infracap" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5533306&quot;, &quot;label&quot;: &quot;Amarillo&quot;, &quot;image&quot;: &quot;Images/Casco Infracap Amarillo.PNG&quot;, &quot;name&quot;: &quot;Casco Infracap Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-103&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Infracap Amarillo&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506506&quot;, &quot;label&quot;: &quot;Azul&quot;, &quot;image&quot;: &quot;Images/Casco Infracap Azul.PNG&quot;, &quot;name&quot;: &quot;Casco Infracap Azul&quot;, &quot;source_id&quot;: &quot;dispatch-104&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Infracap Azul&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5533305&quot;, &quot;label&quot;: &quot;Rojo&quot;, &quot;image&quot;: &quot;Images/Casco Infracap Rojo.PNG&quot;, &quot;name&quot;: &quot;Casco Infracap Rojo&quot;, &quot;source_id&quot;: &quot;dispatch-105&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Infracap Rojo&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5526770&quot;, &quot;label&quot;: &quot;Verde&quot;, &quot;image&quot;: &quot;Images/Casco Infracap Verde.PNG&quot;, &quot;name&quot;: &quot;Casco Infracap Verde&quot;, &quot;source_id&quot;: &quot;dispatch-106&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Casco Infracap Verde&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Infracap Amarillo.PNG" alt="Casco Infracap Amarillo">
-    <h3>Casco Infracap Amarillo</h3>
+    <h3>Casco Infracap</h3>
     <p>EPP</p>
     <p class="product-type">Protección de cabeza</p>
-
+    <label class="variant-field">Color<select class="variant-select" aria-label="Color de Casco Infracap"><option value="5533306">Amarillo</option><option value="5506506">Azul</option><option value="5533305">Rojo</option><option value="5526770">Verde</option></select></label>
     <span class="sku-display">SKU: 5533306</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-104" data-category="EPP" data-subcategory="Protección de cabeza">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Infracap Azul.PNG" alt="Casco Infracap Azul">
-    <h3>Casco Infracap Azul</h3>
-    <p>EPP</p>
-    <p class="product-type">Protección de cabeza</p>
-
-    <span class="sku-display">SKU: 5506506</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-105" data-category="EPP" data-subcategory="Protección de cabeza">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Infracap Rojo.PNG" alt="Casco Infracap Rojo">
-    <h3>Casco Infracap Rojo</h3>
-    <p>EPP</p>
-    <p class="product-type">Protección de cabeza</p>
-
-    <span class="sku-display">SKU: 5533305</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-106" data-category="EPP" data-subcategory="Protección de cabeza">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Infracap Verde.PNG" alt="Casco Infracap Verde">
-    <h3>Casco Infracap Verde</h3>
-    <p>EPP</p>
-    <p class="product-type">Protección de cabeza</p>
-
-    <span class="sku-display">SKU: 5526770</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-107" data-category="EPP" data-subcategory="Protección de cabeza">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Casco Naranja MCA.PNG" alt="Casco Naranja MCA">
-    <h3>Casco Naranja MCA</h3>
-    <p>EPP</p>
-    <p class="product-type">Protección de cabeza</p>
-
-    <span class="sku-display">SKU: 5541827</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-116" data-category="EPP" data-subcategory="Ropa y protección corporal" data-skus="{&quot;M&quot;: &quot;SKU: 5528862&quot;, &quot;G&quot;: &quot;SKU: 5528863&quot;}">
+<div class="card" data-id="dispatch-116" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5528862&quot;, &quot;label&quot;: &quot;M&quot;, &quot;image&quot;: &quot;Images/Chaleco Alta Visibilidad 1 Color Naranja.PNG&quot;, &quot;name&quot;: &quot;Chaleco Alta Visibilidad 1 Color Naranja&quot;, &quot;source_id&quot;: &quot;dispatch-116&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco Alta Visibilidad 1 Color Naranja — Talla: M&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5528863&quot;, &quot;label&quot;: &quot;G&quot;, &quot;image&quot;: &quot;Images/Chaleco Alta Visibilidad 1 Color Naranja.PNG&quot;, &quot;name&quot;: &quot;Chaleco Alta Visibilidad 1 Color Naranja&quot;, &quot;source_id&quot;: &quot;dispatch-116&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco Alta Visibilidad 1 Color Naranja — Talla: G&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Chaleco Alta Visibilidad 1 Color Naranja.PNG" alt="Chaleco Alta Visibilidad 1 Color Naranja">
     <h3>Chaleco Alta Visibilidad 1 Color Naranja</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
-    <label>Talla: <select class="selector-talla"><option value="M">M</option><option value="G">G</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Chaleco Alta Visibilidad 1 Color Naranja"><option value="5528862">M</option><option value="5528863">G</option></select></label>
     <span class="sku-display">SKU: 5528862</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-117" data-category="EPP" data-subcategory="Ropa y protección corporal" data-skus="{&quot;M&quot;: &quot;SKU: 5520968&quot;, &quot;G&quot;: &quot;SKU: 5520973&quot;, &quot;XG&quot;: &quot;SKU: 5520951&quot;}">
+<div class="card" data-id="dispatch-117" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5520968&quot;, &quot;label&quot;: &quot;M&quot;, &quot;image&quot;: &quot;Images/Chaleco Alta Visibilidad Color Naranja.PNG&quot;, &quot;name&quot;: &quot;Chaleco Alta Visibilidad Color Naranja&quot;, &quot;source_id&quot;: &quot;dispatch-117&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco Alta Visibilidad Color Naranja — Talla: M&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5520973&quot;, &quot;label&quot;: &quot;G&quot;, &quot;image&quot;: &quot;Images/Chaleco Alta Visibilidad Color Naranja.PNG&quot;, &quot;name&quot;: &quot;Chaleco Alta Visibilidad Color Naranja&quot;, &quot;source_id&quot;: &quot;dispatch-117&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco Alta Visibilidad Color Naranja — Talla: G&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5520951&quot;, &quot;label&quot;: &quot;XG&quot;, &quot;image&quot;: &quot;Images/Chaleco Alta Visibilidad Color Naranja.PNG&quot;, &quot;name&quot;: &quot;Chaleco Alta Visibilidad Color Naranja&quot;, &quot;source_id&quot;: &quot;dispatch-117&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco Alta Visibilidad Color Naranja — Talla: XG&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Chaleco Alta Visibilidad Color Naranja.PNG" alt="Chaleco Alta Visibilidad Color Naranja">
     <h3>Chaleco Alta Visibilidad Color Naranja</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
-    <label>Talla: <select class="selector-talla"><option value="M">M</option><option value="G">G</option><option value="XG">XG</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Chaleco Alta Visibilidad Color Naranja"><option value="5520968">M</option><option value="5520973">G</option><option value="5520951">XG</option></select></label>
     <span class="sku-display">SKU: 5520968</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-118" data-category="EPP" data-subcategory="Ropa y protección corporal">
+<div class="card" data-id="dispatch-118" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5521045&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Chaleco de Malla Color Azul.PNG&quot;, &quot;name&quot;: &quot;Chaleco de Malla Color Azul&quot;, &quot;source_id&quot;: &quot;dispatch-118&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco de Malla Color Azul&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Chaleco de Malla Color Azul.PNG" alt="Chaleco de Malla Color Azul">
     <h3>Chaleco de Malla Color Azul</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
 
     <span class="sku-display">SKU: 5521045</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-119" data-category="EPP" data-subcategory="Ropa y protección corporal">
+<div class="card" data-id="dispatch-119" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5524453&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Chaleco para Rescatista.PNG&quot;, &quot;name&quot;: &quot;Chaleco para Rescatista&quot;, &quot;source_id&quot;: &quot;dispatch-119&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Chaleco para Rescatista&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Chaleco para Rescatista.PNG" alt="Chaleco para Rescatista">
     <h3>Chaleco para Rescatista</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
 
     <span class="sku-display">SKU: 5524453</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-122" data-category="EPP" data-subcategory="Señalización y seguridad">
+<div class="card" data-id="dispatch-122" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;4245727&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cinta Antiderrapante 3 in Precaucion.PNG&quot;, &quot;name&quot;: &quot;Cinta Antiderrapante 3 in Precaucion&quot;, &quot;source_id&quot;: &quot;dispatch-122&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cinta Antiderrapante 3 in Precaucion&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cinta Antiderrapante 3 in Precaucion.PNG" alt="Cinta Antiderrapante 3 in Precaucion">
     <h3>Cinta Antiderrapante 3 in Precaucion</h3>
     <p>EPP</p>
     <p class="product-type">Señalización y seguridad</p>
 
     <span class="sku-display">SKU: 4245727</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-132" data-category="EPP" data-subcategory="Ropa y protección corporal">
+<div class="card" data-id="dispatch-132" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506500&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cofia Lavable.PNG&quot;, &quot;name&quot;: &quot;Cofia Lavable&quot;, &quot;source_id&quot;: &quot;dispatch-132&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cofia Lavable&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cofia Lavable.PNG" alt="Cofia Lavable">
     <h3>Cofia Lavable</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
 
     <span class="sku-display">SKU: 5506500</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-134" data-category="EPP" data-subcategory="Protección ocular y facial">
+<div class="card" data-id="dispatch-134" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506063&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cristal Claro para Careta de Soldador.PNG&quot;, &quot;name&quot;: &quot;Cristal Claro para Careta de Soldador&quot;, &quot;source_id&quot;: &quot;dispatch-134&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cristal Claro para Careta de Soldador&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cristal Claro para Careta de Soldador.PNG" alt="Cristal Claro para Careta de Soldador">
     <h3>Cristal Claro para Careta de Soldador</h3>
     <p>EPP</p>
     <p class="product-type">Protección ocular y facial</p>
 
     <span class="sku-display">SKU: 5506063</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-139" data-category="EPP" data-subcategory="Calzado de seguridad">
+<div class="card" data-id="dispatch-139" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5524987&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Cubre Bota Desechable.PNG&quot;, &quot;name&quot;: &quot;Cubre Bota Desechable&quot;, &quot;source_id&quot;: &quot;dispatch-139&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Cubre Bota Desechable&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cubre Bota Desechable.PNG" alt="Cubre Bota Desechable">
     <h3>Cubre Bota Desechable</h3>
     <p>EPP</p>
     <p class="product-type">Calzado de seguridad</p>
 
     <span class="sku-display">SKU: 5524987</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-151" data-category="EPP" data-subcategory="Soporte y protección corporal" data-skus="{&quot;S&quot;: &quot;SKU: 5507916&quot;, &quot;M&quot;: &quot;SKU: 5506402&quot;, &quot;G&quot;: &quot;SKU: 5506419&quot;, &quot;XG&quot;: &quot;SKU: 5506472&quot;}">
+<div class="card" data-id="dispatch-151" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5507916&quot;, &quot;label&quot;: &quot;S&quot;, &quot;image&quot;: &quot;Images/Faja Lumbar.PNG&quot;, &quot;name&quot;: &quot;Faja Lumbar&quot;, &quot;source_id&quot;: &quot;dispatch-151&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Faja Lumbar — Talla: S&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506402&quot;, &quot;label&quot;: &quot;M&quot;, &quot;image&quot;: &quot;Images/Faja Lumbar.PNG&quot;, &quot;name&quot;: &quot;Faja Lumbar&quot;, &quot;source_id&quot;: &quot;dispatch-151&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Faja Lumbar — Talla: M&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506419&quot;, &quot;label&quot;: &quot;G&quot;, &quot;image&quot;: &quot;Images/Faja Lumbar.PNG&quot;, &quot;name&quot;: &quot;Faja Lumbar&quot;, &quot;source_id&quot;: &quot;dispatch-151&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Faja Lumbar — Talla: G&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506472&quot;, &quot;label&quot;: &quot;XG&quot;, &quot;image&quot;: &quot;Images/Faja Lumbar.PNG&quot;, &quot;name&quot;: &quot;Faja Lumbar&quot;, &quot;source_id&quot;: &quot;dispatch-151&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Faja Lumbar — Talla: XG&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Faja Lumbar.PNG" alt="Faja Lumbar">
     <h3>Faja Lumbar</h3>
     <p>EPP</p>
     <p class="product-type">Soporte y protección corporal</p>
-    <label>Talla: <select class="selector-talla"><option value="S">S</option><option value="M">M</option><option value="G">G</option><option value="XG">XG</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Faja Lumbar"><option value="5507916">S</option><option value="5506402">M</option><option value="5506419">G</option><option value="5506472">XG</option></select></label>
     <span class="sku-display">SKU: 5507916</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-163" data-category="EPP" data-subcategory="Protección de cabeza">
+<div class="card" data-id="dispatch-163" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5526580&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Gorra Protectora de Impacto.PNG&quot;, &quot;name&quot;: &quot;Gorra Protectora de Impacto&quot;, &quot;source_id&quot;: &quot;dispatch-163&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Gorra Protectora de Impacto&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Gorra Protectora de Impacto.PNG" alt="Gorra Protectora de Impacto">
     <h3>Gorra Protectora de Impacto</h3>
     <p>EPP</p>
     <p class="product-type">Protección de cabeza</p>
 
     <span class="sku-display">SKU: 5526580</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-176" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;6&quot;: &quot;SKU: 5539343&quot;, &quot;7&quot;: &quot;SKU: 5539344&quot;, &quot;8&quot;: &quot;SKU: 5539345&quot;, &quot;9&quot;: &quot;SKU: 5539346&quot;}">
+<div class="card" data-id="dispatch-176" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5539343&quot;, &quot;label&quot;: &quot;6&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte D-ROC.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte D-ROC&quot;, &quot;source_id&quot;: &quot;dispatch-176&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte D-ROC — Talla: 6&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5539344&quot;, &quot;label&quot;: &quot;7&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte D-ROC.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte D-ROC&quot;, &quot;source_id&quot;: &quot;dispatch-176&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte D-ROC — Talla: 7&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5539345&quot;, &quot;label&quot;: &quot;8&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte D-ROC.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte D-ROC&quot;, &quot;source_id&quot;: &quot;dispatch-176&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte D-ROC — Talla: 8&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5539346&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte D-ROC.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte D-ROC&quot;, &quot;source_id&quot;: &quot;dispatch-176&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte D-ROC — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante Anticorte D-ROC.PNG" alt="Guante Anticorte D-ROC">
     <h3>Guante Anticorte D-ROC</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante Anticorte D-ROC"><option value="5539343">6</option><option value="5539344">7</option><option value="5539345">8</option><option value="5539346">9</option></select></label>
     <span class="sku-display">SKU: 5539343</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-177" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;8&quot;: &quot;SKU: 5527331&quot;, &quot;9&quot;: &quot;SKU: 5527332&quot;, &quot;10&quot;: &quot;SKU: 5527333&quot;, &quot;12&quot;: &quot;SKU: 5521186&quot;}">
+<div class="card" data-id="dispatch-177" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5527331&quot;, &quot;label&quot;: &quot;8&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte MAPA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte MAPA&quot;, &quot;source_id&quot;: &quot;dispatch-177&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte MAPA — Talla: 8&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5527332&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte MAPA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte MAPA&quot;, &quot;source_id&quot;: &quot;dispatch-177&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte MAPA — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5527333&quot;, &quot;label&quot;: &quot;10&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte MAPA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte MAPA&quot;, &quot;source_id&quot;: &quot;dispatch-177&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte MAPA — Talla: 10&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5521186&quot;, &quot;label&quot;: &quot;12&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte MAPA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte MAPA&quot;, &quot;source_id&quot;: &quot;dispatch-177&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte MAPA — Talla: 12&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante Anticorte MAPA.PNG" alt="Guante Anticorte MAPA">
     <h3>Guante Anticorte MAPA</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="12">12</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante Anticorte MAPA"><option value="5527331">8</option><option value="5527332">9</option><option value="5527333">10</option><option value="5521186">12</option></select></label>
     <span class="sku-display">SKU: 5527331</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-178" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;8&quot;: &quot;SKU: 5537483&quot;, &quot;9&quot;: &quot;SKU: 5537480&quot;, &quot;10&quot;: &quot;SKU: 5537481&quot;}">
+<div class="card" data-id="dispatch-178" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5537483&quot;, &quot;label&quot;: &quot;8&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte Quimicos SHOWA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte Quimicos SHOWA&quot;, &quot;source_id&quot;: &quot;dispatch-178&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte Quimicos SHOWA — Talla: 8&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5537480&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte Quimicos SHOWA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte Quimicos SHOWA&quot;, &quot;source_id&quot;: &quot;dispatch-178&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte Quimicos SHOWA — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5537481&quot;, &quot;label&quot;: &quot;10&quot;, &quot;image&quot;: &quot;Images/Guante Anticorte Quimicos SHOWA.PNG&quot;, &quot;name&quot;: &quot;Guante Anticorte Quimicos SHOWA&quot;, &quot;source_id&quot;: &quot;dispatch-178&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Anticorte Quimicos SHOWA — Talla: 10&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante Anticorte Quimicos SHOWA.PNG" alt="Guante Anticorte Quimicos SHOWA">
     <h3>Guante Anticorte Quimicos SHOWA</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante Anticorte Quimicos SHOWA"><option value="5537483">8</option><option value="5537480">9</option><option value="5537481">10</option></select></label>
     <span class="sku-display">SKU: 5537483</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-179" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;9&quot;: &quot;SKU: 5506425&quot;, &quot;10&quot;: &quot;SKU: 5506422&quot;, &quot;12&quot;: &quot;SKU: 5506424&quot;}">
+<div class="card" data-id="dispatch-179" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506425&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante Color Cromo de Canraza.PNG&quot;, &quot;name&quot;: &quot;Guante Color Cromo de Canraza&quot;, &quot;source_id&quot;: &quot;dispatch-179&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Color Cromo de Canraza — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506422&quot;, &quot;label&quot;: &quot;10&quot;, &quot;image&quot;: &quot;Images/Guante Color Cromo de Canraza.PNG&quot;, &quot;name&quot;: &quot;Guante Color Cromo de Canraza&quot;, &quot;source_id&quot;: &quot;dispatch-179&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Color Cromo de Canraza — Talla: 10&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506424&quot;, &quot;label&quot;: &quot;12&quot;, &quot;image&quot;: &quot;Images/Guante Color Cromo de Canraza.PNG&quot;, &quot;name&quot;: &quot;Guante Color Cromo de Canraza&quot;, &quot;source_id&quot;: &quot;dispatch-179&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante Color Cromo de Canraza — Talla: 12&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante Color Cromo de Canraza.PNG" alt="Guante Color Cromo de Canraza">
     <h3>Guante Color Cromo de Canraza</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="9">9</option><option value="10">10</option><option value="12">12</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante Color Cromo de Canraza"><option value="5506425">9</option><option value="5506422">10</option><option value="5506424">12</option></select></label>
     <span class="sku-display">SKU: 5506425</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-180" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;9&quot;: &quot;SKU: 5506408&quot;, &quot;10&quot;: &quot;SKU: 5506409&quot;}">
+<div class="card" data-id="dispatch-180" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506408&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante de Hule Negro Adex.PNG&quot;, &quot;name&quot;: &quot;Guante de Hule Negro Adex&quot;, &quot;source_id&quot;: &quot;dispatch-180&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante de Hule Negro Adex — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506409&quot;, &quot;label&quot;: &quot;10&quot;, &quot;image&quot;: &quot;Images/Guante de Hule Negro Adex.PNG&quot;, &quot;name&quot;: &quot;Guante de Hule Negro Adex&quot;, &quot;source_id&quot;: &quot;dispatch-180&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante de Hule Negro Adex — Talla: 10&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante de Hule Negro Adex.PNG" alt="Guante de Hule Negro Adex">
     <h3>Guante de Hule Negro Adex</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="9">9</option><option value="10">10</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante de Hule Negro Adex"><option value="5506408">9</option><option value="5506409">10</option></select></label>
     <span class="sku-display">SKU: 5506408</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-181" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-181" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506473&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Guante de Nitrilo Besto.PNG&quot;, &quot;name&quot;: &quot;Guante de Nitrilo Besto&quot;, &quot;source_id&quot;: &quot;dispatch-181&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante de Nitrilo Besto&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante de Nitrilo Besto.PNG" alt="Guante de Nitrilo Besto">
     <h3>Guante de Nitrilo Besto</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5506473</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-182" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;8&quot;: &quot;SKU: 5519626&quot;, &quot;9&quot;: &quot;SKU: 5520091&quot;, &quot;10&quot;: &quot;SKU: 5520250&quot;}">
+<div class="card" data-id="dispatch-182" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5519626&quot;, &quot;label&quot;: &quot;8&quot;, &quot;image&quot;: &quot;Images/Guante de Protección HY-FLEX.PNG&quot;, &quot;name&quot;: &quot;Guante de Protección HY-FLEX&quot;, &quot;source_id&quot;: &quot;dispatch-182&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante de Protección HY-FLEX — Talla: 8&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5520091&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante de Protección HY-FLEX.PNG&quot;, &quot;name&quot;: &quot;Guante de Protección HY-FLEX&quot;, &quot;source_id&quot;: &quot;dispatch-182&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante de Protección HY-FLEX — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5520250&quot;, &quot;label&quot;: &quot;10&quot;, &quot;image&quot;: &quot;Images/Guante de Protección HY-FLEX.PNG&quot;, &quot;name&quot;: &quot;Guante de Protección HY-FLEX&quot;, &quot;source_id&quot;: &quot;dispatch-182&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante de Protección HY-FLEX — Talla: 10&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante de Protección HY-FLEX.PNG" alt="Guante de Protección HY-FLEX">
     <h3>Guante de Protección HY-FLEX</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante de Protección HY-FLEX"><option value="5519626">8</option><option value="5520091">9</option><option value="5520250">10</option></select></label>
     <span class="sku-display">SKU: 5519626</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-183" data-category="EPP" data-subcategory="Protección de manos y brazos" data-skus="{&quot;9&quot;: &quot;SKU: 5506489&quot;, &quot;10&quot;: &quot;SKU: 5506498&quot;, &quot;11&quot;: &quot;SKU: 5506499&quot;}">
+<div class="card" data-id="dispatch-183" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506489&quot;, &quot;label&quot;: &quot;9&quot;, &quot;image&quot;: &quot;Images/Guante en Piel Tipo Electricista.PNG&quot;, &quot;name&quot;: &quot;Guante en Piel Tipo Electricista&quot;, &quot;source_id&quot;: &quot;dispatch-183&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante en Piel Tipo Electricista — Talla: 9&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506498&quot;, &quot;label&quot;: &quot;10&quot;, &quot;image&quot;: &quot;Images/Guante en Piel Tipo Electricista.PNG&quot;, &quot;name&quot;: &quot;Guante en Piel Tipo Electricista&quot;, &quot;source_id&quot;: &quot;dispatch-183&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante en Piel Tipo Electricista — Talla: 10&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506499&quot;, &quot;label&quot;: &quot;11&quot;, &quot;image&quot;: &quot;Images/Guante en Piel Tipo Electricista.PNG&quot;, &quot;name&quot;: &quot;Guante en Piel Tipo Electricista&quot;, &quot;source_id&quot;: &quot;dispatch-183&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guante en Piel Tipo Electricista — Talla: 11&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guante en Piel Tipo Electricista.PNG" alt="Guante en Piel Tipo Electricista">
     <h3>Guante en Piel Tipo Electricista</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
-    <label>Talla: <select class="selector-talla"><option value="9">9</option><option value="10">10</option><option value="11">11</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Guante en Piel Tipo Electricista"><option value="5506489">9</option><option value="5506498">10</option><option value="5506499">11</option></select></label>
     <span class="sku-display">SKU: 5506489</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-184" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-184" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5519761&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Guantes de Nitrilo con 100 pz.PNG&quot;, &quot;name&quot;: &quot;Guantes de Nitrilo con 100 pz&quot;, &quot;source_id&quot;: &quot;dispatch-184&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guantes de Nitrilo con 100 pz&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guantes de Nitrilo con 100 pz.PNG" alt="Guantes de Nitrilo con 100 pz">
     <h3>Guantes de Nitrilo con 100 pz</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5519761</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-185" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-185" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5520030&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Guantes de Nitrilo de Manga Corta con 100 pzs.PNG&quot;, &quot;name&quot;: &quot;Guantes de Nitrilo de Manga Corta con 100 pzs&quot;, &quot;source_id&quot;: &quot;dispatch-185&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guantes de Nitrilo de Manga Corta con 100 pzs&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guantes de Nitrilo de Manga Corta con 100 pzs.PNG" alt="Guantes de Nitrilo de Manga Corta con 100 pzs">
     <h3>Guantes de Nitrilo de Manga Corta con 100 pzs</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5520030</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-186" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-186" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5518341&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Guantes de Nitrilo de Manga Larga.PNG&quot;, &quot;name&quot;: &quot;Guantes de Nitrilo de Manga Larga&quot;, &quot;source_id&quot;: &quot;dispatch-186&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guantes de Nitrilo de Manga Larga&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guantes de Nitrilo de Manga Larga.PNG" alt="Guantes de Nitrilo de Manga Larga">
     <h3>Guantes de Nitrilo de Manga Larga</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5518341</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-187" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-187" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5520020&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Guantes de Nitrilo Purpura de Manga Corta con 100 pzs.PNG&quot;, &quot;name&quot;: &quot;Guantes de Nitrilo Purpura de Manga Corta con 100 pzs&quot;, &quot;source_id&quot;: &quot;dispatch-187&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Guantes de Nitrilo Purpura de Manga Corta con 100 pzs&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Guantes de Nitrilo Purpura de Manga Corta con 100 pzs.PNG" alt="Guantes de Nitrilo Purpura de Manga Corta con 100 pzs">
     <h3>Guantes de Nitrilo Purpura de Manga Corta con 100 pzs</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5520020</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-196" data-category="EPP" data-subcategory="Ropa y protección corporal" data-skus="{&quot;M&quot;: &quot;SKU: 5506468&quot;, &quot;G&quot;: &quot;SKU: 5506469&quot;, &quot;XG&quot;: &quot;SKU: 5541922&quot;}">
+<div class="card" data-id="dispatch-196" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506468&quot;, &quot;label&quot;: &quot;M&quot;, &quot;image&quot;: &quot;Images/Impermeable Chamarra de Color Amarillo.PNG&quot;, &quot;name&quot;: &quot;Impermeable Chamarra de Color Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-196&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Impermeable Chamarra de Color Amarillo — Talla: M&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506469&quot;, &quot;label&quot;: &quot;G&quot;, &quot;image&quot;: &quot;Images/Impermeable Chamarra de Color Amarillo.PNG&quot;, &quot;name&quot;: &quot;Impermeable Chamarra de Color Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-196&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Impermeable Chamarra de Color Amarillo — Talla: G&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5541922&quot;, &quot;label&quot;: &quot;XG&quot;, &quot;image&quot;: &quot;Images/Impermeable Chamarra de Color Amarillo.PNG&quot;, &quot;name&quot;: &quot;Impermeable Chamarra de Color Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-196&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Impermeable Chamarra de Color Amarillo — Talla: XG&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Impermeable Chamarra de Color Amarillo.PNG" alt="Impermeable Chamarra de Color Amarillo">
     <h3>Impermeable Chamarra de Color Amarillo</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
-    <label>Talla: <select class="selector-talla"><option value="M">M</option><option value="G">G</option><option value="XG">XG</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Impermeable Chamarra de Color Amarillo"><option value="5506468">M</option><option value="5506469">G</option><option value="5541922">XG</option></select></label>
     <span class="sku-display">SKU: 5506468</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-197" data-category="EPP" data-subcategory="Ropa y protección corporal" data-skus="{&quot;M&quot;: &quot;SKU: 5506466&quot;, &quot;G&quot;: &quot;SKU: 5506467&quot;, &quot;XG&quot;: &quot;SKU: 5541921&quot;}">
+<div class="card" data-id="dispatch-197" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506466&quot;, &quot;label&quot;: &quot;M&quot;, &quot;image&quot;: &quot;Images/Impermeable Pantalon Color Amarillo.PNG&quot;, &quot;name&quot;: &quot;Impermeable Pantalon  Color Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-197&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Impermeable Pantalon  Color Amarillo — Talla: M&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506467&quot;, &quot;label&quot;: &quot;G&quot;, &quot;image&quot;: &quot;Images/Impermeable Pantalon Color Amarillo.PNG&quot;, &quot;name&quot;: &quot;Impermeable Pantalon  Color Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-197&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Impermeable Pantalon  Color Amarillo — Talla: G&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5541921&quot;, &quot;label&quot;: &quot;XG&quot;, &quot;image&quot;: &quot;Images/Impermeable Pantalon Color Amarillo.PNG&quot;, &quot;name&quot;: &quot;Impermeable Pantalon  Color Amarillo&quot;, &quot;source_id&quot;: &quot;dispatch-197&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Impermeable Pantalon  Color Amarillo — Talla: XG&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Impermeable Pantalon Color Amarillo.PNG" alt="Impermeable Pantalon  Color Amarillo">
     <h3>Impermeable Pantalon  Color Amarillo</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
-    <label>Talla: <select class="selector-talla"><option value="M">M</option><option value="G">G</option><option value="XG">XG</option></select></label>
+    <label class="variant-field">Talla<select class="variant-select" aria-label="Talla de Impermeable Pantalon  Color Amarillo"><option value="5506466">M</option><option value="5506467">G</option><option value="5541921">XG</option></select></label>
     <span class="sku-display">SKU: 5506466</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-207" data-category="EPP" data-subcategory="Protección ocular y facial">
+<div class="card" data-id="dispatch-207" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5540479&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Lente de Seguridad.PNG&quot;, &quot;name&quot;: &quot;Lente de Seguridad&quot;, &quot;source_id&quot;: &quot;dispatch-207&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Lente de Seguridad&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Lente de Seguridad.PNG" alt="Lente de Seguridad">
     <h3>Lente de Seguridad</h3>
     <p>EPP</p>
     <p class="product-type">Protección ocular y facial</p>
 
     <span class="sku-display">SKU: 5540479</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-208" data-category="EPP" data-subcategory="Protección ocular y facial">
+<div class="card" data-id="dispatch-208" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5541911&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Lente de Seguridad Antiparra.PNG&quot;, &quot;name&quot;: &quot;Lente de Seguridad Antiparra&quot;, &quot;source_id&quot;: &quot;dispatch-208&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Lente de Seguridad Antiparra&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Lente de Seguridad Antiparra.PNG" alt="Lente de Seguridad Antiparra">
     <h3>Lente de Seguridad Antiparra</h3>
     <p>EPP</p>
     <p class="product-type">Protección ocular y facial</p>
 
     <span class="sku-display">SKU: 5541911</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-209" data-category="EPP" data-subcategory="Protección ocular y facial">
+<div class="card" data-id="dispatch-209" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5513660&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Lente de Seguridad Lente sobre Lente.PNG&quot;, &quot;name&quot;: &quot;Lente de Seguridad Lente sobre Lente&quot;, &quot;source_id&quot;: &quot;dispatch-209&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Lente de Seguridad Lente sobre Lente&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Lente de Seguridad Lente sobre Lente.PNG" alt="Lente de Seguridad Lente sobre Lente">
     <h3>Lente de Seguridad Lente sobre Lente</h3>
     <p>EPP</p>
     <p class="product-type">Protección ocular y facial</p>
 
     <span class="sku-display">SKU: 5513660</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-218" data-category="EPP" data-subcategory="Protección de manos y brazos">
+<div class="card" data-id="dispatch-218" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5525030&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Manga Anticorte.PNG&quot;, &quot;name&quot;: &quot;Manga Anticorte&quot;, &quot;source_id&quot;: &quot;dispatch-218&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Manga Anticorte&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Manga Anticorte.PNG" alt="Manga Anticorte">
     <h3>Manga Anticorte</h3>
     <p>EPP</p>
     <p class="product-type">Protección de manos y brazos</p>
 
     <span class="sku-display">SKU: 5525030</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-219" data-category="EPP" data-subcategory="Señalización y seguridad">
+<div class="card" data-id="dispatch-219" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5523730&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Manga Indicadora de Viento 10 in.PNG&quot;, &quot;name&quot;: &quot;Manga Indicadora de Viento 10 in&quot;, &quot;source_id&quot;: &quot;dispatch-219&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Manga Indicadora de Viento 10 in&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Manga Indicadora de Viento 10 in.PNG" alt="Manga Indicadora de Viento 10 in">
     <h3>Manga Indicadora de Viento 10 in</h3>
     <p>EPP</p>
     <p class="product-type">Señalización y seguridad</p>
 
     <span class="sku-display">SKU: 5523730</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-227" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-227" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5527608&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Mascarilla Cara Completa Advantage.PNG&quot;, &quot;name&quot;: &quot;Mascarilla Cara Completa Advantage&quot;, &quot;source_id&quot;: &quot;dispatch-227&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Mascarilla Cara Completa Advantage&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Mascarilla Cara Completa Advantage.PNG" alt="Mascarilla Cara Completa Advantage">
     <h3>Mascarilla Cara Completa Advantage</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5527608</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-228" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-228" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5523843&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Mascarilla Cara Completa Ultravue.PNG&quot;, &quot;name&quot;: &quot;Mascarilla Cara Completa Ultravue&quot;, &quot;source_id&quot;: &quot;dispatch-228&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Mascarilla Cara Completa Ultravue&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Mascarilla Cara Completa Ultravue.PNG" alt="Mascarilla Cara Completa Ultravue">
     <h3>Mascarilla Cara Completa Ultravue</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5523843</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-229" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-229" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506482&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Mascarilla de Soldador Moldex.PNG&quot;, &quot;name&quot;: &quot;Mascarilla de Soldador Moldex&quot;, &quot;source_id&quot;: &quot;dispatch-229&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Mascarilla de Soldador Moldex&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Mascarilla de Soldador Moldex.PNG" alt="Mascarilla de Soldador Moldex">
     <h3>Mascarilla de Soldador Moldex</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506482</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-230" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-230" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506434&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Mascarilla Media Cara.PNG&quot;, &quot;name&quot;: &quot;Mascarilla Media Cara&quot;, &quot;source_id&quot;: &quot;dispatch-230&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Mascarilla Media Cara&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Mascarilla Media Cara.PNG" alt="Mascarilla Media Cara">
     <h3>Mascarilla Media Cara</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506434</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-231" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-231" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506414&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Mascarilla para Polvo y Neblina.PNG&quot;, &quot;name&quot;: &quot;Mascarilla para Polvo y Neblina&quot;, &quot;source_id&quot;: &quot;dispatch-231&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Mascarilla para Polvo y Neblina&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Mascarilla para Polvo y Neblina.PNG" alt="Mascarilla para Polvo y Neblina">
     <h3>Mascarilla para Polvo y Neblina</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506414</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-232" data-category="EPP" data-subcategory="Protección ocular y facial">
+<div class="card" data-id="dispatch-232" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5525683&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Mica para Careta Bionic.PNG&quot;, &quot;name&quot;: &quot;Mica para Careta Bionic&quot;, &quot;source_id&quot;: &quot;dispatch-232&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Mica para Careta Bionic&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Mica para Careta Bionic.PNG" alt="Mica para Careta Bionic">
     <h3>Mica para Careta Bionic</h3>
     <p>EPP</p>
     <p class="product-type">Protección ocular y facial</p>
 
     <span class="sku-display">SKU: 5525683</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-235" data-category="EPP" data-subcategory="Soporte y protección corporal">
+<div class="card" data-id="dispatch-235" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5535400&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Navaja de Seguridad Autoretractil.PNG&quot;, &quot;name&quot;: &quot;Navaja de Seguridad Autoretractil&quot;, &quot;source_id&quot;: &quot;dispatch-235&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Navaja de Seguridad Autoretractil&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Navaja de Seguridad Autoretractil.PNG" alt="Navaja de Seguridad Autoretractil">
     <h3>Navaja de Seguridad Autoretractil</h3>
     <p>EPP</p>
     <p class="product-type">Soporte y protección corporal</p>
 
     <span class="sku-display">SKU: 5535400</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-237" data-category="EPP" data-subcategory="Protección auditiva">
+<div class="card" data-id="dispatch-237" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5537402&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Orejera Montable a Casco.PNG&quot;, &quot;name&quot;: &quot;Orejera Montable a Casco&quot;, &quot;source_id&quot;: &quot;dispatch-237&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Orejera Montable a Casco&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Orejera Montable a Casco.PNG" alt="Orejera Montable a Casco">
     <h3>Orejera Montable a Casco</h3>
     <p>EPP</p>
     <p class="product-type">Protección auditiva</p>
 
     <span class="sku-display">SKU: 5537402</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-238" data-category="EPP" data-subcategory="Ropa y protección corporal">
+<div class="card" data-id="dispatch-238" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506475&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Overol Tyuek.PNG&quot;, &quot;name&quot;: &quot;Overol Tyuek&quot;, &quot;source_id&quot;: &quot;dispatch-238&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Overol Tyuek&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Overol Tyuek.PNG" alt="Overol Tyuek">
     <h3>Overol Tyuek</h3>
     <p>EPP</p>
     <p class="product-type">Ropa y protección corporal</p>
 
     <span class="sku-display">SKU: 5506475</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-264" data-category="EPP" data-subcategory="Calzado de seguridad">
+<div class="card" data-id="dispatch-264" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5526810&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Plantilla Anticorte.PNG&quot;, &quot;name&quot;: &quot;Plantilla Anticorte&quot;, &quot;source_id&quot;: &quot;dispatch-264&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Plantilla Anticorte&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Plantilla Anticorte.PNG" alt="Plantilla Anticorte">
     <h3>Plantilla Anticorte</h3>
     <p>EPP</p>
     <p class="product-type">Calzado de seguridad</p>
 
     <span class="sku-display">SKU: 5526810</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-268" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-268" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506436&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Prefiltro.PNG&quot;, &quot;name&quot;: &quot;Prefiltro&quot;, &quot;source_id&quot;: &quot;dispatch-268&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Prefiltro&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Prefiltro.PNG" alt="Prefiltro">
     <h3>Prefiltro</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5506436</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-271" data-category="EPP" data-subcategory="Protección ocular y facial">
+<div class="card" data-id="dispatch-271" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5520820&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Protector Facial Bionic.PNG&quot;, &quot;name&quot;: &quot;Protector Facial Bionic&quot;, &quot;source_id&quot;: &quot;dispatch-271&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Protector Facial Bionic&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Protector Facial Bionic.PNG" alt="Protector Facial Bionic">
     <h3>Protector Facial Bionic</h3>
     <p>EPP</p>
     <p class="product-type">Protección ocular y facial</p>
 
     <span class="sku-display">SKU: 5520820</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-278" data-category="EPP" data-subcategory="Protección respiratoria">
+<div class="card" data-id="dispatch-278" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5541705&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Respirador MSA Miniscape.PNG&quot;, &quot;name&quot;: &quot;Respirador MSA Miniscape&quot;, &quot;source_id&quot;: &quot;dispatch-278&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Respirador MSA Miniscape&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Respirador MSA Miniscape.PNG" alt="Respirador MSA Miniscape">
     <h3>Respirador MSA Miniscape</h3>
     <p>EPP</p>
     <p class="product-type">Protección respiratoria</p>
 
     <span class="sku-display">SKU: 5541705</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-280" data-category="EPP" data-subcategory="Soporte y protección corporal">
+<div class="card" data-id="dispatch-280" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;4242875&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Rodillera Regular.PNG&quot;, &quot;name&quot;: &quot;Rodillera Regular&quot;, &quot;source_id&quot;: &quot;dispatch-280&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Rodillera Regular&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Rodillera Regular.PNG" alt="Rodillera Regular">
     <h3>Rodillera Regular</h3>
     <p>EPP</p>
     <p class="product-type">Soporte y protección corporal</p>
 
     <span class="sku-display">SKU: 4242875</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-284" data-category="EPP" data-subcategory="Señalización y seguridad">
+<div class="card" data-id="rollos-senalamiento" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506406&quot;, &quot;label&quot;: &quot;Peligro&quot;, &quot;image&quot;: &quot;Images/Rollo de Señalamiento Peligro 12 cm x 50 m.PNG&quot;, &quot;name&quot;: &quot;Rollo de Señalamiento Peligro 12 cm x 50 m&quot;, &quot;source_id&quot;: &quot;dispatch-284&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Rollo de Señalamiento Peligro 12 cm x 50 m&quot;, &quot;note&quot;: &quot;&quot;}, {&quot;sku&quot;: &quot;5506405&quot;, &quot;label&quot;: &quot;Precaución&quot;, &quot;image&quot;: &quot;Images/Rollo de Señalamiento Precaucion 12 cm x 50 m.PNG&quot;, &quot;name&quot;: &quot;Rollo de Señalamiento Precaucion 12 cm x 50 m&quot;, &quot;source_id&quot;: &quot;dispatch-285&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Rollo de Señalamiento Precaucion 12 cm x 50 m&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Rollo de Señalamiento Peligro 12 cm x 50 m.PNG" alt="Rollo de Señalamiento Peligro 12 cm x 50 m">
-    <h3>Rollo de Señalamiento Peligro 12 cm x 50 m</h3>
+    <h3>Rollo de señalamiento (12 cm × 50 m)</h3>
     <p>EPP</p>
     <p class="product-type">Señalización y seguridad</p>
-
+    <label class="variant-field">Leyenda<select class="variant-select" aria-label="Leyenda de Rollo de señalamiento (12 cm × 50 m)"><option value="5506406">Peligro</option><option value="5506405">Precaución</option></select></label>
     <span class="sku-display">SKU: 5506406</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-285" data-category="EPP" data-subcategory="Señalización y seguridad">
-    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Rollo de Señalamiento Precaucion 12 cm x 50 m.PNG" alt="Rollo de Señalamiento Precaucion 12 cm x 50 m">
-    <h3>Rollo de Señalamiento Precaucion 12 cm x 50 m</h3>
-    <p>EPP</p>
-    <p class="product-type">Señalización y seguridad</p>
-
-    <span class="sku-display">SKU: 5506405</span>
-
-    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
-</div>
-<div class="card" data-id="dispatch-308" data-category="EPP" data-subcategory="Protección de cabeza">
+<div class="card" data-id="dispatch-308" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506507&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Suspension con Ajustes de Intervalos Mode para Casco.PNG&quot;, &quot;name&quot;: &quot;Suspension con Ajustes de Intervalos Mode para Casco&quot;, &quot;source_id&quot;: &quot;dispatch-308&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Suspension con Ajustes de Intervalos Mode para Casco&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Suspension con Ajustes de Intervalos Mode para Casco.PNG" alt="Suspension con Ajustes de Intervalos Mode para Casco">
     <h3>Suspension con Ajustes de Intervalos Mode para Casco</h3>
     <p>EPP</p>
     <p class="product-type">Protección de cabeza</p>
 
     <span class="sku-display">SKU: 5506507</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
-<div class="card" data-id="dispatch-314" data-category="EPP" data-subcategory="Protección auditiva">
+<div class="card" data-id="dispatch-314" data-category="EPP" data-variants="[{&quot;sku&quot;: &quot;5506415&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/Tapon Auditivo de Cordon.PNG&quot;, &quot;name&quot;: &quot;Tapon Auditivo de Cordon&quot;, &quot;source_id&quot;: &quot;dispatch-314&quot;, &quot;source&quot;: &quot;dispatch&quot;, &quot;cart_name&quot;: &quot;Tapon Auditivo de Cordon&quot;, &quot;note&quot;: &quot;&quot;}]">
     <img loading="lazy" decoding="async" width="240" height="200" src="Images/Tapon Auditivo de Cordon.PNG" alt="Tapon Auditivo de Cordon">
     <h3>Tapon Auditivo de Cordon</h3>
     <p>EPP</p>
     <p class="product-type">Protección auditiva</p>
 
     <span class="sku-display">SKU: 5506415</span>
-
+    <p class="product-note" hidden></p>
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>
 </section>
