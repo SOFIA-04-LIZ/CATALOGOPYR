@@ -54,3 +54,7 @@ Las imágenes se cargan de forma diferida; el buscador utiliza un índice en mem
 ## Diseño para celulares
 
 El catálogo conserva tres columnas desde 320 px y pasa a cuatro, cinco o seis en pantallas grandes. En celulares se ajustan imágenes, texto, espaciado y controles; los botones y selectores mantienen una altura mínima de 44 px. Las categorías están únicamente en la navegación superior, sin filtros ni contadores debajo del buscador. Los recursos compartidos llevan una versión en su URL para solicitar el diseño actualizado al publicar.
+
+## Pie de página visible
+
+La página ocupa la altura disponible de la pantalla (`100dvh`, con respaldo `100vh`). El encabezado, menú y pie tienen su espacio propio; solo `#catalog-content` se desplaza. El pie se mantiene visible también cuando la búsqueda no encuentra productos. Las pruebas del navegador comprueban la posición y que el pie sea el elemento pintado en pantalla.

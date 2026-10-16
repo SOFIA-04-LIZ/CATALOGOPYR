@@ -89,18 +89,21 @@ frame.onload = () => {
         for (const width of [320, 360, 375, 390, 430, 600, 768, 1024, 1280, 1440]) {
             frame.style.width = width + 'px';
             const footer = d.querySelector('footer');
-            assert(w.getComputedStyle(footer).position === 'fixed', 'footer is fixed at ' + width + 'px');
-            assert(parseFloat(w.getComputedStyle(d.body).paddingBottom) >= footer.getBoundingClientRect().height, 'footer space is reserved at ' + width + 'px');
+            const content = d.getElementById('catalog-content');
+            assert(content.clientHeight > 0, 'catalog has a scrollable viewport at ' + width + 'px');
+            assert(content.getBoundingClientRect().bottom <= footer.getBoundingClientRect().top + 1, 'footer has separate space at ' + width + 'px');
             assert(footer.scrollHeight <= footer.clientHeight, 'footer text fits at ' + width + 'px');
-            for (const scrollTop of [0, d.documentElement.scrollHeight / 2, d.documentElement.scrollHeight]) {
-                w.scrollTo(0, scrollTop);
+            for (const scrollTop of [0, content.scrollHeight / 2, content.scrollHeight]) {
+                content.scrollTop = scrollTop;
                 const footerRect = footer.getBoundingClientRect();
                 assert(Math.abs(footerRect.bottom - w.innerHeight) < 1 && footerRect.top >= 0, 'footer stays visible while scrolling at ' + width + 'px');
+                const painted = d.elementFromPoint(w.innerWidth / 2, footerRect.top + footerRect.height / 2);
+                assert(painted === footer || footer.contains(painted), 'footer is actually painted above the catalog at ' + width + 'px');
             }
             search.value = 'zzzz-no-match'; w.buscarProducto();
             assert(Math.abs(footer.getBoundingClientRect().bottom - w.innerHeight) < 1, 'footer stays at bottom with no results');
             search.value = ''; w.buscarProducto();
-            w.scrollTo(0, 0);
+            content.scrollTop = 0;
             const grid = d.getElementById('catalogo');
             const columns = w.getComputedStyle(grid).gridTemplateColumns.split(' ').length;
             assert(columns >= 3, 'at least three columns at ' + width + 'px');
