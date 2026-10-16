@@ -53,6 +53,7 @@ def build():
             links += f'<li><a href="{key}.html"{current}>{escape(name)}</a></li>\n'
         links += '</ul>'
         values = dict(TITLE='Catálogo PYR — ' + heading, CATEGORY_LINKS=links,
+                      CURRENT_CATEGORY=escape(categories[category] if category else 'Inicio · Todos los materiales'),
                       CARDS='\n'.join(render_card(p, categories) for p in selected))
         page = template
         for key, value in values.items():

@@ -555,3 +555,11 @@ footer {
     :root { --footer-height: 64px; }
     footer { font-size: 12px; }
 }
+
+/* Keep the current category visible beside the catalog navigation. */
+.current-location { flex: 0 0 auto; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; padding: 9px 40px; background: #fff; border-bottom: 1px solid #e5dfcf; color: #666; font-size: 13px; }
+.current-location strong { color: #705710; font-size: 14px; font-weight: 600; }
+@media (max-width: 768px) {
+    .current-location { padding: 8px 12px; font-size: 12px; }
+    .current-location strong { font-size: 13px; }
+}

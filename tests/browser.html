@@ -31,6 +31,9 @@ frame.onload = () => {
         assert(d.querySelector('nav').contains(d.getElementById('categories-menu')), 'categories stay in top navigation');
         const toggle = d.querySelector('.categories-toggle');
         const menu = d.getElementById('categories-menu');
+        const categoryLabel = d.getElementById('current-category');
+        const activeCategory = menu.querySelector('[aria-current="page"]');
+        assert(categoryLabel.textContent === (activeCategory ? activeCategory.textContent : 'Inicio · Todos los materiales'), 'current category label matches the navigation');
         assert(menu.hidden, 'category menu initially closed');
         toggle.click();
         assert(!menu.hidden && toggle.getAttribute('aria-expanded') === 'true', 'category menu opens');

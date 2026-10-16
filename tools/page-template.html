@@ -6,9 +6,9 @@
 <title>{{TITLE}}</title>
 
 
-<link rel="stylesheet" href="styles.css?v=20261016-footer-layout2">
+<link rel="stylesheet" href="styles.css?v=20261016-location">
 
-<script src="scripts.js?v=20261016-footer-layout2" defer></script>
+<script src="scripts.js?v=20261016-location" defer></script>
 </head>
 <body>
 
@@ -42,6 +42,9 @@
     </a>
 </nav>
 
+<div class="current-location" aria-label="Ubicación actual">
+    <span>Estás en:</span> <strong id="current-category">{{CURRENT_CATEGORY}}</strong>
+</div>
 <main id="catalog-content">
 <section class="search-container">
     <label for="buscador" class="sr-only">Buscar producto por nombre o SKU</label>
