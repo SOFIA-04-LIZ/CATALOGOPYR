@@ -16,7 +16,7 @@ La comparación del 16 de octubre de 2026 con [Productos Despacho](https://almac
 - `data/reconciliation.json`: faltantes recuperados y diferencias detectadas.
 - `REVISION-CATALOGO.md`: resultados y criterios de clasificación.
 
-Los 343 registros se presentan en **282 tarjetas**, con 33 familias agrupadas por color, género, manga, medida o presentación. Todos los 399 SKU siguen disponibles. Cada opción de un desplegable actualiza imagen, SKU y datos del carrito. Los cascos se agrupan por modelo (BUM CAP, MCA e Infracap); los modelos y funciones de protección distintos conservan tarjetas independientes.
+Los 343 registros se presentan en **286 tarjetas**, con 32 familias agrupadas por color, género, manga, medida o presentación. Todos los 399 SKU siguen disponibles. Cada opción de un desplegable actualiza imagen, SKU y datos del carrito. Los cascos se agrupan por modelo (BUM CAP, MCA e Infracap); los modelos y funciones de protección distintos conservan tarjetas independientes.
 
 Cada tarjeta aparece en Inicio y en una sola categoría. Las categorías se abren desde el menú superior junto a Inicio; se retiró el bloque inferior de filtros, título y contador. El buscador reconoce también los nombres y SKU de las variantes y selecciona automáticamente la opción coincidente.
 
@@ -24,7 +24,7 @@ Cada tarjeta aparece en Inicio y en una sola categoría. Las categorías se abre
 
 Se incorporaron los 23 materiales de `Libro1 (005).xlsx`, hoja `SKUS NUEVOS`: 21 SKU nuevos y dos placas acrílicas existentes, sin duplicados. El archivo central mantiene las descripciones originales como alias de búsqueda y las unidades de manejo del Excel. Los 21 materiales añadidos usan sus imágenes extraídas del libro, optimizadas a un máximo de 640 px.
 
-Se creó Consumibles para pilas, desechables, cintas y sellos. Los adhesivos, herramientas y EPP conservan sus categorías específicas. Las placas acrílicas pasaron a Refacciones, de acuerdo con el archivo recibido. Las plumas Paper Mate se agrupan por color y las pilas por tipo/presentación; el tamaño no indicado de la pila `4024835` se conserva sin inventar un valor.
+Se creó Consumibles para pilas, desechables, cintas y sellos. Los adhesivos, herramientas y EPP conservan sus categorías específicas. Las placas acrílicas pasaron a Refacciones, de acuerdo con el archivo recibido. Las plumas Paper Mate se agrupan por color y las pilas se muestran en cinco tarjetas individuales; el tamaño no indicado de la pila `4024835` se conserva sin inventar un valor.
 
 `tools/read_xlsx.py` lee los valores y las imágenes del libro mediante los metadatos XML, incluidos los dibujos flotantes y las imágenes en celdas, sin ejecutar fórmulas. El registro de importación incluye el hash SHA-256 del archivo de origen. La copia del Excel permanece fuera del repositorio.
 
@@ -62,3 +62,5 @@ La página ocupa la altura disponible de la pantalla (`100dvh`, con respaldo `10
 ## Categorías unificadas
 
 Por solicitud del usuario, Herramientas y consumibles e Insumos generales se integraron en Consumibles. El papel aluminio y todos los materiales de esas categorías aparecen ahora ahí. El menú muestra 12 categorías; las direcciones antiguas `HERRAMIENTAS.html` e `INSUMOS.html` conservan una copia de Consumibles para que sigan funcionando los enlaces compartidos.
+
+Las pilas C, AAA, de 9 V, de 1.5 V sin tamaño indicado y AA se muestran en tarjetas separadas, cada una con su foto, SKU y unidad de manejo.

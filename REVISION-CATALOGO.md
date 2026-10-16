@@ -25,7 +25,7 @@ Se recuperaron las imágenes del candado dieléctrico, la tarjeta PVC y la camis
 | Gases | 4 |
 | Adhesivos y selladores | 12 |
 | Pinturas y recubrimientos | 5 |
-| Consumibles | 14 |
+| Consumibles | 18 |
 
 La clasificación se hizo por uso del material. Las grasas, aceites y lubricadores quedaron en Lubricantes; los fijadores, resinas y siliconas en Adhesivos y selladores; los barnices, esmaltes y pinturas en Pinturas y recubrimientos. Los gases tienen categoría propia. La bombilla quedó en Refacciones. La cinta métrica, brochas y pastas de trabajo quedaron en Herramientas y consumibles; las placas acrílicas y el papel aluminio en Insumos generales. Se conservaron las denominaciones comerciales de la fuente.
 
@@ -59,3 +59,8 @@ El SKU `4024835` especifica 1.5 V y dos unidades, sin indicar tamaño: el desple
 ## Unificación solicitada
 
 Herramientas y consumibles e Insumos generales se integraron en Consumibles. La categoría reúne ahora 19 SKU en 14 tarjetas, incluido el papel aluminio `5514168`. Se preservaron las variantes, imágenes y unidades. Las categorías anteriores desaparecen del menú; sus direcciones compartidas muestran Consumibles. El resto de las categorías permanece igual.
+
+
+## Pilas en tarjetas individuales
+
+Por solicitud del usuario, las cinco pilas (`4156359`, `4024834`, `4029762`, `4024835`, `4156364`) tienen ahora tarjetas independientes. Se conservan sus imágenes, descripciones, unidades y SKU. El catálogo mantiene 399 SKU, distribuidos en 286 tarjetas; Consumibles contiene 18 tarjetas.
