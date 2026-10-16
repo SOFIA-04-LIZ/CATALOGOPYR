@@ -88,6 +88,19 @@ frame.onload = () => {
         // Verify the requested three-column minimum across phones and tablets.
         for (const width of [320, 360, 375, 390, 430, 600, 768, 1024, 1280, 1440]) {
             frame.style.width = width + 'px';
+            const footer = d.querySelector('footer');
+            assert(w.getComputedStyle(footer).position === 'fixed', 'footer is fixed at ' + width + 'px');
+            assert(parseFloat(w.getComputedStyle(d.body).paddingBottom) >= footer.getBoundingClientRect().height, 'footer space is reserved at ' + width + 'px');
+            assert(footer.scrollHeight <= footer.clientHeight, 'footer text fits at ' + width + 'px');
+            for (const scrollTop of [0, d.documentElement.scrollHeight / 2, d.documentElement.scrollHeight]) {
+                w.scrollTo(0, scrollTop);
+                const footerRect = footer.getBoundingClientRect();
+                assert(Math.abs(footerRect.bottom - w.innerHeight) < 1 && footerRect.top >= 0, 'footer stays visible while scrolling at ' + width + 'px');
+            }
+            search.value = 'zzzz-no-match'; w.buscarProducto();
+            assert(Math.abs(footer.getBoundingClientRect().bottom - w.innerHeight) < 1, 'footer stays at bottom with no results');
+            search.value = ''; w.buscarProducto();
+            w.scrollTo(0, 0);
             const grid = d.getElementById('catalogo');
             const columns = w.getComputedStyle(grid).gridTemplateColumns.split(' ').length;
             assert(columns >= 3, 'at least three columns at ' + width + 'px');
