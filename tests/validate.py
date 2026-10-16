@@ -142,6 +142,22 @@ class InventoryTests(unittest.TestCase):
                     self.assertEqual(product['source'], 'excel')
                     self.assertEqual(product['image'], row['image'])
 
+    def test_consumables_are_unified_in_menu_and_legacy_pages(self):
+        self.assertNotIn('HERRAMIENTAS', self.catalog['categories'])
+        self.assertNotIn('INSUMOS', self.catalog['categories'])
+        consumables = Page()
+        consumables.feed((ROOT / 'CONSUMIBLES.html').read_text())
+        self.assertIn('5514168', [v['sku'] for v in consumables.variants])
+        self.assertIn('5544109', [v['sku'] for v in consumables.variants])
+        for filename in ['HERRAMIENTAS.html', 'INSUMOS.html']:
+            page = Page()
+            text = (ROOT / filename).read_text()
+            page.feed(text)
+            self.assertCountEqual(page.product_ids, consumables.product_ids)
+            self.assertIn('id="current-category">Consumibles</strong>', text)
+            self.assertNotIn('Herramientas y consumibles', text)
+            self.assertNotIn('Insumos generales', text)
+
     def test_conflicting_local_sku_is_preserved(self):
         local = [p for p in self.catalog['products'] if p['source'] == 'local']
         self.assertEqual([p['sku'] for p in local], ['5537478'])

@@ -38,7 +38,7 @@ frame.onload = () => {
         toggle.click();
         assert(!menu.hidden && toggle.getAttribute('aria-expanded') === 'true', 'category menu opens');
         assert(w.getComputedStyle(menu).display !== 'none', 'category menu is visible');
-        assert(menu.querySelectorAll('a').length === 14, 'all category links are present');
+        assert(menu.querySelectorAll('a').length === 12, 'all category links are present');
         d.dispatchEvent(new w.KeyboardEvent('keydown', {key: 'Escape', bubbles: true}));
         assert(menu.hidden, 'Escape closes category menu');
         toggle.click();

@@ -36,7 +36,7 @@ Editar los materiales en `data/catalog.json` y sus agrupaciones en `data/product
 python3 tools/build_catalog.py
 ```
 
-Esto regenera Inicio, las 14 categorías y el CSV. Para cambiar la estructura compartida, editar `tools/page-template.html`. No editar las páginas generadas por separado, porque la siguiente generación reemplaza esos cambios.
+Esto regenera Inicio, las 12 categorías y el CSV. Para cambiar la estructura compartida, editar `tools/page-template.html`. No editar las páginas generadas por separado, porque la siguiente generación reemplaza esos cambios.
 
 El importador `python3 tools/import_dispatch.py ruta/al/index-descargado.html` permite reconstruir los datos a partir de una copia del enlace. **Reemplaza** `data/catalog.json` y `data/source-dispatch.json`; usarlo al actualizar la fuente y revisar las diferencias antes de regenerar. Los cambios manuales en la lista central deben preservarse antes de otra importación.
 
@@ -58,3 +58,7 @@ El catálogo conserva tres columnas desde 320 px y pasa a cuatro, cinco o seis e
 ## Pie de página visible
 
 La página ocupa la altura disponible de la pantalla (`100dvh`, con respaldo `100vh`). El encabezado, menú y pie tienen su espacio propio; solo `#catalog-content` se desplaza. El pie se mantiene visible también cuando la búsqueda no encuentra productos. Las pruebas del navegador comprueban la posición y que el pie sea el elemento pintado en pantalla.
+
+## Categorías unificadas
+
+Por solicitud del usuario, Herramientas y consumibles e Insumos generales se integraron en Consumibles. El papel aluminio y todos los materiales de esas categorías aparecen ahora ahí. El menú muestra 12 categorías; las direcciones antiguas `HERRAMIENTAS.html` e `INSUMOS.html` conservan una copia de Consumibles para que sigan funcionando los enlaces compartidos.

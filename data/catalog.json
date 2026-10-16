@@ -11,8 +11,6 @@
     "GASES": "Gases",
     "ADHESIVOS": "Adhesivos y selladores",
     "PINTURAS": "Pinturas y recubrimientos",
-    "HERRAMIENTAS": "Herramientas y consumibles",
-    "INSUMOS": "Insumos generales",
     "CONSUMIBLES": "Consumibles"
   },
   "products": [
@@ -660,7 +658,7 @@
     {
       "id": "dispatch-56",
       "name": "Brocha (Pinceleta) de 2 in",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "",
       "sku": "4187859",
       "sizes": {},
@@ -671,7 +669,7 @@
     {
       "id": "dispatch-57",
       "name": "Brocha (Pinceleta) de 4 in",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "",
       "sku": "4014690",
       "sizes": {},
@@ -1440,7 +1438,7 @@
     {
       "id": "dispatch-126",
       "name": "Cinta Metrica Truper 50 m",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "",
       "sku": "5542016",
       "sizes": {},
@@ -2780,7 +2778,7 @@
     {
       "id": "dispatch-244",
       "name": "Papel Aluminio en Rollo (400 mt x 30 cm)",
-      "category": "INSUMOS",
+      "category": "CONSUMIBLES",
       "subcategory": "",
       "sku": "5514168",
       "sizes": {},
@@ -2868,7 +2866,7 @@
     {
       "id": "dispatch-252",
       "name": "Pasta de Diamante Blanca para Pulir 5gr",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "",
       "sku": "4233254",
       "sizes": {},
@@ -2890,7 +2888,7 @@
     {
       "id": "dispatch-254",
       "name": "Pasta de Soldadura con 60 gr",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "",
       "sku": "4185544",
       "sizes": {},
@@ -3747,7 +3745,7 @@
     {
       "id": "excel-4080934",
       "name": "Disco de corte de fibra de vidrio Austromex 769",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "Discos de corte",
       "sku": "4080934",
       "sizes": {},
@@ -3762,7 +3760,7 @@
     {
       "id": "excel-5544334",
       "name": "Navaja de seguridad de retracción 11-987",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "Herramientas de corte",
       "sku": "5544334",
       "sizes": {},
@@ -3867,7 +3865,7 @@
     {
       "id": "excel-4052033",
       "name": "Candado Phillips de latón modelo 12",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "Candados de uso general",
       "sku": "4052033",
       "sizes": {},
@@ -3912,7 +3910,7 @@
     {
       "id": "excel-5544109",
       "name": "Linterna recargable Truper modelo 10614",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "Iluminación portátil",
       "sku": "5544109",
       "sizes": {},
@@ -3927,7 +3925,7 @@
     {
       "id": "excel-4023511",
       "name": "Flexómetro de 5 m con caja metálica",
-      "category": "HERRAMIENTAS",
+      "category": "CONSUMIBLES",
       "subcategory": "Medición",
       "sku": "4023511",
       "sizes": {},

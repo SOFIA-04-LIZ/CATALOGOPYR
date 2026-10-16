@@ -62,6 +62,11 @@ def build():
             page = page.replace('<a href="index.html">Inicio</a>', '<a href="index.html" aria-current="page">Inicio</a>')
         page = '\n'.join(line.rstrip() for line in page.splitlines()) + '\n'
         (ROOT / ((category or 'index') + '.html')).write_text(page)
+    # Keep previously shared URLs useful, while exposing only Consumibles in the menu.
+    consumables = (ROOT / 'CONSUMIBLES.html').read_text()
+    legacy_page = consumables.replace('</head>', '<link rel="canonical" href="CONSUMIBLES.html">\n</head>')
+    for legacy_name in ['HERRAMIENTAS.html', 'INSUMOS.html']:
+        (ROOT / legacy_name).write_text(legacy_page)
     with (ROOT / 'data/inventario-clasificado.csv').open('w', encoding='utf-8-sig', newline='') as file:
         writer = csv.writer(file, lineterminator="\n")
         writer.writerow(['SKU', 'Material', 'Grupo', 'Opción', 'Categoría', 'Tipo de material', 'Origen', 'Observaciones', 'UM'])

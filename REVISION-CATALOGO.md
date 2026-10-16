@@ -25,9 +25,7 @@ Se recuperaron las imágenes del candado dieléctrico, la tarjeta PVC y la camis
 | Gases | 4 |
 | Adhesivos y selladores | 12 |
 | Pinturas y recubrimientos | 5 |
-| Herramientas y consumibles | 9 |
-| Insumos generales | 1 |
-| Consumibles | 4 |
+| Consumibles | 14 |
 
 La clasificación se hizo por uso del material. Las grasas, aceites y lubricadores quedaron en Lubricantes; los fijadores, resinas y siliconas en Adhesivos y selladores; los barnices, esmaltes y pinturas en Pinturas y recubrimientos. Los gases tienen categoría propia. La bombilla quedó en Refacciones. La cinta métrica, brochas y pastas de trabajo quedaron en Herramientas y consumibles; las placas acrílicas y el papel aluminio en Insumos generales. Se conservaron las denominaciones comerciales de la fuente.
 
@@ -56,3 +54,8 @@ Se recuperaron todas las imágenes del Excel; las de los 21 materiales nuevos se
 Se creó Consumibles, con cuatro tarjetas: pilas (cinco opciones), vasos desechables, masking tape y sellos de seguridad. Las plumas retráctiles Paper Mate tienen un selector de color independiente de los bolígrafos anteriores. Las mangas y cubrebocas se ubicaron en EPP; el adhesivo Loctite en Adhesivos y selladores; el disco, navaja, candado, linterna y flexómetro en Herramientas. El tejido de rafia, la lámina y la manguera se ubicaron en Refacciones conforme al libro.
 
 El SKU `4024835` especifica 1.5 V y dos unidades, sin indicar tamaño: el desplegable lo señala así. El detalle por fila, las unidades originales y el hash del archivo se conservan en `data/source-excel.json`.
+
+
+## Unificación solicitada
+
+Herramientas y consumibles e Insumos generales se integraron en Consumibles. La categoría reúne ahora 19 SKU en 14 tarjetas, incluido el papel aluminio `5514168`. Se preservaron las variantes, imágenes y unidades. Las categorías anteriores desaparecen del menú; sus direcciones compartidas muestran Consumibles. El resto de las categorías permanece igual.
