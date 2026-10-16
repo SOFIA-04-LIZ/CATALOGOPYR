@@ -1,0 +1,55 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><title>Catalog browser checks</title><body><pre id="result">RUNNING</pre><iframe id="app"></iframe><script>
+const frame = document.getElementById('app');
+const results = [];
+const assert = (condition, message) => { if (!condition) throw Error(message); results.push(message); };
+const pages = ['index', 'EPP', 'LIMPIEZA', 'LUBRICANTES', 'PAPELERIA', 'QUIMICOS', 'REFACCIONES', 'SOLVENTES', 'UNIFORMES', 'GASES', 'ADHESIVOS', 'PINTURAS', 'HERRAMIENTAS', 'INSUMOS'];
+let index = 0;
+frame.onload = () => {
+ try {
+  const w = frame.contentWindow, d = w.document;
+  assert(typeof w.buscarProducto === 'function', pages[index] + ': scripts initialized');
+  assert(!!d.querySelector('.card:not([hidden])'), pages[index] + ': catalog has materials');
+  d.querySelector('.cart-container').click();
+  assert(w.getComputedStyle(d.getElementById('cart-panel')).display === 'block', pages[index] + ': cart opens on first click');
+  w.vaciarCarrito();
+  w.onerror = message => { throw Error(message); };
+  for (const card of d.querySelectorAll('.card')) {
+   w.agregarAlCarrito(card.querySelector('button[onclick="agregarAlCarrito(this)"]'));
+   assert(d.querySelector('.cart-sku').textContent === card.querySelector('span').textContent.trim(), 'product can be added');
+   w.vaciarCarrito();
+   for (const button of card.querySelectorAll('.opcion-btn')) button.click();
+   const selector = card.querySelector('select');
+   if (selector) for (const option of selector.options) { selector.value = option.value; selector.dispatchEvent(new w.Event('change')); assert(card.querySelector('.sku-display').textContent === JSON.parse(card.dataset.skus)[option.value], 'size selects exact SKU');
+    w.agregarAlCarrito(card.querySelector('button[onclick="agregarAlCarrito(this)"]'));
+    assert(d.querySelector('.cart-sku').textContent === card.querySelector('.sku-display').textContent, 'cart uses size SKU');
+    w.vaciarCarrito(); }
+  }
+  if (pages[index] === 'index') {
+   const filter = d.getElementById('filtro-categoria');
+   filter.value = 'GASES'; filter.dispatchEvent(new w.Event('change'));
+   assert(d.querySelectorAll('.card:not([hidden])').length === 4, 'gas category filter');
+   filter.value = ''; filter.dispatchEvent(new w.Event('change'));
+   d.getElementById('buscador').value = '5506472'; w.buscarProducto();
+   assert(d.querySelector('.card:not([hidden]) h3').textContent === 'Faja Lumbar', 'search finds unselected size SKU');
+   d.getElementById('buscador').value = 'quimicos'; w.buscarProducto();
+   assert(d.querySelectorAll('.card:not([hidden])').length > 0, 'accent insensitive search');
+   d.getElementById('buscador').value = ''; w.buscarProducto();
+  }
+  const card = d.querySelector('.card');
+  if (card) {
+   w.agregarAlCarrito(card.querySelector('button'));
+   assert(d.getElementById('cart-count').textContent === '1', 'add to cart');
+   assert(d.querySelector('.cart-sku').textContent === card.querySelector('span').textContent.trim(), 'cart uses selected SKU');
+   w.eliminarProducto(0);
+   assert(d.getElementById('cart-count').textContent === '0', 'remove from cart');
+   d.getElementById('buscador').value = 'zzzz-no-match'; w.buscarProducto();
+   assert(!d.querySelector('.card:not([hidden])'), 'search hides nonmatches');
+   assert(!d.getElementById('sin-resultados').hidden, 'search empty state');
+  }
+  if (++index < pages.length) frame.src = '../' + pages[index] + '.html';
+  else document.getElementById('result').textContent = 'PASS: ' + results.length + ' checks across ' + pages.length + ' pages';
+ } catch (error) { document.getElementById('result').textContent = 'FAIL: ' + error.stack; }
+};
+window.addEventListener('error', event => document.getElementById('result').textContent = 'FAIL: ' + event.message);
+frame.src = '../index.html';
+</script></body></html>

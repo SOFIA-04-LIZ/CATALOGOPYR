@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}}</title>
+
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="scripts.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>ALMACEN PARTES Y REFACCIONES</h1>
+      <div class="logo-container">
+        <img src="Images/LOGOBLANCO.png" alt="Logo Empresa">
+    </div>
+
+   <button type="button" class="cart-container" onclick="toggleCarrito()" aria-label="Abrir carrito" aria-expanded="false" aria-controls="cart-panel">
+    🛒 <span id="cart-count">0</span>
+</button>
+<div id="cart-panel">
+    <h3>Mi carrito</h3>
+    <div id="cart-items"></div>
+    <button onclick="vaciarCarrito()" class="btn-vaciar">
+        Eliminar lista
+    </button>
+</div>
+
+</header>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li>
+            <a href="#">Categorías ▼</a>
+{{CATEGORY_LINKS}}
+        </li>
+    </ul>
+</nav>
+
+<section class="search-container">
+    <label for="buscador" class="sr-only">Buscar producto por nombre o SKU</label>
+    <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
+</section>
+
+<section class="catalog-heading">
+    <h2>{{HEADING}}</h2>
+    <div class="catalog-filters">
+        <label for="filtro-categoria">Categoría</label>
+        <select id="filtro-categoria">{{CATEGORY_OPTIONS}}</select>
+        <label for="filtro-subcategoria">Tipo de material</label>
+        <select id="filtro-subcategoria">{{SUBCATEGORY_OPTIONS}}</select>
+    </div>
+    <p id="result-count" role="status"></p>
+</section>
+<section class="catalogo" id="catalogo">
+{{CARDS}}
+</section>
+<p id="sin-resultados" role="status" hidden>No se encontraron productos.</p>
+<footer>2026 Catálogo Partes Y Refacciones V2 By Sofia Jimenez</footer>
+</body>
+</html>

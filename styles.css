@@ -161,7 +161,7 @@ header h1{
     font-weight:600;
     letter-spacing:2px;
     color:var(--accent);
-    align-items: justify-content;
+
 }
 
 /* NAV */
@@ -413,3 +413,34 @@ footer{
 
 }
 
+
+/* Keep hidden results out of the grid and avoid painting offscreen cards. */
+[hidden] { display: none !important; }
+.card { content-visibility: auto; contain-intrinsic-size: auto 390px; }
+.card img { aspect-ratio: 6 / 5; }
+.cart-container { background: transparent; border: 0; }
+#cart-panel { z-index: 100; max-height: 70vh; overflow-y: auto; }
+.menu li ul { z-index: 50; }
+.menu li:focus-within ul { display: block; }
+#sin-resultados { text-align: center; padding: 30px; }
+@media (min-width: 769px) {
+    header { min-height: 130px; padding-left: 220px; padding-right: 110px; }
+    .logo-container img { width: 160px; height: 100px; object-fit: contain; }
+    header h1 { font-size: clamp(18px, 2.4vw, 32px); }
+}
+@media (max-width: 400px) {
+    .catalogo { grid-template-columns: minmax(0, 1fr); padding: 16px; gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.catalog-heading { padding: 0 40px; text-align: center; }
+.catalog-heading h2 { margin-bottom: 12px; }
+.catalog-filters { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+.catalog-filters select { max-width: 100%; font-size: 16px; }
+.product-type { min-height: 1em; }
+.card .product-note { margin-top: 10px; font-size: 12px; color: #755b12; }
+.menu li ul { max-height: 65vh; overflow-y: auto; min-width: 245px; }
+@media (max-width: 400px) { .catalog-heading { padding: 0 16px; } }

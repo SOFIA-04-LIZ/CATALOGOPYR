@@ -1,0 +1,129 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo PYR — Herramientas y consumibles</title>
+
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="scripts.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>ALMACEN PARTES Y REFACCIONES</h1>
+      <div class="logo-container">
+        <img src="Images/LOGOBLANCO.png" alt="Logo Empresa">
+    </div>
+
+   <button type="button" class="cart-container" onclick="toggleCarrito()" aria-label="Abrir carrito" aria-expanded="false" aria-controls="cart-panel">
+    🛒 <span id="cart-count">0</span>
+</button>
+<div id="cart-panel">
+    <h3>Mi carrito</h3>
+    <div id="cart-items"></div>
+    <button onclick="vaciarCarrito()" class="btn-vaciar">
+        Eliminar lista
+    </button>
+</div>
+
+</header>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li>
+            <a href="#">Categorías ▼</a>
+<ul>
+<li><a href="LIMPIEZA.html">Limpieza</a></li>
+<li><a href="EPP.html">EPP</a></li>
+<li><a href="PAPELERIA.html">Papelería</a></li>
+<li><a href="SOLVENTES.html">Solventes</a></li>
+<li><a href="LUBRICANTES.html">Lubricantes</a></li>
+<li><a href="QUIMICOS.html">Químicos</a></li>
+<li><a href="UNIFORMES.html">Uniformes</a></li>
+<li><a href="REFACCIONES.html">Refacciones</a></li>
+<li><a href="GASES.html">Gases</a></li>
+<li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
+<li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
+<li><a href="HERRAMIENTAS.html">Herramientas y consumibles</a></li>
+<li><a href="INSUMOS.html">Insumos generales</a></li>
+</ul>
+        </li>
+    </ul>
+</nav>
+
+<section class="search-container">
+    <label for="buscador" class="sr-only">Buscar producto por nombre o SKU</label>
+    <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
+</section>
+
+<section class="catalog-heading">
+    <h2>Herramientas y consumibles</h2>
+    <div class="catalog-filters">
+        <label for="filtro-categoria">Categoría</label>
+        <select id="filtro-categoria"><option value="">Todas las categorías</option><option value="LIMPIEZA">Limpieza</option><option value="EPP">EPP</option><option value="PAPELERIA">Papelería</option><option value="SOLVENTES">Solventes</option><option value="LUBRICANTES">Lubricantes</option><option value="QUIMICOS">Químicos</option><option value="UNIFORMES">Uniformes</option><option value="REFACCIONES">Refacciones</option><option value="GASES">Gases</option><option value="ADHESIVOS">Adhesivos y selladores</option><option value="PINTURAS">Pinturas y recubrimientos</option><option value="HERRAMIENTAS" selected>Herramientas y consumibles</option><option value="INSUMOS">Insumos generales</option></select>
+        <label for="filtro-subcategoria">Tipo de material</label>
+        <select id="filtro-subcategoria"><option value="">Todos los tipos</option></select>
+    </div>
+    <p id="result-count" role="status"></p>
+</section>
+<section class="catalogo" id="catalogo">
+<div class="card" data-id="dispatch-56" data-category="HERRAMIENTAS" data-subcategory="">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Brocha (Pinceleta) de 2 in.PNG" alt="Brocha (Pinceleta) de 2 in">
+    <h3>Brocha (Pinceleta) de 2 in</h3>
+    <p>Herramientas y consumibles</p>
+    <p class="product-type"></p>
+
+    <span class="sku-display">SKU: 4187859</span>
+
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="dispatch-57" data-category="HERRAMIENTAS" data-subcategory="">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Brocha (Pinceleta) de 4 in.PNG" alt="Brocha (Pinceleta) de 4 in">
+    <h3>Brocha (Pinceleta) de 4 in</h3>
+    <p>Herramientas y consumibles</p>
+    <p class="product-type"></p>
+
+    <span class="sku-display">SKU: 4014690</span>
+
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="dispatch-126" data-category="HERRAMIENTAS" data-subcategory="">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Cinta Metrica Truper 50 m.PNG" alt="Cinta Metrica Truper 50 m">
+    <h3>Cinta Metrica Truper 50 m</h3>
+    <p>Herramientas y consumibles</p>
+    <p class="product-type"></p>
+
+    <span class="sku-display">SKU: 5542016</span>
+
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="dispatch-252" data-category="HERRAMIENTAS" data-subcategory="">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pasta de Diamante Blanca para Pulir 5gr.PNG" alt="Pasta de Diamante Blanca para Pulir 5gr">
+    <h3>Pasta de Diamante Blanca para Pulir 5gr</h3>
+    <p>Herramientas y consumibles</p>
+    <p class="product-type"></p>
+
+    <span class="sku-display">SKU: 4233254</span>
+
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="dispatch-254" data-category="HERRAMIENTAS" data-subcategory="">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/Pasta de Soldadura con 60 gr.PNG" alt="Pasta de Soldadura con 60 gr">
+    <h3>Pasta de Soldadura con 60 gr</h3>
+    <p>Herramientas y consumibles</p>
+    <p class="product-type"></p>
+
+    <span class="sku-display">SKU: 4185544</span>
+
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+</section>
+<p id="sin-resultados" role="status" hidden>No se encontraron productos.</p>
+<footer>2026 Catálogo Partes Y Refacciones V2 By Sofia Jimenez</footer>
+</body>
+</html>

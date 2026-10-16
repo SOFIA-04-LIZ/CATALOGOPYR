@@ -1,0 +1,64 @@
+{
+  "source_url": "https://almacengeneral.github.io/Productos-Despacho/index.html",
+  "checked_on": "2026-10-16",
+  "source_products": 321,
+  "source_unique_skus": 377,
+  "previously_missing_skus": [
+    {
+      "name": "Borrador para Pizarron Blanco",
+      "sku": "5530050"
+    },
+    {
+      "name": "Candado Dielectrico para Bloqueo Color Azul",
+      "sku": "5536106"
+    },
+    {
+      "name": "Casco Infracap Amarillo",
+      "sku": "5533306"
+    },
+    {
+      "name": "Casco Infracap Azul",
+      "sku": "5506506"
+    },
+    {
+      "name": "Casco Infracap Rojo",
+      "sku": "5533305"
+    },
+    {
+      "name": "Casco Infracap Verde",
+      "sku": "5526770"
+    },
+    {
+      "name": "Cloro Cloralex con 950 ml",
+      "sku": "5506859"
+    },
+    {
+      "name": "Faja Lumbar",
+      "sku": "5506402"
+    },
+    {
+      "name": "Faja Lumbar",
+      "sku": "5506419"
+    },
+    {
+      "name": "Faja Lumbar",
+      "sku": "5506472"
+    },
+    {
+      "name": "Limpiador de Superficie Tipo Espuma 400 g",
+      "sku": "4056842"
+    }
+  ],
+  "conflicts": [
+    {
+      "name": "Limpiador de Superficie Tipo Espuma 400 g",
+      "source_sku": "4056842",
+      "local_sku": "5537478",
+      "resolution": "Conservar ambos identificados, confirmar inventario."
+    },
+    {
+      "name": "Aceite Mobil Glygoyle 30 y 460",
+      "resolution": "Se adoptaron los SKU del enlace: 30 = 4056384; 460 = 4057131. El proyecto los tenía intercambiados."
+    }
+  ]
+}
