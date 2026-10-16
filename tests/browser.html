@@ -91,6 +91,12 @@ frame.onload = () => {
             const columns = w.getComputedStyle(grid).gridTemplateColumns.split(' ').length;
             assert(columns >= 3, 'at least three columns at ' + width + 'px');
             assert(d.documentElement.scrollWidth <= d.documentElement.clientWidth, 'no horizontal overflow at ' + width + 'px');
+            const logo = d.querySelector('.logo-container');
+            assert(d.querySelector('nav').contains(logo), 'logo belongs to navigation');
+            const logoRect = logo.getBoundingClientRect();
+            const navRect = d.querySelector('nav .menu').getBoundingClientRect();
+            assert(logoRect.left >= navRect.right, 'logo does not overlap navigation at ' + width + 'px');
+            assert(logoRect.right <= width, 'logo fits viewport at ' + width + 'px');
             const titleRange = d.createRange();
             titleRange.selectNodeContents(d.querySelector('header h1'));
             const cartRect = d.querySelector('.cart-container').getBoundingClientRect();
