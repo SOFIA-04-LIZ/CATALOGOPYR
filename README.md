@@ -41,3 +41,7 @@ node --check scripts.js
 Las pruebas verifican cobertura exacta de materiales y SKU de la fuente, tallas, imágenes locales, categorías sin omisiones ni duplicados, JSON e identificadores HTML. Abrir `tests/browser.html` desde el servidor local para probar búsqueda, navegación superior, todas las opciones y carrito en las 14 páginas, con anchos de escritorio y celular. Usar un perfil de pruebas: la comprobación vacía el carrito local.
 
 Las imágenes se cargan de forma diferida; el buscador utiliza un índice en memoria y admite consultas sin acentos. El carrito conserva los productos entre páginas mediante almacenamiento local y funciona también si el navegador lo bloquea.
+
+## Diseño para celulares
+
+El catálogo conserva tres columnas desde 320 px y pasa a cuatro, cinco o seis en pantallas grandes. En celulares se ajustan imágenes, texto, espaciado y controles; los botones y selectores mantienen una altura mínima de 44 px. Las categorías están únicamente en la navegación superior, sin filtros ni contadores debajo del buscador. Los recursos compartidos llevan una versión en su URL para solicitar el diseño actualizado al publicar.

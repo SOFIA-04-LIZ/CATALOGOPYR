@@ -24,7 +24,7 @@ class Page(HTMLParser):
         if 'id' in attrs:
             self.ids.append(attrs['id'])
         if tag in ('img', 'script', 'link'):
-            self.assets.append(attrs.get('src', attrs.get('href', '')))
+            self.assets.append(attrs.get('src', attrs.get('href', '')).split('?', 1)[0])
         if 'card' in attrs.get('class', '').split():
             self.cards += 1
             self.product_ids.append(attrs.get('data-id'))

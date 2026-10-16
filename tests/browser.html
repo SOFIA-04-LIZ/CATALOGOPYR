@@ -84,12 +84,30 @@ frame.onload = () => {
         assert(!d.getElementById('sin-resultados').hidden, 'empty search state');
         search.value = ''; w.buscarProducto();
         assert(d.getElementById('sin-resultados').hidden, 'clearing search restores catalog');
-        // Check card/select layout with a phone-size viewport.
-        frame.style.width = '375px';
-        assert(d.documentElement.scrollWidth <= d.documentElement.clientWidth, 'no horizontal overflow at 375px');
-        toggle.click();
-        assert(menu.getBoundingClientRect().right <= w.innerWidth, 'top category menu fits phone width');
-        toggle.click();
+        // Verify the requested three-column minimum across phones and tablets.
+        for (const width of [320, 360, 375, 390, 430, 600, 768, 1024, 1280, 1440]) {
+            frame.style.width = width + 'px';
+            const grid = d.getElementById('catalogo');
+            const columns = w.getComputedStyle(grid).gridTemplateColumns.split(' ').length;
+            assert(columns >= 3, 'at least three columns at ' + width + 'px');
+            assert(d.documentElement.scrollWidth <= d.documentElement.clientWidth, 'no horizontal overflow at ' + width + 'px');
+            const titleRange = d.createRange();
+            titleRange.selectNodeContents(d.querySelector('header h1'));
+            const cartRect = d.querySelector('.cart-container').getBoundingClientRect();
+            assert([...titleRange.getClientRects()].every(rect => rect.right <= cartRect.left || rect.left >= cartRect.right || rect.bottom <= cartRect.top || rect.top >= cartRect.bottom), 'header text does not overlap cart at ' + width + 'px');
+            const firstCards = [...d.querySelectorAll('.card:not([hidden])')].slice(0, 3);
+            if (firstCards.length === 3) {
+                const positions = firstCards.map(card => card.getBoundingClientRect());
+                assert(positions.every(position => Math.abs(position.top - positions[0].top) < 1), 'first three cards share a row at ' + width + 'px');
+                assert(positions[2].right <= width, 'third card fits viewport at ' + width + 'px');
+            }
+            toggle.click();
+            assert(menu.getBoundingClientRect().right <= w.innerWidth, 'top category menu fits at ' + width + 'px');
+            toggle.click();
+            for (const selector of d.querySelectorAll('.variant-select')) {
+                assert(selector.getBoundingClientRect().width <= selector.closest('.card').getBoundingClientRect().width, 'variant dropdown fits its card at ' + width + 'px');
+            }
+        }
         frame.style.width = '1280px';
         w.agregarAlCarrito(d.querySelector('.card button'));
         assert(d.getElementById('cart-count').textContent === '1', 'cart count updates');
