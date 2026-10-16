@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo PYR — Consumibles</title>
+
+
+<link rel="stylesheet" href="styles.css?v=20261016-excel">
+
+<script src="scripts.js?v=20261016-excel" defer></script>
+</head>
+<body>
+
+<header>
+    <h1><span class="header-kicker">ALMACÉN</span><span class="header-title">PARTES Y REFACCIONES</span></h1>
+
+   <button type="button" class="cart-container" onclick="toggleCarrito()" aria-label="Abrir carrito" aria-expanded="false" aria-controls="cart-panel">
+    🛒 <span id="cart-count">0</span>
+</button>
+<div id="cart-panel">
+    <h3>Mi carrito</h3>
+    <div id="cart-items"></div>
+    <button onclick="vaciarCarrito()" class="btn-vaciar">
+        Eliminar lista
+    </button>
+</div>
+
+</header>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li>
+            <button type="button" class="categories-toggle" aria-expanded="false" aria-controls="categories-menu">Categorías <span aria-hidden="true">▼</span></button>
+<ul id="categories-menu" hidden>
+<li><a href="LIMPIEZA.html">Limpieza</a></li>
+<li><a href="EPP.html">EPP</a></li>
+<li><a href="PAPELERIA.html">Papelería</a></li>
+<li><a href="SOLVENTES.html">Solventes</a></li>
+<li><a href="LUBRICANTES.html">Lubricantes</a></li>
+<li><a href="QUIMICOS.html">Químicos</a></li>
+<li><a href="UNIFORMES.html">Uniformes</a></li>
+<li><a href="REFACCIONES.html">Refacciones</a></li>
+<li><a href="GASES.html">Gases</a></li>
+<li><a href="ADHESIVOS.html">Adhesivos y selladores</a></li>
+<li><a href="PINTURAS.html">Pinturas y recubrimientos</a></li>
+<li><a href="HERRAMIENTAS.html">Herramientas y consumibles</a></li>
+<li><a href="INSUMOS.html">Insumos generales</a></li>
+<li><a href="CONSUMIBLES.html" aria-current="page">Consumibles</a></li>
+</ul>
+        </li>
+    </ul>
+    <a class="logo-container" href="index.html" aria-label="Logística — Inicio">
+        <img src="Images/LOGOBLANCO.png" alt="Logística" width="130" height="44">
+    </a>
+</nav>
+
+<section class="search-container">
+    <label for="buscador" class="sr-only">Buscar producto por nombre o SKU</label>
+    <input type="search" id="buscador" placeholder="Buscar producto por nombre o sku...">
+</section>
+
+<section class="catalogo" id="catalogo">
+<div class="card" data-id="pilas" data-category="CONSUMIBLES" data-variants="[{&quot;sku&quot;: &quot;4156359&quot;, &quot;label&quot;: &quot;C — 1.5 V — 2 unidades&quot;, &quot;image&quot;: &quot;Images/material-4156359.png&quot;, &quot;name&quot;: &quot;Pila alcalina C de 1.5 V (blíster de 2)&quot;, &quot;source_id&quot;: &quot;excel-4156359&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Pila alcalina C de 1.5 V (blíster de 2)&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PAQ&quot;, &quot;aliases&quot;: [&quot;PILA ALCAL;C;1,5V;BLISTER C/2 UNI&quot;]}, {&quot;sku&quot;: &quot;4024834&quot;, &quot;label&quot;: &quot;AAA — 1.5 V — 2 unidades&quot;, &quot;image&quot;: &quot;Images/material-4024834.png&quot;, &quot;name&quot;: &quot;Pila alcalina AAA de 1.5 V (paquete de 2)&quot;, &quot;source_id&quot;: &quot;excel-4024834&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Pila alcalina AAA de 1.5 V (paquete de 2)&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PAQ&quot;, &quot;aliases&quot;: [&quot;PILA ALCAL;TAM:AAA;1,5 V;EMP C/2 UNID&quot;]}, {&quot;sku&quot;: &quot;4029762&quot;, &quot;label&quot;: &quot;9 V — Cualquier marca&quot;, &quot;image&quot;: &quot;Images/material-4029762.png&quot;, &quot;name&quot;: &quot;Pila de 9 V, cualquier marca&quot;, &quot;source_id&quot;: &quot;excel-4029762&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Pila de 9 V, cualquier marca&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PZA&quot;, &quot;aliases&quot;: [&quot;PILA 9 VOLTS. CUALQUIER MCA&quot;]}, {&quot;sku&quot;: &quot;4024835&quot;, &quot;label&quot;: &quot;1.5 V — 2 unidades (tamaño sin indicar)&quot;, &quot;image&quot;: &quot;Images/material-4024835.png&quot;, &quot;name&quot;: &quot;Pila alcalina de 1.5 V (blíster de 2)&quot;, &quot;source_id&quot;: &quot;excel-4024835&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Pila alcalina de 1.5 V (blíster de 2)&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PAR&quot;, &quot;aliases&quot;: [&quot;PILA ALCAL;1,5V;BLISTER C/2UNIDADES&quot;]}, {&quot;sku&quot;: &quot;4156364&quot;, &quot;label&quot;: &quot;AA — 1.5 V — 4 unidades&quot;, &quot;image&quot;: &quot;Images/material-4156364.png&quot;, &quot;name&quot;: &quot;Pila alcalina AA de 1.5 V (blíster de 4)&quot;, &quot;source_id&quot;: &quot;excel-4156364&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Pila alcalina AA de 1.5 V (blíster de 4)&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PAC&quot;, &quot;aliases&quot;: [&quot;PILA ALCAL;AA;1,5V;BLISTER C/4 UNI&quot;]}]">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/material-4156359.png" alt="Pila alcalina C de 1.5 V (blíster de 2)">
+    <h3>Pilas</h3>
+    <p>Consumibles</p>
+    <p class="product-type">Pilas y baterías</p>
+    <label class="variant-field">Tipo / presentación<select class="variant-select" aria-label="Tipo / presentación de Pilas"><option value="4156359">C — 1.5 V — 2 unidades</option><option value="4024834">AAA — 1.5 V — 2 unidades</option><option value="4029762">9 V — Cualquier marca</option><option value="4024835">1.5 V — 2 unidades (tamaño sin indicar)</option><option value="4156364">AA — 1.5 V — 4 unidades</option></select></label>
+    <span class="sku-display">SKU: 4156359</span>
+    <p class="product-unit">Unidad: PAQ</p>
+    <p class="product-note" hidden></p>
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="excel-5542368" data-category="CONSUMIBLES" data-variants="[{&quot;sku&quot;: &quot;5542368&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/material-5542368.png&quot;, &quot;name&quot;: &quot;Vaso de plástico transparente desechable de 16 oz&quot;, &quot;source_id&quot;: &quot;excel-5542368&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Vaso de plástico transparente desechable de 16 oz&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PAQ&quot;, &quot;aliases&quot;: [&quot;VASO DE PLASTICO TRANSP DESECH DE 16 OZ&quot;]}]">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/material-5542368.png" alt="Vaso de plástico transparente desechable de 16 oz">
+    <h3>Vaso de plástico transparente desechable de 16 oz</h3>
+    <p>Consumibles</p>
+    <p class="product-type">Desechables</p>
+
+    <span class="sku-display">SKU: 5542368</span>
+    <p class="product-unit">Unidad: PAQ</p>
+    <p class="product-note" hidden></p>
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="excel-5530059" data-category="CONSUMIBLES" data-variants="[{&quot;sku&quot;: &quot;5530059&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/material-5530059.png&quot;, &quot;name&quot;: &quot;Cinta masking tape de 24 mm × 50 m&quot;, &quot;source_id&quot;: &quot;excel-5530059&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Cinta masking tape de 24 mm × 50 m&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;PZA&quot;, &quot;aliases&quot;: [&quot;CINTA MASKING TAPE 24MM X 50M&quot;]}]">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/material-5530059.png" alt="Cinta masking tape de 24 mm × 50 m">
+    <h3>Cinta masking tape de 24 mm × 50 m</h3>
+    <p>Consumibles</p>
+    <p class="product-type">Cintas</p>
+
+    <span class="sku-display">SKU: 5530059</span>
+    <p class="product-unit">Unidad: PZA</p>
+    <p class="product-note" hidden></p>
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+<div class="card" data-id="excel-5543725" data-category="CONSUMIBLES" data-variants="[{&quot;sku&quot;: &quot;5543725&quot;, &quot;label&quot;: &quot;&quot;, &quot;image&quot;: &quot;Images/material-5543725.png&quot;, &quot;name&quot;: &quot;Sello de seguridad amarillo ETIA02&quot;, &quot;source_id&quot;: &quot;excel-5543725&quot;, &quot;source&quot;: &quot;excel&quot;, &quot;cart_name&quot;: &quot;Sello de seguridad amarillo ETIA02&quot;, &quot;note&quot;: &quot;&quot;, &quot;unit&quot;: &quot;&quot;, &quot;aliases&quot;: [&quot;SELLO SEGURIDAD AMARILLO ETIA02&quot;]}]">
+    <img loading="lazy" decoding="async" width="240" height="200" src="Images/material-5543725.png" alt="Sello de seguridad amarillo ETIA02">
+    <h3>Sello de seguridad amarillo ETIA02</h3>
+    <p>Consumibles</p>
+    <p class="product-type">Sellos de seguridad</p>
+
+    <span class="sku-display">SKU: 5543725</span>
+    <p class="product-unit" hidden></p>
+    <p class="product-note" hidden></p>
+    <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
+</div>
+</section>
+<p id="sin-resultados" role="status" hidden>No se encontraron productos.</p>
+<footer>2026 Catálogo Partes Y Refacciones V2 By Sofia Jimenez</footer>
+</body>
+</html>

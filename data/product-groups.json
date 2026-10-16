@@ -29,5 +29,7 @@
   {"id":"resinas-scotchcast","name":"Resina epoxi 3M Scotchcast","label":"Presentación","members":[["dispatch-275","418 g"],["dispatch-276","90 g"]]},
   {"id":"rollos-senalamiento","name":"Rollo de señalamiento (12 cm × 50 m)","label":"Leyenda","members":[["dispatch-284","Peligro"],["dispatch-285","Precaución"]]},
   {"id":"viniles-scotchcal","name":"Vinil autoadherible Scotchcal Electrocut (24 in × 45.42 m)","label":"Color","members":[["dispatch-287","Amarillo"],["dispatch-288","Azul"],["dispatch-289","Blanco"],["dispatch-290","Negro"],["dispatch-291","Rojo"],["dispatch-292","Verde"]]},
-  {"id":"toallas-rollo","name":"Toalla en rollo para manos (6 rollos)","label":"Longitud","members":[["dispatch-319","160 m"],["dispatch-320","180 m"]]}
+  {"id":"toallas-rollo","name":"Toalla en rollo para manos (6 rollos)","label":"Longitud","members":[["dispatch-319","160 m"],["dispatch-320","180 m"]]},
+  {"id":"plumas-papermate","name":"Plumas retráctiles Paper Mate (caja de 12)","label":"Color","members":[["excel-5541901","Negro"],["excel-5541902","Azul"]]},
+  {"id":"pilas","name":"Pilas","label":"Tipo / presentación","members":[["excel-4156359","C — 1.5 V — 2 unidades"],["excel-4024834","AAA — 1.5 V — 2 unidades"],["excel-4029762","9 V — Cualquier marca"],["excel-4024835","1.5 V — 2 unidades (tamaño sin indicar)"],["excel-4156364","AA — 1.5 V — 4 unidades"]]}
 ]

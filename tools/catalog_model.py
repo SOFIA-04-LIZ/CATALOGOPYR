@@ -12,7 +12,8 @@ def material_variants(product, label=''):
             sku=sku, label=option, image=product['image'], name=product['name'],
             source_id=product['id'], source=product['source'],
             cart_name=product['name'] + (f' — {selector_label}: {size}' if size else ''),
-            note=product.get('note', ''),
+            note=product.get('note', ''), unit=product.get('unit', ''),
+            aliases=product.get('aliases', []),
         ))
     return variants
 

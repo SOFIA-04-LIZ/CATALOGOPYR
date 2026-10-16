@@ -16,6 +16,9 @@ function selectVariant(card, variant) {
     const note = card.querySelector('.product-note');
     note.textContent = variant.note;
     note.hidden = !variant.note;
+    const unit = card.querySelector('.product-unit');
+    unit.textContent = variant.unit ? 'Unidad: ' + variant.unit : '';
+    unit.hidden = !variant.unit;
     selectedVariants.set(card, variant);
 }
 
@@ -28,7 +31,7 @@ for (const card of cards) {
         if (variant) selectVariant(card, variant);
     });
     searchIndex.set(card, normalize(card.textContent + ' ' + variants.map(item =>
-        [item.name, item.label, item.sku].join(' ')).join(' ')));
+        [item.name, item.label, item.sku, ...(item.aliases || [])].join(' ')).join(' ')));
 }
 
 function buscarProducto() {
@@ -41,7 +44,7 @@ function buscarProducto() {
         count++;
         // Searching for a specific SKU or color also displays the matching option.
         if (query) {
-            const matches = variant => normalize([variant.name, variant.label, variant.sku].join(' ')).includes(query);
+            const matches = variant => normalize([variant.name, variant.label, variant.sku, ...(variant.aliases || [])].join(' ')).includes(query);
             if (!matches(selectedVariants.get(card))) {
                 const variant = cardVariants.get(card).find(matches);
                 if (variant) selectVariant(card, variant);

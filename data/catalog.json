@@ -12,7 +12,8 @@
     "ADHESIVOS": "Adhesivos y selladores",
     "PINTURAS": "Pinturas y recubrimientos",
     "HERRAMIENTAS": "Herramientas y consumibles",
-    "INSUMOS": "Insumos generales"
+    "INSUMOS": "Insumos generales",
+    "CONSUMIBLES": "Consumibles"
   },
   "products": [
     {
@@ -2977,24 +2978,32 @@
     {
       "id": "dispatch-262",
       "name": "Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor",
-      "category": "INSUMOS",
-      "subcategory": "",
+      "category": "REFACCIONES",
+      "subcategory": "Placas y láminas",
       "sku": "4056931",
       "sizes": {},
       "image": "Images/Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 3 mm de Espesor.PNG",
       "source": "dispatch",
-      "source_name": "Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor"
+      "source_name": "Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 3 mm de Espesor",
+      "unit": "PZA",
+      "aliases": [
+        "placa acrilico de 3mm"
+      ]
     },
     {
       "id": "dispatch-263",
       "name": "Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor",
-      "category": "INSUMOS",
-      "subcategory": "",
+      "category": "REFACCIONES",
+      "subcategory": "Placas y láminas",
       "sku": "4056625",
       "sizes": {},
       "image": "Images/Placa Acrilica Cristal L-051 (2.40 X 1.20 m) con 6 mm de Espesor.PNG",
       "source": "dispatch",
-      "source_name": "Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor"
+      "source_name": "Placa Acrilica Cristal L-051  (2.40 X 1.20 m) con 6 mm de Espesor",
+      "unit": "PZA",
+      "aliases": [
+        "placa acrilico de 6mm"
+      ]
     },
     {
       "id": "dispatch-264",
@@ -3644,6 +3653,321 @@
       "image": "Images/Limpiador de Superficie Tipo Espuma 400 g.PNG",
       "source": "local",
       "note": "El catálogo enlazado usa SKU 4056842 para esta descripción. Confirmar con inventario antes de unificar."
+    },
+    {
+      "id": "excel-4072423",
+      "name": "Tejido de rafia natural de 7 mm (bobina de 3 kg)",
+      "category": "REFACCIONES",
+      "subcategory": "Materiales de mantenimiento",
+      "sku": "4072423",
+      "sizes": {},
+      "image": "Images/material-4072423.png",
+      "source": "excel",
+      "source_name": "TEJIDO RAFIA;NAT;7MM;BOB 3KG",
+      "unit": "",
+      "aliases": [
+        "TEJIDO RAFIA;NAT;7MM;BOB 3KG"
+      ]
+    },
+    {
+      "id": "excel-4236003",
+      "name": "Lámina de Enterteni de 1/2 in, azul",
+      "category": "REFACCIONES",
+      "subcategory": "Placas y láminas",
+      "sku": "4236003",
+      "sizes": {},
+      "image": "Images/material-4236003.png",
+      "source": "excel",
+      "source_name": "LAMINA D ENTERTENI DE 1/2\"  COLOR AZUL",
+      "unit": "",
+      "aliases": [
+        "LAMINA D ENTERTENI DE 1/2\"  COLOR AZUL"
+      ]
+    },
+    {
+      "id": "excel-4057044",
+      "name": "Manguera para agua roja, diámetro 3/4",
+      "category": "REFACCIONES",
+      "subcategory": "Mangueras",
+      "sku": "4057044",
+      "sizes": {},
+      "image": "Images/material-4057044.png",
+      "source": "excel",
+      "source_name": "MANG P/ AGUA COLOR ROJO DE 3/4 DIA",
+      "unit": "",
+      "aliases": [
+        "MANG P/ AGUA COLOR ROJO DE 3/4 DIA"
+      ]
+    },
+    {
+      "id": "excel-5541901",
+      "name": "Plumas retráctiles Paper Mate negras (caja de 12)",
+      "category": "PAPELERIA",
+      "subcategory": "Artículos de Escritura",
+      "sku": "5541901",
+      "sizes": {},
+      "image": "Images/material-5541901.png",
+      "source": "excel",
+      "source_name": "CJA 12 PLUMAS NEGRA RETRACTIL PAPERMATE",
+      "unit": "PZA",
+      "aliases": [
+        "CJA 12 PLUMAS NEGRA RETRACTIL PAPERMATE"
+      ]
+    },
+    {
+      "id": "excel-5541902",
+      "name": "Plumas retráctiles Paper Mate azules (caja de 12)",
+      "category": "PAPELERIA",
+      "subcategory": "Artículos de Escritura",
+      "sku": "5541902",
+      "sizes": {},
+      "image": "Images/material-5541902.png",
+      "source": "excel",
+      "source_name": "CJA 12 PLUMA AZUL RETRACTIL PAPERMATE",
+      "unit": "PZA",
+      "aliases": [
+        "CJA 12 PLUMA AZUL RETRACTIL PAPERMATE"
+      ]
+    },
+    {
+      "id": "excel-5523853",
+      "name": "Manga Ansell Armor Knit Kevlar",
+      "category": "EPP",
+      "subcategory": "Protección de manos y brazos",
+      "sku": "5523853",
+      "sizes": {},
+      "image": "Images/material-5523853.png",
+      "source": "excel",
+      "source_name": "MANGA ANSELL ARMOR KNIT KEVLAR",
+      "unit": "PAR",
+      "aliases": [
+        "MANGA ANSELL ARMOR KNIT KEVLAR"
+      ]
+    },
+    {
+      "id": "excel-4080934",
+      "name": "Disco de corte de fibra de vidrio Austromex 769",
+      "category": "HERRAMIENTAS",
+      "subcategory": "Discos de corte",
+      "sku": "4080934",
+      "sizes": {},
+      "image": "Images/material-4080934.png",
+      "source": "excel",
+      "source_name": "DISCO CORT;FIB VID;AUSTROMEX/769",
+      "unit": "",
+      "aliases": [
+        "DISCO CORT;FIB VID;AUSTROMEX/769"
+      ]
+    },
+    {
+      "id": "excel-5544334",
+      "name": "Navaja de seguridad de retracción 11-987",
+      "category": "HERRAMIENTAS",
+      "subcategory": "Herramientas de corte",
+      "sku": "5544334",
+      "sizes": {},
+      "image": "Images/material-5544334.jpeg",
+      "source": "excel",
+      "source_name": "NAVAJA DE SEGURIDAD DE RETRACCION 11-987",
+      "unit": "PZA",
+      "aliases": [
+        "NAVAJA DE SEGURIDAD DE RETRACCION 11-987"
+      ]
+    },
+    {
+      "id": "excel-4156359",
+      "name": "Pila alcalina C de 1.5 V (blíster de 2)",
+      "category": "CONSUMIBLES",
+      "subcategory": "Pilas y baterías",
+      "sku": "4156359",
+      "sizes": {},
+      "image": "Images/material-4156359.png",
+      "source": "excel",
+      "source_name": "PILA ALCAL;C;1,5V;BLISTER C/2 UNI",
+      "unit": "PAQ",
+      "aliases": [
+        "PILA ALCAL;C;1,5V;BLISTER C/2 UNI"
+      ]
+    },
+    {
+      "id": "excel-4024834",
+      "name": "Pila alcalina AAA de 1.5 V (paquete de 2)",
+      "category": "CONSUMIBLES",
+      "subcategory": "Pilas y baterías",
+      "sku": "4024834",
+      "sizes": {},
+      "image": "Images/material-4024834.png",
+      "source": "excel",
+      "source_name": "PILA ALCAL;TAM:AAA;1,5 V;EMP C/2 UNID",
+      "unit": "PAQ",
+      "aliases": [
+        "PILA ALCAL;TAM:AAA;1,5 V;EMP C/2 UNID"
+      ]
+    },
+    {
+      "id": "excel-4029762",
+      "name": "Pila de 9 V, cualquier marca",
+      "category": "CONSUMIBLES",
+      "subcategory": "Pilas y baterías",
+      "sku": "4029762",
+      "sizes": {},
+      "image": "Images/material-4029762.png",
+      "source": "excel",
+      "source_name": "PILA 9 VOLTS. CUALQUIER MCA",
+      "unit": "PZA",
+      "aliases": [
+        "PILA 9 VOLTS. CUALQUIER MCA"
+      ]
+    },
+    {
+      "id": "excel-4024835",
+      "name": "Pila alcalina de 1.5 V (blíster de 2)",
+      "category": "CONSUMIBLES",
+      "subcategory": "Pilas y baterías",
+      "sku": "4024835",
+      "sizes": {},
+      "image": "Images/material-4024835.png",
+      "source": "excel",
+      "source_name": "PILA ALCAL;1,5V;BLISTER C/2UNIDADES",
+      "unit": "PAR",
+      "aliases": [
+        "PILA ALCAL;1,5V;BLISTER C/2UNIDADES"
+      ]
+    },
+    {
+      "id": "excel-4156364",
+      "name": "Pila alcalina AA de 1.5 V (blíster de 4)",
+      "category": "CONSUMIBLES",
+      "subcategory": "Pilas y baterías",
+      "sku": "4156364",
+      "sizes": {},
+      "image": "Images/material-4156364.png",
+      "source": "excel",
+      "source_name": "PILA ALCAL;AA;1,5V;BLISTER C/4 UNI",
+      "unit": "PAC",
+      "aliases": [
+        "PILA ALCAL;AA;1,5V;BLISTER C/4 UNI"
+      ]
+    },
+    {
+      "id": "excel-5542368",
+      "name": "Vaso de plástico transparente desechable de 16 oz",
+      "category": "CONSUMIBLES",
+      "subcategory": "Desechables",
+      "sku": "5542368",
+      "sizes": {},
+      "image": "Images/material-5542368.png",
+      "source": "excel",
+      "source_name": "VASO DE PLASTICO TRANSP DESECH DE 16 OZ",
+      "unit": "PAQ",
+      "aliases": [
+        "VASO DE PLASTICO TRANSP DESECH DE 16 OZ"
+      ]
+    },
+    {
+      "id": "excel-4052033",
+      "name": "Candado Phillips de latón modelo 12",
+      "category": "HERRAMIENTAS",
+      "subcategory": "Candados de uso general",
+      "sku": "4052033",
+      "sizes": {},
+      "image": "Images/material-4052033.png",
+      "source": "excel",
+      "source_name": "CAND PHILLIPS DE LATON MOD12",
+      "unit": "PZA",
+      "aliases": [
+        "CAND PHILLIPS DE LATON MOD12"
+      ]
+    },
+    {
+      "id": "excel-4015743",
+      "name": "Adhesivo instantáneo Henkel Loctite 495 de 20 g",
+      "category": "ADHESIVOS",
+      "subcategory": "Adhesivos instantáneos",
+      "sku": "4015743",
+      "sizes": {},
+      "image": "Images/material-4015743.png",
+      "source": "excel",
+      "source_name": "ADHESIVO INST;HENKEL/LOCTITE49520GR",
+      "unit": "PZA",
+      "aliases": [
+        "ADHESIVO INST;HENKEL/LOCTITE49520GR"
+      ]
+    },
+    {
+      "id": "excel-5530059",
+      "name": "Cinta masking tape de 24 mm × 50 m",
+      "category": "CONSUMIBLES",
+      "subcategory": "Cintas",
+      "sku": "5530059",
+      "sizes": {},
+      "image": "Images/material-5530059.png",
+      "source": "excel",
+      "source_name": "CINTA MASKING TAPE 24MM X 50M",
+      "unit": "PZA",
+      "aliases": [
+        "CINTA MASKING TAPE 24MM X 50M"
+      ]
+    },
+    {
+      "id": "excel-5544109",
+      "name": "Linterna recargable Truper modelo 10614",
+      "category": "HERRAMIENTAS",
+      "subcategory": "Iluminación portátil",
+      "sku": "5544109",
+      "sizes": {},
+      "image": "Images/material-5544109.png",
+      "source": "excel",
+      "source_name": "LINTERNA RECARGABLE MOD 10614 MCA TRUPER",
+      "unit": "PZA",
+      "aliases": [
+        "LINTERNA RECARGABLE MOD 10614 MCA TRUPER"
+      ]
+    },
+    {
+      "id": "excel-4023511",
+      "name": "Flexómetro de 5 m con caja metálica",
+      "category": "HERRAMIENTAS",
+      "subcategory": "Medición",
+      "sku": "4023511",
+      "sizes": {},
+      "image": "Images/material-4023511.png",
+      "source": "excel",
+      "source_name": "FLEXOM 5 MTS. CAJA MET",
+      "unit": "PZA",
+      "aliases": [
+        "FLEXOM 5 MTS. CAJA MET"
+      ]
+    },
+    {
+      "id": "excel-5535900",
+      "name": "Cubrebocas quirúrgico desechable Biotec (caja de 150)",
+      "category": "EPP",
+      "subcategory": "Protección respiratoria",
+      "sku": "5535900",
+      "sizes": {},
+      "image": "Images/material-5535900.png",
+      "source": "excel",
+      "source_name": "CUBREBOCA QUIRURGICO DES/BIOTEC 150 PZAS",
+      "unit": "CJ",
+      "aliases": [
+        "CUBREBOCA QUIRURGICO DES/BIOTEC 150 PZAS"
+      ]
+    },
+    {
+      "id": "excel-5543725",
+      "name": "Sello de seguridad amarillo ETIA02",
+      "category": "CONSUMIBLES",
+      "subcategory": "Sellos de seguridad",
+      "sku": "5543725",
+      "sizes": {},
+      "image": "Images/material-5543725.png",
+      "source": "excel",
+      "source_name": "SELLO SEGURIDAD AMARILLO ETIA02",
+      "unit": "",
+      "aliases": [
+        "SELLO SEGURIDAD AMARILLO ETIA02"
+      ]
     }
   ]
 }

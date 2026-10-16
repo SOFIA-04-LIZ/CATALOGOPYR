@@ -12,7 +12,7 @@ const assert = (condition, message) => {
     if (!condition) throw Error(message);
     checks++;
 };
-const pages = ['index', 'EPP', 'LIMPIEZA', 'LUBRICANTES', 'PAPELERIA', 'QUIMICOS', 'REFACCIONES', 'SOLVENTES', 'UNIFORMES', 'GASES', 'ADHESIVOS', 'PINTURAS', 'HERRAMIENTAS', 'INSUMOS'];
+const pages = ['index', 'EPP', 'LIMPIEZA', 'LUBRICANTES', 'PAPELERIA', 'QUIMICOS', 'REFACCIONES', 'SOLVENTES', 'UNIFORMES', 'GASES', 'ADHESIVOS', 'PINTURAS', 'HERRAMIENTAS', 'INSUMOS', 'CONSUMIBLES'];
 let index = 0;
 let checks = 0;
 let failed = false;
@@ -35,7 +35,7 @@ frame.onload = () => {
         toggle.click();
         assert(!menu.hidden && toggle.getAttribute('aria-expanded') === 'true', 'category menu opens');
         assert(w.getComputedStyle(menu).display !== 'none', 'category menu is visible');
-        assert(menu.querySelectorAll('a').length === 13, 'all category links are present');
+        assert(menu.querySelectorAll('a').length === 14, 'all category links are present');
         d.dispatchEvent(new w.KeyboardEvent('keydown', {key: 'Escape', bubbles: true}));
         assert(menu.hidden, 'Escape closes category menu');
         toggle.click();
@@ -58,6 +58,7 @@ frame.onload = () => {
                 assert(card.querySelector('img').getAttribute('src') === variant.image, 'selected image: ' + variant.sku);
                 assert(card.querySelector('img').alt === variant.name, 'image description matches selection');
                 assert(card.querySelector('.product-note').hidden === !variant.note, 'note belongs to selected option');
+                assert(card.querySelector('.product-unit').textContent === (variant.unit ? 'Unidad: ' + variant.unit : ''), 'unit matches selected option');
                 w.agregarAlCarrito(card.querySelector('button'));
                 assert(d.querySelector('.cart-sku').textContent === 'SKU: ' + variant.sku, 'cart SKU: ' + variant.sku);
                 assert(d.querySelector('.cart-nombre').textContent === variant.cart_name, 'cart identifies original material and size');
@@ -67,7 +68,7 @@ frame.onload = () => {
         }
         const search = d.getElementById('buscador');
         if (pages[index] === 'index') {
-            for (const sku of ['5506472', '5539469', '5517584', '5526770', '5537478']) {
+            for (const sku of ['5506472', '5539469', '5517584', '5526770', '5537478', '4024834', '5541902', '5544109']) {
                 search.value = sku;
                 w.buscarProducto();
                 const found = d.querySelectorAll('.card:not([hidden])');

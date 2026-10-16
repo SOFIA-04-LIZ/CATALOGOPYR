@@ -123,6 +123,25 @@ class InventoryTests(unittest.TestCase):
         for product_id in ['dispatch-67', 'dispatch-71', 'dispatch-97', 'dispatch-98']:
             self.assertIn(product_id, views)
 
+    def test_every_excel_material_is_present_once(self):
+        workbook = json.loads((ROOT / 'data/source-excel.json').read_text())
+        products = {sku: p for p in self.catalog['products'] for sku in [p['sku'], *p['sizes'].values()]}
+        page = Page()
+        page.feed((ROOT / 'index.html').read_text())
+        rendered_skus = [v['sku'] for v in page.variants]
+        self.assertEqual(len(workbook['materials']), 23)
+        self.assertEqual(sum(row['status'] == 'added' for row in workbook['materials']), 21)
+        for row in workbook['materials']:
+            with self.subTest(sku=row['sku']):
+                product = products[row['sku']]
+                self.assertEqual(rendered_skus.count(row['sku']), 1)
+                self.assertEqual(product.get('unit'), row['unit'])
+                self.assertIn(row['name'], product['aliases'])
+                self.assertEqual(product['category'], row['catalog_category'])
+                if row['status'] == 'added':
+                    self.assertEqual(product['source'], 'excel')
+                    self.assertEqual(product['image'], row['image'])
+
     def test_conflicting_local_sku_is_preserved(self):
         local = [p for p in self.catalog['products'] if p['source'] == 'local']
         self.assertEqual([p['sku'] for p in local], ['5537478'])

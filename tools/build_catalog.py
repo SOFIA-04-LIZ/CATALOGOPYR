@@ -30,6 +30,7 @@ def render_card(product, categories):
     <p class="product-type">{e(product['subcategory'])}</p>
     {options}
     <span class="sku-display">SKU: {e(first['sku'])}</span>
+    <p class="product-unit"{'' if first['unit'] else ' hidden'}>{e('Unidad: ' + first['unit']) if first['unit'] else ''}</p>
     {note}
     <button type="button" onclick="agregarAlCarrito(this)">Agregar al carrito</button>
 </div>'''
@@ -62,11 +63,11 @@ def build():
         (ROOT / ((category or 'index') + '.html')).write_text(page)
     with (ROOT / 'data/inventario-clasificado.csv').open('w', encoding='utf-8-sig', newline='') as file:
         writer = csv.writer(file, lineterminator="\n")
-        writer.writerow(['SKU', 'Material', 'Grupo', 'Opción', 'Categoría', 'Tipo de material', 'Origen', 'Observaciones'])
+        writer.writerow(['SKU', 'Material', 'Grupo', 'Opción', 'Categoría', 'Tipo de material', 'Origen', 'Observaciones', 'UM'])
         for product in products:
             for variant in product['variants']:
                 writer.writerow([variant['sku'], variant['name'], product['name'], variant['label'],
-                                 categories[product['category']], product['subcategory'], variant['source'], variant['note']])
+                                 categories[product['category']], product['subcategory'], variant['source'], variant['note'], variant['unit']])
     print(json.dumps(counts, ensure_ascii=False, indent=2))
 
 
