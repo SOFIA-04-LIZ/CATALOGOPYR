@@ -1444,7 +1444,10 @@
       "sizes": {},
       "image": "Images/Cinta Metrica Truper 50 m.PNG",
       "source": "dispatch",
-      "source_name": "Cinta Metrica Truper 50 m"
+      "source_name": "Cinta Metrica Truper 50 m",
+      "aliases": [
+        "CINTA METRICA"
+      ]
     },
     {
       "id": "dispatch-127",
@@ -3966,6 +3969,351 @@
       "aliases": [
         "SELLO SEGURIDAD AMARILLO ETIA02"
       ]
+    },
+    {
+      "id": "libro4-4245783",
+      "name": "Diablito 3 en 1 modelo H-2086 con rueda neumática",
+      "category": "CONSUMIBLES",
+      "subcategory": "Transporte de materiales",
+      "sku": "4245783",
+      "sizes": {},
+      "image": "Images/material-4245783.png",
+      "source": "excel-libro4",
+      "source_name": "DIABLITO 3 EN 1 MOD. H-2086 RUEDA NEUMAT",
+      "aliases": [
+        "DIABLITO 3 EN 1 MOD. H-2086 RUEDA NEUMAT"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4250695",
+      "name": "Buje Manufacturas",
+      "category": "REFACCIONES",
+      "subcategory": "Bujes",
+      "sku": "4250695",
+      "sizes": {},
+      "image": "Images/material-4250695.png",
+      "source": "excel-libro4",
+      "source_name": "BUJE;MANUFACTURAS",
+      "aliases": [
+        "BUJE;MANUFACTURAS"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4063301",
+      "name": "Rodillo NP",
+      "category": "REFACCIONES",
+      "subcategory": "Rodillos",
+      "sku": "4063301",
+      "sizes": {},
+      "image": "Images/material-4063301.png",
+      "source": "excel-libro4",
+      "source_name": "RODI NP",
+      "aliases": [
+        "RODI NP"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4008114",
+      "name": "Rodillo nueva versión",
+      "category": "REFACCIONES",
+      "subcategory": "Rodillos",
+      "sku": "4008114",
+      "sizes": {},
+      "image": "Images/material-4008114.png",
+      "source": "excel-libro4",
+      "source_name": "RODI NUEVA VERS",
+      "aliases": [
+        "RODI NUEVA VERS"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4051967",
+      "name": "Abrazadera guía",
+      "category": "REFACCIONES",
+      "subcategory": "Guías y sujeción",
+      "sku": "4051967",
+      "sizes": {},
+      "image": "Images/material-4051967.png",
+      "source": "excel-libro4",
+      "source_name": "ABRAZADERA GUIA",
+      "aliases": [
+        "ABRAZADERA GUIA"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4095328",
+      "name": "Cilindro neumático",
+      "category": "REFACCIONES",
+      "subcategory": "Componentes neumáticos",
+      "sku": "4095328",
+      "sizes": {},
+      "image": "Images/material-4095328.png",
+      "source": "excel-libro4",
+      "source_name": "CIL NEUM",
+      "aliases": [
+        "CIL NEUM"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4065600",
+      "name": "Martillo con pastilla",
+      "category": "REFACCIONES",
+      "subcategory": "Componentes de maquinaria",
+      "sku": "4065600",
+      "sizes": {},
+      "image": "Images/material-4065600.png",
+      "source": "excel-libro4",
+      "source_name": "MARTILLO  C/ PASTILLA",
+      "aliases": [
+        "MARTILLO  C/ PASTILLA"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4146774",
+      "name": "Rótula para pistón coronador",
+      "category": "REFACCIONES",
+      "subcategory": "Componentes neumáticos",
+      "sku": "4146774",
+      "sizes": {},
+      "image": "Images/material-4146774.png",
+      "source": "excel-libro4",
+      "source_name": "ROTULA P/PISTON CORONADOR",
+      "aliases": [
+        "ROTULA P/PISTON CORONADOR"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4065899",
+      "name": "Cople para sinfín",
+      "category": "REFACCIONES",
+      "subcategory": "Coples y transmisión",
+      "sku": "4065899",
+      "sizes": {},
+      "image": "Images/material-4065899.png",
+      "source": "excel-libro4",
+      "source_name": "COPLE P/SINFIN",
+      "aliases": [
+        "COPLE P/SINFIN"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4063649",
+      "name": "Cuerpo del extractor",
+      "category": "REFACCIONES",
+      "subcategory": "Componentes de maquinaria",
+      "sku": "4063649",
+      "sizes": {},
+      "image": "Images/material-4063649.png",
+      "source": "excel-libro4",
+      "source_name": "CUERP DEL EXTRACT",
+      "aliases": [
+        "CUERP DEL EXTRACT"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4051730",
+      "name": "Rueda dentada",
+      "category": "REFACCIONES",
+      "subcategory": "Ruedas y transmisión",
+      "sku": "4051730",
+      "sizes": {},
+      "image": "Images/material-4051730.png",
+      "source": "excel-libro4",
+      "source_name": "RUEDA DENT",
+      "aliases": [
+        "RUEDA DENT"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4064852",
+      "name": "Soporte",
+      "category": "REFACCIONES",
+      "subcategory": "Soportes",
+      "sku": "4064852",
+      "sizes": {},
+      "image": "Images/material-4064852.png",
+      "source": "excel-libro4",
+      "source_name": "SOPORTE",
+      "aliases": [
+        "SOPORTE"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4276111",
+      "name": "Soporte",
+      "category": "REFACCIONES",
+      "subcategory": "Soportes",
+      "sku": "4276111",
+      "sizes": {},
+      "image": "Images/material-4276111.png",
+      "source": "excel-libro4",
+      "source_name": "SOPORTE",
+      "aliases": [
+        "SOPORTE"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4051916",
+      "name": "Collar de eje",
+      "category": "REFACCIONES",
+      "subcategory": "Guías y sujeción",
+      "sku": "4051916",
+      "sizes": {},
+      "image": "Images/material-4051916.png",
+      "source": "excel-libro4",
+      "source_name": "COLLAR EJ",
+      "aliases": [
+        "COLLAR EJ"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4063297",
+      "name": "Rueda dentada para cadena",
+      "category": "REFACCIONES",
+      "subcategory": "Ruedas y transmisión",
+      "sku": "4063297",
+      "sizes": {},
+      "image": "Images/material-4063297.png",
+      "source": "excel-libro4",
+      "source_name": "RUEDA DENT P/CAD",
+      "aliases": [
+        "RUEDA DENT P/CAD"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4685273",
+      "name": "Rodillo de retorno",
+      "category": "REFACCIONES",
+      "subcategory": "Rodillos",
+      "sku": "4685273",
+      "sizes": {},
+      "image": "Images/material-4685273.png",
+      "source": "excel-libro4",
+      "source_name": "Rodillo de retorno",
+      "aliases": [
+        "Rodillo de retorno"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4051917",
+      "name": "Collar de eje circular",
+      "category": "REFACCIONES",
+      "subcategory": "Guías y sujeción",
+      "sku": "4051917",
+      "sizes": {},
+      "image": "Images/material-4051917.png",
+      "source": "excel-libro4",
+      "source_name": "COLLAR EJE;CIRC",
+      "aliases": [
+        "COLLAR EJE;CIRC"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4130209",
+      "name": "Buchaca familiar",
+      "category": "REFACCIONES",
+      "subcategory": "Componentes de maquinaria",
+      "sku": "4130209",
+      "sizes": {},
+      "image": "Images/material-4130209.png",
+      "source": "excel-libro4",
+      "source_name": "BUCHACA FAMILIAR",
+      "aliases": [
+        "BUCHACA FAMILIAR"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4123194",
+      "name": "Filtro Filtrox",
+      "category": "REFACCIONES",
+      "subcategory": "Filtros",
+      "sku": "4123194",
+      "sizes": {},
+      "image": "Images/material-4123194.png",
+      "source": "excel-libro4",
+      "source_name": "FILTRO FILTROX",
+      "aliases": [
+        "FILTRO FILTROX"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4082711",
+      "name": "Cinta aislante",
+      "category": "CONSUMIBLES",
+      "subcategory": "Cintas",
+      "sku": "4082711",
+      "sizes": {},
+      "image": "Images/material-4082711.png",
+      "source": "excel-libro4",
+      "source_name": "CINTA AISLANTE",
+      "aliases": [
+        "CINTA AISLANTE"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4179883",
+      "name": "Válvula de 1/2 in",
+      "category": "REFACCIONES",
+      "subcategory": "Válvulas",
+      "sku": "4179883",
+      "sizes": {},
+      "image": "Images/material-4179883.png",
+      "source": "excel-libro4",
+      "source_name": "VALVULA 1/2POL",
+      "aliases": [
+        "VALVULA 1/2POL"
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4054250",
+      "name": "Válvula de bola de 1/2 in",
+      "category": "REFACCIONES",
+      "subcategory": "Válvulas",
+      "sku": "4054250",
+      "sizes": {},
+      "image": "Images/material-4054250.png",
+      "source": "excel-libro4",
+      "source_name": "VALV DE BOLA  DE 1/2\"",
+      "aliases": [
+        "VALV DE BOLA  DE 1/2\""
+      ],
+      "unit": ""
+    },
+    {
+      "id": "libro4-4057710",
+      "name": "Cable de cobre flexible",
+      "category": "REFACCIONES",
+      "subcategory": "Componentes eléctricos",
+      "sku": "4057710",
+      "sizes": {},
+      "image": "Images/material-4057710.png",
+      "source": "excel-libro4",
+      "source_name": "CABLE COBRE FLEXIBLE",
+      "aliases": [
+        "CABLE COBRE FLEXIBLE"
+      ],
+      "unit": ""
     }
   ]
 }

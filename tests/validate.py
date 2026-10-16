@@ -158,6 +158,33 @@ class InventoryTests(unittest.TestCase):
             self.assertNotIn('Herramientas y consumibles', text)
             self.assertNotIn('Insumos generales', text)
 
+    def test_libro4_additions_and_duplicate_sku_are_accounted_for(self):
+        source = json.loads((ROOT / 'data/source-libro4.json').read_text())
+        products = {p['id']: p for p in self.catalog['products']}
+        page = Page()
+        page.feed((ROOT / 'index.html').read_text())
+        skus = [v['sku'] for v in page.variants]
+        self.assertEqual(len(source['materials']), 49)
+        for row in source['materials']:
+            with self.subTest(row=row['row'], sku=row['sku']):
+                if row['status'] == 'pending_duplicate_sku':
+                    self.assertEqual(row['sku'], '4300806')
+                    self.assertTrue((ROOT / row['image']).is_file())
+                    self.assertTrue(row.get('note'))
+                    self.assertNotIn('catalog_id', row)
+                    continue
+                product = products[row['catalog_id']]
+                self.assertEqual(skus.count(row['sku']), 1)
+                self.assertIn(row['name'], product['aliases'])
+                if row['status'] == 'added':
+                    self.assertEqual(product['image'], row['image'])
+                    self.assertEqual(product['source'], 'excel-libro4')
+        unresolved = [r for r in source['materials'] if r['status'] == 'pending_duplicate_sku']
+        if unresolved:
+            self.assertEqual(len(unresolved), 2)
+            self.assertNotIn('4300806', skus)
+            self.assertNotEqual(unresolved[0]['image'], unresolved[1]['image'])
+
     def test_conflicting_local_sku_is_preserved(self):
         local = [p for p in self.catalog['products'] if p['source'] == 'local']
         self.assertEqual([p['sku'] for p in local], ['5537478'])

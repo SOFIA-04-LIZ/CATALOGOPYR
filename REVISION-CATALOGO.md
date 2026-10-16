@@ -21,11 +21,11 @@ Se recuperaron las imágenes del candado dieléctrico, la tarjeta PVC y la camis
 | Lubricantes | 34 |
 | Químicos | 21 |
 | Uniformes | 10 |
-| Refacciones | 5 |
+| Refacciones | 26 |
 | Gases | 4 |
 | Adhesivos y selladores | 12 |
 | Pinturas y recubrimientos | 5 |
-| Consumibles | 18 |
+| Consumibles | 20 |
 
 La clasificación se hizo por uso del material. Las grasas, aceites y lubricadores quedaron en Lubricantes; los fijadores, resinas y siliconas en Adhesivos y selladores; los barnices, esmaltes y pinturas en Pinturas y recubrimientos. Los gases tienen categoría propia. La bombilla quedó en Refacciones. La cinta métrica, brochas y pastas de trabajo quedaron en Herramientas y consumibles; las placas acrílicas y el papel aluminio en Insumos generales. Se conservaron las denominaciones comerciales de la fuente.
 
@@ -64,3 +64,10 @@ Herramientas y consumibles e Insumos generales se integraron en Consumibles. La 
 ## Pilas en tarjetas individuales
 
 Por solicitud del usuario, las cinco pilas (`4156359`, `4024834`, `4029762`, `4024835`, `4156364`) tienen ahora tarjetas independientes. Se conservan sus imágenes, descripciones, unidades y SKU. El catálogo mantiene 399 SKU, distribuidos en 286 tarjetas; Consumibles contiene 18 tarjetas.
+
+
+## Libro4.xlsx
+
+Se revisaron 49 renglones y 48 SKU distintos. Veinticuatro materiales ya existían y no se duplicaron. Se incorporaron 23 materiales nuevos con sus imágenes, 21 en Refacciones y dos en Consumibles. Los nombres originales se preservaron como alias y las unidades vacías no se dedujeron. El catálogo resultante contiene 422 SKU y 309 tarjetas.
+
+Dos materiales no se publicaron porque el libro repite `4300806`: `RUEDA DENT REXNORD` (fila 43) y `BUCHACA MEDIA` (fila 45). Se solicitó aclaración al usuario. Sus imágenes se guardaron con el número de fila para conservarlas por separado. Las filas, estados y hash SHA-256 del archivo están en `data/source-libro4.json`.

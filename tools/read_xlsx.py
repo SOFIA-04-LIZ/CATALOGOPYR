@@ -21,7 +21,7 @@ def relations(archive, path):
             for node in root if node.get('TargetMode') != 'External'}
 
 
-def read_inventory(path):
+def read_inventory(path, *, images_by_row=False):
     with ZipFile(path) as archive:
         strings = [''.join(node.itertext()) for node in
                    ET.fromstring(archive.read('xl/sharedStrings.xml')).findall(f'{{{S}}}si')]
@@ -66,7 +66,8 @@ def read_inventory(path):
                 continue
             sku = values['B']
             if image_path:
-                images[sku] = (PurePosixPath(image_path).suffix, archive.read(image_path))
+                image_key = int(row.get('r')) if images_by_row else sku
+                images[image_key] = (PurePosixPath(image_path).suffix, archive.read(image_path))
             rows.append(dict(row=int(row.get('r')), sku=sku, name=values.get('C', ''),
                              category=values.get('E', ''), unit=values.get('F', ''),
                              image_embedded=bool(image_path)))
